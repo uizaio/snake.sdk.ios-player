@@ -92,7 +92,7 @@ UZFloatingPlayerViewController().present(with: videoItem, playlist: playlist)
 
 See [Example](https://github.com/uizaio/snake.sdk.ios-player/blob/master/UZPlayerExample)
 
-For API details, check [API Document](https://uizaio.github.io/snake.sdk.ios-player/)
+For API details, check [API Document](https://uizaio.github.io/uiza-ios-player-sdk/)
 
 ## Google ChromeCast supports
 If developing using Xcode 10 and targeting iOS devices running iOS 12 or higher, the "Access WiFi Information" capability is required in order to discover and connect to Cast devices
