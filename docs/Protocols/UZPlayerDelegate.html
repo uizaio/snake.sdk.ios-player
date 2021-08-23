@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UZPlayerDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/UZPlayerDelegate" class="dashAnchor"></a>
+    <a title="UZPlayerDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">UZPlayer Docs</a> (9% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">UZPlayer Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        UZPlayerDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/UZCastingManager.html">UZCastingManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZEndscreenView.html">UZEndscreenView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZFloatingPlayerViewController.html">UZFloatingPlayerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZLiveBadgeView.html">UZLiveBadgeView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayer.html">UZPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerContainerViewController.html">UZPlayerContainerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerControlView.html">UZPlayerControlView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerLayerView.html">UZPlayerLayerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerViewController.html">UZPlayerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZSubtitles.html">UZSubtitles</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZSubtitles/UZSubtitleGroup.html">– UZSubtitleGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme1.html">UZTheme1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme2.html">UZTheme2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme3.html">UZTheme3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme4.html">UZTheme4</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme5.html">UZTheme5</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme6.html">UZTheme6</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme7.html">UZTheme7</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/UZButtonTag.html">UZButtonTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UZFullscreenPresentationMode.html">UZFullscreenPresentationMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UZPlayerAspectRatio.html">UZPlayerAspectRatio</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UZPlayerState.html">UZPlayerState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/UZDeviceListTableViewController">UZDeviceListTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UZPlayer.html">UZPlayer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/UZFloatingPlayerViewProtocol.html">UZFloatingPlayerViewProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UZPlayerControlViewDelegate.html">UZPlayerControlViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UZPlayerDelegate.html">UZPlayerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UZPlayerTheme.html">UZPlayerTheme</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/UZCastItem">UZCastItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZPlayerConfig.html">UZPlayerConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZPlayerResource.html">UZPlayerResource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZVideoItem.html">UZVideoItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZVideoLinkPlay.html">UZVideoLinkPlay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZVideoSubtitle.html">UZVideoSubtitle</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>UZPlayerDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">UZPlayerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8UZPlayer0A8DelegateP6playerAD0C14StateDidChangeyA2AC_AA0aD0OtF"></a>
+                    <a name="//apple_ref/swift/Method/player(player:playerStateDidChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8UZPlayer0A8DelegateP6playerAD0C14StateDidChangeyA2AC_AA0aD0OtF">player(player:playerStateDidChange:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">player</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/UZPlayer.html">UZPlayer</a></span><span class="p">,</span> <span class="n">playerStateDidChange</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Enums/UZPlayerState.html">UZPlayerState</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8UZPlayer0A8DelegateP6playerAD19loadedTimeDidChange13totalDurationyA2AC_S2dtF"></a>
+                    <a name="//apple_ref/swift/Method/player(player:loadedTimeDidChange:totalDuration:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8UZPlayer0A8DelegateP6playerAD19loadedTimeDidChange13totalDurationyA2AC_S2dtF">player(player:loadedTimeDidChange:totalDuration:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">player</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/UZPlayer.html">UZPlayer</a></span><span class="p">,</span> <span class="n">loadedTimeDidChange</span> <span class="nv">loadedDuration</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">totalDuration</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8UZPlayer0A8DelegateP6playerAD17playTimeDidChange05totalE0yA2AC_S2dtF"></a>
+                    <a name="//apple_ref/swift/Method/player(player:playTimeDidChange:totalTime:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8UZPlayer0A8DelegateP6playerAD17playTimeDidChange05totalE0yA2AC_S2dtF">player(player:playTimeDidChange:totalTime:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">player</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/UZPlayer.html">UZPlayer</a></span><span class="p">,</span> <span class="n">playTimeDidChange</span> <span class="nv">currentTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">totalTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8UZPlayer0A8DelegateP6playerAD0C9IsPlayingyA2AC_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/player(player:playerIsPlaying:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8UZPlayer0A8DelegateP6playerAD0C9IsPlayingyA2AC_SbtF">player(player:playerIsPlaying:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">player</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/UZPlayer.html">UZPlayer</a></span><span class="p">,</span> <span class="n">playerIsPlaying</span> <span class="nv">playing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8UZPlayer0A8DelegateP6playerAD0c13DidFailToPlayF7EndTimeyA2AC_s5Error_pSgtF"></a>
+                    <a name="//apple_ref/swift/Method/player(player:playerDidFailToPlayToEndTime:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8UZPlayer0A8DelegateP6playerAD0c13DidFailToPlayF7EndTimeyA2AC_s5Error_pSgtF">player(player:playerDidFailToPlayToEndTime:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">player</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/UZPlayer.html">UZPlayer</a></span><span class="p">,</span> <span class="n">playerDidFailToPlayToEndTime</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8UZPlayer0A8DelegateP6player0C8DidStallyA2AC_tF"></a>
+                    <a name="//apple_ref/swift/Method/player(playerDidStall:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8UZPlayer0A8DelegateP6player0C8DidStallyA2AC_tF">player(playerDidStall:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">player</span><span class="p">(</span><span class="nv">playerDidStall</span><span class="p">:</span> <span class="kt"><a href="../Classes/UZPlayer.html">UZPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8UZPlayer0A8DelegateP6player0C16DidEndLivestreamyA2AC_tF"></a>
+                    <a name="//apple_ref/swift/Method/player(playerDidEndLivestream:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8UZPlayer0A8DelegateP6player0C16DidEndLivestreamyA2AC_tF">player(playerDidEndLivestream:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">player</span><span class="p">(</span><span class="nv">playerDidEndLivestream</span><span class="p">:</span> <span class="kt"><a href="../Classes/UZPlayer.html">UZPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://uiza.io/" target="_blank" rel="external">Nam Kennic</a>. All rights reserved. (Last updated: 2020-03-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

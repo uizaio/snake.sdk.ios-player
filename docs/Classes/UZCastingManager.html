@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UZCastingManager Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/UZCastingManager" class="dashAnchor"></a>
+    <a title="UZCastingManager Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">UZPlayer Docs</a> (9% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">UZPlayer Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        UZCastingManager Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/UZCastingManager.html">UZCastingManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZEndscreenView.html">UZEndscreenView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZFloatingPlayerViewController.html">UZFloatingPlayerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZLiveBadgeView.html">UZLiveBadgeView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayer.html">UZPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerContainerViewController.html">UZPlayerContainerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerControlView.html">UZPlayerControlView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerLayerView.html">UZPlayerLayerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZPlayerViewController.html">UZPlayerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZSubtitles.html">UZSubtitles</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZSubtitles/UZSubtitleGroup.html">– UZSubtitleGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme1.html">UZTheme1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme2.html">UZTheme2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme3.html">UZTheme3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme4.html">UZTheme4</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme5.html">UZTheme5</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme6.html">UZTheme6</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UZTheme7.html">UZTheme7</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/UZButtonTag.html">UZButtonTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UZFullscreenPresentationMode.html">UZFullscreenPresentationMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UZPlayerAspectRatio.html">UZPlayerAspectRatio</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UZPlayerState.html">UZPlayerState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/UZDeviceListTableViewController">UZDeviceListTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UZPlayer.html">UZPlayer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/UZFloatingPlayerViewProtocol.html">UZFloatingPlayerViewProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UZPlayerControlViewDelegate.html">UZPlayerControlViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UZPlayerDelegate.html">UZPlayerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UZPlayerTheme.html">UZPlayerTheme</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/UZCastItem">UZCastItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZPlayerConfig.html">UZPlayerConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZPlayerResource.html">UZPlayerResource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZVideoItem.html">UZVideoItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZVideoLinkPlay.html">UZVideoLinkPlay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UZVideoSubtitle.html">UZVideoSubtitle</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>UZCastingManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
+                    <a class="token" href="#/">shared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/hasConnectedSession" class="dashAnchor"></a>
+                    <a class="token" href="#/">hasConnectedSession</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/deviceCount" class="dashAnchor"></a>
+                    <a class="token" href="#/">deviceCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/device(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">device(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/mediaDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/">mediaDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/lastPosition" class="dashAnchor"></a>
+                    <a class="token" href="#/">lastPosition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/currentPosition" class="dashAnchor"></a>
+                    <a class="token" href="#/">currentPosition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/currentPlayerState" class="dashAnchor"></a>
+                    <a class="token" href="#/">currentPlayerState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/discoverManager" class="dashAnchor"></a>
+                    <a class="token" href="#/">discoverManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/sessionManager" class="dashAnchor"></a>
+                    <a class="token" href="#/">sessionManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/remoteClient" class="dashAnchor"></a>
+                    <a class="token" href="#/">remoteClient</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/currentCastSession" class="dashAnchor"></a>
+                    <a class="token" href="#/">currentCastSession</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/currentCastItem" class="dashAnchor"></a>
+                    <a class="token" href="#/">currentCastItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Discover"></a>
+                <a name="//apple_ref/swift/Section/Discover" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Discover"></a>
+                  <h3 class="section-name"><p>Discover</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/startDiscovering()" class="dashAnchor"></a>
+                    <a class="token" href="#/">startDiscovering()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/stopDiscovering()" class="dashAnchor"></a>
+                    <a class="token" href="#/">stopDiscovering()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Connect"></a>
+                <a name="//apple_ref/swift/Section/Connect" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Connect"></a>
+                  <h3 class="section-name"><p>Connect</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/cast(item:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">cast(item:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/connect(to:andCast:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">connect(to:andCast:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/disconnect()" class="dashAnchor"></a>
+                    <a class="token" href="#/">disconnect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/castItem(item:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">castItem(item:with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/play()" class="dashAnchor"></a>
+                    <a class="token" href="#/">play()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/pause()" class="dashAnchor"></a>
+                    <a class="token" href="#/">pause()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/stop()" class="dashAnchor"></a>
+                    <a class="token" href="#/">stop()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/seek(to:resumeState:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">seek(to:resumeState:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/setVolume(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">setVolume(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/setMute(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">setMute(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/selectTracksIDs(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">selectTracksIDs(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/didUpdateDeviceList()" class="dashAnchor"></a>
+                    <a class="token" href="#/">didUpdateDeviceList()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/sessionManager(_:didStart:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">sessionManager(_:didStart:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/sessionManager(_:didResumeCastSession:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">sessionManager(_:didResumeCastSession:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/sessionManager(_:session:didReceiveDeviceStatus:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">sessionManager(_:session:didReceiveDeviceStatus:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/sessionManager(_:didEnd:withError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">sessionManager(_:didEnd:withError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/sessionManager(_:didSuspend:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">sessionManager(_:didSuspend:with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/remoteMediaClient(_:didStartMediaSessionWithID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">remoteMediaClient(_:didStartMediaSessionWithID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/remoteMediaClient(_:didUpdate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">remoteMediaClient(_:didUpdate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/requestDidComplete(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">requestDidComplete(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/request(_:didFailWithError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">request(_:didFailWithError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/request(_:didAbortWith:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">request(_:didAbortWith:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://uiza.io/" target="_blank" rel="external">Nam Kennic</a>. All rights reserved. (Last updated: 2020-03-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

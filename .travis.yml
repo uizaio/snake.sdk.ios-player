@@ -1,0 +1,19 @@
+language: swift
+osx_image: xcode11.5
+xcode_project: UZPlayerExample.xcodeproj
+xcode_scheme: UZPlayerExample
+
+env:
+    global:
+    - FRAMEWORK_NAME=UZPlayerExample
+
+before_install:
+    - gem install xcpretty
+
+script:
+    - travis_wait 30 pod install
+    - xcodebuild clean build -sdk iphonesimulator -workspace $FRAMEWORK_NAME.xcworkspace -scheme $FRAMEWORK_NAME CODE_SIGNING_REQUIRED=NO | xcpretty
+    - pod lib lint
+
+notification:
+    email: false

@@ -1,0 +1,2987 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZMediaResource.swift",
+      "line": 11,
+      "symbol": "UZPlayerResource",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZMediaResource.swift",
+      "line": 12,
+      "symbol": "UZPlayerResource.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZMediaResource.swift",
+      "line": 13,
+      "symbol": "UZPlayerResource.cover",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZMediaResource.swift",
+      "line": 14,
+      "symbol": "UZPlayerResource.subtitles",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZMediaResource.swift",
+      "line": 15,
+      "symbol": "UZPlayerResource.definitions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZMediaResource.swift",
+      "line": 16,
+      "symbol": "UZPlayerResource.isLive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 11,
+      "symbol": "UZPlayerConfig",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 12,
+      "symbol": "UZPlayerConfig.endscreenMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 13,
+      "symbol": "UZPlayerConfig.autoStart",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 14,
+      "symbol": "UZPlayerConfig.preloadVideo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 15,
+      "symbol": "UZPlayerConfig.allowFullscreen",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 16,
+      "symbol": "UZPlayerConfig.allowSharing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 17,
+      "symbol": "UZPlayerConfig.displayPlaylist",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 18,
+      "symbol": "UZPlayerConfig.showEndscreen",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 19,
+      "symbol": "UZPlayerConfig.showQualitySelector",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 20,
+      "symbol": "UZPlayerConfig.showLogo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 21,
+      "symbol": "UZPlayerConfig.logoImageUrl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 22,
+      "symbol": "UZPlayerConfig.logoRedirectUrl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZPlayerConfig.swift",
+      "line": 23,
+      "symbol": "UZPlayerConfig.logoDisplayPosition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZSubtitles.swift",
+      "line": 11,
+      "symbol": "UZSubtitles",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZSubtitles.swift",
+      "line": 12,
+      "symbol": "UZSubtitles.groups",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZSubtitles.swift",
+      "line": 14,
+      "symbol": "UZSubtitles.UZSubtitleGroup",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZSubtitles.swift",
+      "line": 49,
+      "symbol": "UZSubtitles.init(url:encoding:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZVideoItem.swift",
+      "line": 65,
+      "symbol": "UZVideoItem.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZVideoItem.swift",
+      "line": 66,
+      "symbol": "UZVideoItem.thumbnailURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZVideoItem.swift",
+      "line": 67,
+      "symbol": "UZVideoItem.isLive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZVideoItem.swift",
+      "line": 68,
+      "symbol": "UZVideoItem.linkPlay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Models/UZVideoItem.swift",
+      "line": 69,
+      "symbol": "UZVideoItem.subtitleURLs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 50,
+      "symbol": "UZPlayer.togglePiP()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 146,
+      "symbol": "UZPlayer.setupAudioCategory()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 165,
+      "symbol": "UZPlayer.loadLiveViews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 172,
+      "symbol": "UZPlayer.loadLiveStatus(after:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 189,
+      "symbol": "UZPlayer.showLiveEndedMessage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 221,
+      "symbol": "UZPlayer.getCurrentLatency()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 245,
+      "symbol": "UZPlayer.nextVideo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 249,
+      "symbol": "UZPlayer.previousVideo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 440,
+      "symbol": "UZPlayer.observeValue(forKeyPath:of:change:context:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer++.swift",
+      "line": 554,
+      "symbol": "UZPlayer.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 116,
+      "symbol": "UZPlayer.showAirPlayDevicesSelection()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 132,
+      "symbol": "UZPlayer.showCastingDeviceList()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 253,
+      "symbol": "UZPlayer.showShare(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 270,
+      "symbol": "UZPlayer.showQualitySelector()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 285,
+      "symbol": "UZPlayer.showMediaOptionSelector()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 319,
+      "symbol": "UZPlayer.controlView(controlView:didChooseDefinition:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 324,
+      "symbol": "UZPlayer.controlView(controlView:didSelectButton:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 417,
+      "symbol": "UZPlayer.controlView(controlView:slider:onSliderEvent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 493,
+      "symbol": "UZPlayer.player(player:playerIsPlaying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 499,
+      "symbol": "UZPlayer.player(player:loadedTimeDidChange:totalDuration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 506,
+      "symbol": "UZPlayer.player(player:playerStateDidChange:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 561,
+      "symbol": "UZPlayer.player(player:playTimeDidChange:totalTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 576,
+      "symbol": "UZPlayer.player(player:playerDidFailToPlayToEndTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 580,
+      "symbol": "UZPlayer.player(playerDidStall:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 584,
+      "symbol": "UZPlayer.player(playerRequiresSeekingToLive:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 595,
+      "symbol": "UZPlayer.pictureInPictureControllerWillStartPictureInPicture(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 600,
+      "symbol": "UZPlayer.pictureInPictureControllerDidStartPictureInPicture(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer+.swift",
+      "line": 605,
+      "symbol": "UZPlayer.pictureInPictureControllerDidStopPictureInPicture(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 32,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 38,
+      "symbol": "UZPlayerDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 39,
+      "symbol": "UZPlayerDelegate.player(player:playerStateDidChange:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 40,
+      "symbol": "UZPlayerDelegate.player(player:loadedTimeDidChange:totalDuration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 41,
+      "symbol": "UZPlayerDelegate.player(player:playTimeDidChange:totalTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 42,
+      "symbol": "UZPlayerDelegate.player(player:playerIsPlaying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 43,
+      "symbol": "UZPlayerDelegate.player(player:playerDidFailToPlayToEndTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 44,
+      "symbol": "UZPlayerDelegate.player(playerDidStall:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 45,
+      "symbol": "UZPlayerDelegate.player(playerDidEndLivestream:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 48,
+      "symbol": "UZPlayerControlViewDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 49,
+      "symbol": "UZPlayerControlViewDelegate.controlView(controlView:didChooseDefinition:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 50,
+      "symbol": "UZPlayerControlViewDelegate.controlView(controlView:didSelectButton:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 51,
+      "symbol": "UZPlayerControlViewDelegate.controlView(controlView:slider:onSliderEvent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 68,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 71,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 72,
+      "symbol": "UZPlayer.ShowAirPlayDeviceListNotification",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 73,
+      "symbol": "UZPlayer.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 75,
+      "symbol": "UZPlayer.backBlock",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 76,
+      "symbol": "UZPlayer.videoChangedBlock",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 77,
+      "symbol": "UZPlayer.fullscreenBlock",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 78,
+      "symbol": "UZPlayer.buttonSelectionBlock",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 79,
+      "symbol": "UZPlayer.playTimeDidChange",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 80,
+      "symbol": "UZPlayer.playStateDidChange",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 82,
+      "symbol": "UZPlayer.videoGravity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 88,
+      "symbol": "UZPlayer.aspectRatio",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 94,
+      "symbol": "UZPlayer.isPlaying",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 98,
+      "symbol": "UZPlayer.avPlayer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 102,
+      "symbol": "UZPlayer.subtitleOptions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 106,
+      "symbol": "UZPlayer.audioOptions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 110,
+      "symbol": "UZPlayer.playlist",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 114,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 118,
+      "symbol": "UZPlayer.currentVideoIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 146,
+      "symbol": "UZPlayer.currentVideo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 153,
+      "symbol": "UZPlayer.currentLinkPlay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 155,
+      "symbol": "UZPlayer.themeConfig",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 163,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 165,
+      "symbol": "UZPlayer.shouldAutoPlay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 166,
+      "symbol": "UZPlayer.shouldShowsControlViewAfterStoppingPiP",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 167,
+      "symbol": "UZPlayer.autoTryNextDefinitionIfError",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 168,
+      "symbol": "UZPlayer.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 169,
+      "symbol": "UZPlayer.liveEndedMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 178,
+      "symbol": "UZPlayer.customControlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 194,
+      "symbol": "UZPlayer.preferredForwardBufferDuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 202,
+      "symbol": "UZPlayer.resource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 208,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 208,
+      "symbol": "UZPlayer.currentDefinition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 209,
+      "symbol": "UZPlayer.playerLayer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 216,
+      "symbol": "UZPlayer.totalDuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 217,
+      "symbol": "UZPlayer.currentPosition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 219,
+      "symbol": "UZPlayer.isURLSet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 220,
+      "symbol": "UZPlayer.isSliderSliding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 221,
+      "symbol": "UZPlayer.isPauseByUser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 222,
+      "symbol": "UZPlayer.isPlayToTheEnd",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 223,
+      "symbol": "UZPlayer.isReplaying",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 236,
+      "symbol": "UZPlayer.pictureInPictureController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 245,
+      "symbol": "UZPlayer.autoPauseWhenInactive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 248,
+      "symbol": "UZPlayer.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 251,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 263,
+      "symbol": "UZPlayer.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 267,
+      "symbol": "UZPlayer.init(customControlView:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 317,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 325,
+      "symbol": "UZPlayer.playIfApplicable()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 331,
+      "symbol": "UZPlayer.play()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 345,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 425,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 455,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 463,
+      "symbol": "UZPlayer.switchVideoDefinition(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 473,
+      "symbol": "UZPlayer.isVisualizeInfoEnabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 491,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 505,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZPlayer.swift",
+      "line": 592,
+      "symbol": "UZPlayer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 13,
+      "symbol": "UZTheme1",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 14,
+      "symbol": "UZTheme1.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 15,
+      "symbol": "UZTheme1.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 31,
+      "symbol": "UZTheme1.init(iconSize:centerIconSize:seekThumbSize:iconColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 40,
+      "symbol": "UZTheme1.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 44,
+      "symbol": "UZTheme1.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 222,
+      "symbol": "UZTheme1.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 249,
+      "symbol": "UZTheme1.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 254,
+      "symbol": "UZTheme1.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 258,
+      "symbol": "UZTheme1.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 269,
+      "symbol": "UZTheme1.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 274,
+      "symbol": "UZTheme1.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme1.swift",
+      "line": 282,
+      "symbol": "UZTheme1.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 13,
+      "symbol": "UZTheme2",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 14,
+      "symbol": "UZTheme2.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 15,
+      "symbol": "UZTheme2.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 31,
+      "symbol": "UZTheme2.init(iconSize:centerIconSize:seekThumbSize:iconColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 40,
+      "symbol": "UZTheme2.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 44,
+      "symbol": "UZTheme2.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 221,
+      "symbol": "UZTheme2.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 248,
+      "symbol": "UZTheme2.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 253,
+      "symbol": "UZTheme2.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 257,
+      "symbol": "UZTheme2.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 268,
+      "symbol": "UZTheme2.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 273,
+      "symbol": "UZTheme2.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme2.swift",
+      "line": 281,
+      "symbol": "UZTheme2.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 13,
+      "symbol": "UZTheme3",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 14,
+      "symbol": "UZTheme3.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 15,
+      "symbol": "UZTheme3.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 30,
+      "symbol": "UZTheme3.init(iconSize:centerIconSize:seekThumbSize:iconColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 39,
+      "symbol": "UZTheme3.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 43,
+      "symbol": "UZTheme3.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 224,
+      "symbol": "UZTheme3.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 253,
+      "symbol": "UZTheme3.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 257,
+      "symbol": "UZTheme3.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 261,
+      "symbol": "UZTheme3.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 272,
+      "symbol": "UZTheme3.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 277,
+      "symbol": "UZTheme3.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme3.swift",
+      "line": 285,
+      "symbol": "UZTheme3.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 13,
+      "symbol": "UZTheme4",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 14,
+      "symbol": "UZTheme4.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 15,
+      "symbol": "UZTheme4.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 29,
+      "symbol": "UZTheme4.init(iconSize:centerIconSize:seekThumbSize:iconColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 38,
+      "symbol": "UZTheme4.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 42,
+      "symbol": "UZTheme4.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 230,
+      "symbol": "UZTheme4.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 263,
+      "symbol": "UZTheme4.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 267,
+      "symbol": "UZTheme4.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 271,
+      "symbol": "UZTheme4.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 282,
+      "symbol": "UZTheme4.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 288,
+      "symbol": "UZTheme4.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme4.swift",
+      "line": 296,
+      "symbol": "UZTheme4.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 13,
+      "symbol": "UZTheme5",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 14,
+      "symbol": "UZTheme5.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 15,
+      "symbol": "UZTheme5.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 31,
+      "symbol": "UZTheme5.init(iconSize:centerIconSize:seekThumbSize:iconColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 40,
+      "symbol": "UZTheme5.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 44,
+      "symbol": "UZTheme5.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 221,
+      "symbol": "UZTheme5.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 253,
+      "symbol": "UZTheme5.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 258,
+      "symbol": "UZTheme5.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 262,
+      "symbol": "UZTheme5.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 273,
+      "symbol": "UZTheme5.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 278,
+      "symbol": "UZTheme5.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme5.swift",
+      "line": 286,
+      "symbol": "UZTheme5.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 13,
+      "symbol": "UZTheme6",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 14,
+      "symbol": "UZTheme6.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 15,
+      "symbol": "UZTheme6.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 31,
+      "symbol": "UZTheme6.init(iconSize:centerIconSize:seekThumbSize:iconColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 40,
+      "symbol": "UZTheme6.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 44,
+      "symbol": "UZTheme6.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 217,
+      "symbol": "UZTheme6.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 250,
+      "symbol": "UZTheme6.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 254,
+      "symbol": "UZTheme6.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 258,
+      "symbol": "UZTheme6.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 269,
+      "symbol": "UZTheme6.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 274,
+      "symbol": "UZTheme6.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme6.swift",
+      "line": 282,
+      "symbol": "UZTheme6.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 13,
+      "symbol": "UZTheme7",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 14,
+      "symbol": "UZTheme7.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 15,
+      "symbol": "UZTheme7.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 30,
+      "symbol": "UZTheme7.init(iconSize:centerIconSize:seekThumbSize:iconColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 39,
+      "symbol": "UZTheme7.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 43,
+      "symbol": "UZTheme7.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 224,
+      "symbol": "UZTheme7.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 254,
+      "symbol": "UZTheme7.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 258,
+      "symbol": "UZTheme7.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 262,
+      "symbol": "UZTheme7.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 273,
+      "symbol": "UZTheme7.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 278,
+      "symbol": "UZTheme7.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/Themes/UZTheme7.swift",
+      "line": 286,
+      "symbol": "UZTheme7.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 12,
+      "symbol": "UZEndscreenView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 13,
+      "symbol": "UZEndscreenView.blurView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 14,
+      "symbol": "UZEndscreenView.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 15,
+      "symbol": "UZEndscreenView.replayButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 16,
+      "symbol": "UZEndscreenView.shareButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 19,
+      "symbol": "UZEndscreenView.allButtons",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 23,
+      "symbol": "UZEndscreenView.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 38,
+      "symbol": "UZEndscreenView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 42,
+      "symbol": "UZEndscreenView.setupUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZEndscreenView.swift",
+      "line": 88,
+      "symbol": "UZEndscreenView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 11,
+      "symbol": "UZFloatingPlayerViewProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 13,
+      "symbol": "UZFloatingPlayerViewProtocol.floatingPlayer(_:didBecomeFloating:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 14,
+      "symbol": "UZFloatingPlayerViewProtocol.floatingPlayer(_:onFloatingProgress:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 15,
+      "symbol": "UZFloatingPlayerViewProtocol.floatingPlayerDidDismiss(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 19,
+      "symbol": "UZFloatingPlayerViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 20,
+      "symbol": "UZFloatingPlayerViewController.playerWindow",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 23,
+      "symbol": "UZFloatingPlayerViewController.playerViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 53,
+      "symbol": "UZFloatingPlayerViewController.player",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 54,
+      "symbol": "UZFloatingPlayerViewController.detailsContainerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 55,
+      "symbol": "UZFloatingPlayerViewController.playerRatio",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 56,
+      "symbol": "UZFloatingPlayerViewController.autoDetectPortraitVideo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 58,
+      "symbol": "UZFloatingPlayerViewController.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 60,
+      "symbol": "UZFloatingPlayerViewController.videoItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 83,
+      "symbol": "UZFloatingPlayerViewController.videoItems",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 110,
+      "symbol": "UZFloatingPlayerViewController.onDismiss",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 111,
+      "symbol": "UZFloatingPlayerViewController.onFloatingProgress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 112,
+      "symbol": "UZFloatingPlayerViewController.onFloating",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 113,
+      "symbol": "UZFloatingPlayerViewController.onUnfloating",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 115,
+      "symbol": "UZFloatingPlayerViewController.floatingHandler",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 119,
+      "symbol": "UZFloatingPlayerViewController.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 123,
+      "symbol": "UZFloatingPlayerViewController.init(customPlayerViewController:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 131,
+      "symbol": "UZFloatingPlayerViewController.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 138,
+      "symbol": "UZFloatingPlayerViewController.present(with:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 202,
+      "symbol": "UZFloatingPlayerViewController.dismiss(animated:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 219,
+      "symbol": "UZFloatingPlayerViewController.playResource(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 235,
+      "symbol": "UZFloatingPlayerViewController.stop()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 241,
+      "symbol": "UZFloatingPlayerViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 252,
+      "symbol": "UZFloatingPlayerViewController.viewWillLayoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 276,
+      "symbol": "UZFloatingPlayerViewController.prefersStatusBarHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 280,
+      "symbol": "UZFloatingPlayerViewController.shouldAutorotate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 284,
+      "symbol": "UZFloatingPlayerViewController.preferredInterfaceOrientationForPresentation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 288,
+      "symbol": "UZFloatingPlayerViewController.supportedInterfaceOrientations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 294,
+      "symbol": "UZFloatingPlayerViewController.containerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 298,
+      "symbol": "UZFloatingPlayerViewController.gestureView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 302,
+      "symbol": "UZFloatingPlayerViewController.fullRect",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 306,
+      "symbol": "UZFloatingPlayerViewController.floatingRect(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 337,
+      "symbol": "UZFloatingPlayerViewController.floatingHandlerDidDragging(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 372,
+      "symbol": "UZFloatingPlayerViewController.floatingHandlerDidDismiss()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 395,
+      "symbol": "UZPlayerContainerViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 397,
+      "symbol": "UZPlayerContainerViewController.prefersStatusBarHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 401,
+      "symbol": "UZPlayerContainerViewController.shouldAutorotate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 405,
+      "symbol": "UZPlayerContainerViewController.preferredInterfaceOrientationForPresentation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZFloatingPlayerViewController.swift",
+      "line": 409,
+      "symbol": "UZPlayerContainerViewController.supportedInterfaceOrientations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 12,
+      "symbol": "UZButtonTag",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 13,
+      "symbol": "UZButtonTag.play",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 14,
+      "symbol": "UZButtonTag.pause",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 15,
+      "symbol": "UZButtonTag.back",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 16,
+      "symbol": "UZButtonTag.fullscreen",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 17,
+      "symbol": "UZButtonTag.replay",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 18,
+      "symbol": "UZButtonTag.settings",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 19,
+      "symbol": "UZButtonTag.help",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 20,
+      "symbol": "UZButtonTag.playlist",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 21,
+      "symbol": "UZButtonTag.caption",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 22,
+      "symbol": "UZButtonTag.volume",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 23,
+      "symbol": "UZButtonTag.forward",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 24,
+      "symbol": "UZButtonTag.backward",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 25,
+      "symbol": "UZButtonTag.share",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 26,
+      "symbol": "UZButtonTag.relates",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 27,
+      "symbol": "UZButtonTag.pip",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 28,
+      "symbol": "UZButtonTag.chromecast",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 29,
+      "symbol": "UZButtonTag.airplay",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 30,
+      "symbol": "UZButtonTag.casting",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 31,
+      "symbol": "UZButtonTag.next",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 32,
+      "symbol": "UZButtonTag.previous",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 33,
+      "symbol": "UZButtonTag.logo",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 36,
+      "symbol": "UZPlayerTheme",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 37,
+      "symbol": "UZPlayerTheme.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 38,
+      "symbol": "UZPlayerTheme.controlView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 40,
+      "symbol": "UZPlayerTheme.updateUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 41,
+      "symbol": "UZPlayerTheme.update(withResource:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 42,
+      "symbol": "UZPlayerTheme.layoutControls(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 43,
+      "symbol": "UZPlayerTheme.cleanUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 44,
+      "symbol": "UZPlayerTheme.allButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 45,
+      "symbol": "UZPlayerTheme.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 46,
+      "symbol": "UZPlayerTheme.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 47,
+      "symbol": "UZPlayerTheme.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 53,
+      "symbol": "UZPlayerControlView.gestureRecognizer(_:shouldReceive:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 62,
+      "symbol": "UZPlayerControlView.playStateDidChange(isPlaying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 68,
+      "symbol": "UZPlayerControlView.showControlView(duration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 88,
+      "symbol": "UZPlayerControlView.hideControlView(duration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 101,
+      "symbol": "UZPlayerControlView.showMessage(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 122,
+      "symbol": "UZPlayerControlView.hideMessage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 129,
+      "symbol": "UZPlayerControlView.showEndScreen()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 137,
+      "symbol": "UZPlayerControlView.hideEndScreen()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 142,
+      "symbol": "UZPlayerControlView.showLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 146,
+      "symbol": "UZPlayerControlView.hideLoader()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 150,
+      "symbol": "UZPlayerControlView.showCoverWithLink(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 154,
+      "symbol": "UZPlayerControlView.showCover(url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 170,
+      "symbol": "UZPlayerControlView.hideCoverImageView()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 174,
+      "symbol": "UZPlayerControlView.showCastingScreen()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 186,
+      "symbol": "UZPlayerControlView.hideCastingScreen()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 195,
+      "symbol": "UZPlayerControlView.onButtonPressed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 212,
+      "symbol": "UZPlayerControlView.onTap(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 220,
+      "symbol": "UZPlayerControlView.onDoubleTap(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 242,
+      "symbol": "UZPlayerControlView.progressSliderTouchBegan(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 246,
+      "symbol": "UZPlayerControlView.progressSliderValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 261,
+      "symbol": "UZPlayerControlView.progressSliderTouchEnded(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 270,
+      "symbol": "UZLiveBadgeView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 272,
+      "symbol": "UZLiveBadgeView.views",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 329,
+      "symbol": "UZLiveBadgeView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 333,
+      "symbol": "UZLiveBadgeView.sizeThatFits(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView+.swift",
+      "line": 337,
+      "symbol": "UZLiveBadgeView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 12,
+      "symbol": "UZPlayerControlView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 13,
+      "symbol": "UZPlayerControlView.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 14,
+      "symbol": "UZPlayerControlView.autoHideControlsInterval",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 15,
+      "symbol": "UZPlayerControlView.enableTimeshiftForLiveVideo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 17,
+      "symbol": "UZPlayerControlView.playerConfig",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 30,
+      "symbol": "UZPlayerControlView.logoEdgeInsetsWhenControlsInvisible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 31,
+      "symbol": "UZPlayerControlView.logoEdgeInsetsWhenControlsVisible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 33,
+      "symbol": "UZPlayerControlView.totalDuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 51,
+      "symbol": "UZPlayerControlView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 56,
+      "symbol": "UZPlayerControlView.tapGesture",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 57,
+      "symbol": "UZPlayerControlView.doubleTapGesture",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 59,
+      "symbol": "UZPlayerControlView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 59,
+      "symbol": "UZPlayerControlView.theme",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 102,
+      "symbol": "UZPlayerControlView.allButtons",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 111,
+      "symbol": "UZPlayerControlView.containerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 112,
+      "symbol": "UZPlayerControlView.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 113,
+      "symbol": "UZPlayerControlView.currentTimeLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 114,
+      "symbol": "UZPlayerControlView.totalTimeLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 115,
+      "symbol": "UZPlayerControlView.remainTimeLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 116,
+      "symbol": "UZPlayerControlView.playpauseCenterButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 117,
+      "symbol": "UZPlayerControlView.playpauseButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 118,
+      "symbol": "UZPlayerControlView.forwardButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 119,
+      "symbol": "UZPlayerControlView.backwardButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 120,
+      "symbol": "UZPlayerControlView.nextButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 121,
+      "symbol": "UZPlayerControlView.previousButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 122,
+      "symbol": "UZPlayerControlView.volumeButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 123,
+      "symbol": "UZPlayerControlView.backButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 124,
+      "symbol": "UZPlayerControlView.fullscreenButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 125,
+      "symbol": "UZPlayerControlView.playlistButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 126,
+      "symbol": "UZPlayerControlView.relateButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 127,
+      "symbol": "UZPlayerControlView.ccButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 128,
+      "symbol": "UZPlayerControlView.settingsButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 129,
+      "symbol": "UZPlayerControlView.helpButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 130,
+      "symbol": "UZPlayerControlView.pipButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 131,
+      "symbol": "UZPlayerControlView.castingButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 132,
+      "symbol": "UZPlayerControlView.enlapseTimeLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 133,
+      "symbol": "UZPlayerControlView.logoButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 134,
+      "symbol": "UZPlayerControlView.airplayButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 135,
+      "symbol": "UZPlayerControlView.coverImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 136,
+      "symbol": "UZPlayerControlView.liveBadgeView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 137,
+      "symbol": "UZPlayerControlView.loadingIndicatorView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 138,
+      "symbol": "UZPlayerControlView.endscreenView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 139,
+      "symbol": "UZPlayerControlView.timeSlider",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 158,
+      "symbol": "UZPlayerControlView.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 165,
+      "symbol": "UZPlayerControlView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 169,
+      "symbol": "UZPlayerControlView.configUI()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 274,
+      "symbol": "UZPlayerControlView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 301,
+      "symbol": "UZPlayerControlView.playTimeDidChange(currentTime:totalTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 331,
+      "symbol": "UZPlayerControlView.loadedTimeDidChange(loadedDuration:totalDuration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 336,
+      "symbol": "UZPlayerControlView.playerStateDidChange(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 364,
+      "symbol": "UZPlayerControlView.prepareUI(for:video:playlist:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 394,
+      "symbol": "UZPlayerControlView.autoFadeOutControlView(after:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 406,
+      "symbol": "UZPlayerControlView.cancelAutoFadeOutAnimation()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 410,
+      "symbol": "UZPlayerControlView.alignLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerControlView.swift",
+      "line": 461,
+      "symbol": "UZPlayerControlView.updateUI(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 49,
+      "symbol": "UZPlayerLayerView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 52,
+      "symbol": "UZPlayerLayerView.playerItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 58,
+      "symbol": "UZPlayerLayerView.currentVideo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 60,
+      "symbol": "UZPlayerLayerView.preferredForwardBufferDuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 70,
+      "symbol": "UZPlayerLayerView.player",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 76,
+      "symbol": "UZPlayerLayerView.videoGravity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 82,
+      "symbol": "UZPlayerLayerView.isPlaying",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 90,
+      "symbol": "UZPlayerLayerView.aspectRatio",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 96,
+      "symbol": "UZPlayerLayerView.playerLayer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 118,
+      "symbol": "UZPlayerLayerView.playURL(url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 123,
+      "symbol": "UZPlayerLayerView.playAsset(asset:subtitleURL:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 131,
+      "symbol": "UZPlayerLayerView.replaceAsset(asset:subtitleURL:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 140,
+      "symbol": "UZPlayerLayerView.play()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 157,
+      "symbol": "UZPlayerLayerView.pause(alsoPauseCasting:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 170,
+      "symbol": "UZPlayerLayerView.retryPlaying(after:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 208,
+      "symbol": "UZPlayerLayerView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 233,
+      "symbol": "UZPlayerLayerView.seek(to:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 398,
+      "symbol": "UZPlayerLayerView.moviePlayerDidEnd()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 411,
+      "symbol": "UZPlayerLayerView.moviePlayerDidFailToPlayToEndTime(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 417,
+      "symbol": "UZPlayerLayerView.moviePlayerDidStall()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 439,
+      "symbol": "UZPlayerLayerView.observeValue(forKeyPath:of:change:context:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 513,
+      "symbol": "UZPlayerLayerView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 586,
+      "symbol": "UZPlayerLayerView.resetPlayer()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 611,
+      "symbol": "UZPlayerLayerView.prepareToDeinit()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerLayerView.swift",
+      "line": 621,
+      "symbol": "UZPlayerLayerView.onTimeSliderBegan()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 12,
+      "symbol": "UZFullscreenPresentationMode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 13,
+      "symbol": "UZFullscreenPresentationMode.modal",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 14,
+      "symbol": "UZFullscreenPresentationMode.fullscreen",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 17,
+      "symbol": "UZPlayerViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 19,
+      "symbol": "UZPlayerViewController.player",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 28,
+      "symbol": "UZPlayerViewController.fullscreenPresentationMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 29,
+      "symbol": "UZPlayerViewController.autoFullscreenWhenRotateDevice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 30,
+      "symbol": "UZPlayerViewController.autoFullscreenDelay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 33,
+      "symbol": "UZPlayerViewController.isFullscreen",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 43,
+      "symbol": "UZPlayerViewController.setFullscreen(fullscreen:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 88,
+      "symbol": "UZPlayerViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 105,
+      "symbol": "UZPlayerViewController.viewDidLayoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 133,
+      "symbol": "UZPlayerViewController.prefersStatusBarHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 137,
+      "symbol": "UZPlayerViewController.shouldAutorotate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 141,
+      "symbol": "UZPlayerViewController.supportedInterfaceOrientations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/namkennic/Projects/UZPlayer/UZPlayer/UZPlayerViewController.swift",
+      "line": 145,
+      "symbol": "UZPlayerViewController.preferredInterfaceOrientationForPresentation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/namkennic/Projects/UZPlayer"
+}
