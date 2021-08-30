@@ -113,12 +113,12 @@ open class UZTheme4: UZPlayerTheme {
 		frameLayout + HStackLayout {
 			$0 + [controlView.backButton, controlView.titleLabel]
 			($0 + 0).flexible()
-			$0 + [controlView.pipButton, controlView.castingButton, controlView.playlistButton, controlView.settingsButton]
+			$0 + [controlView.pipButton, controlView.castingButton, controlView.settingsButton]
 			$0.spacing = 10
 			$0.padding(top: 10, left: 10, bottom: 0, right:12)
 		}
 		(frameLayout + 0).flexible()
-		frameLayout + HStackLayout {
+		frameLayout + ZStackLayout {
             $0 + HStackLayout {
                 $0 + [controlView.currentTimeLabel, controlView.remainTimeLabel]
                 $0.ignoreHiddenView = false
@@ -130,11 +130,12 @@ open class UZTheme4: UZPlayerTheme {
 				$0.distribution = .center
 				$0.flexible()
 			}
-			$0 + [controlView.playlistButton, controlView.fullscreenButton]
+			$0 + HStackLayout {
+				$0 + [controlView.playlistButton, controlView.fullscreenButton]
+				$0.distribution = .right
+			}
             
-			$0.ignoreHiddenView = false
 			$0.fixedHeight = 50
-			$0.spacing = 10
 			$0.padding(top: 0, left: 10, bottom: 0, right: 12)
 			$0.backgroundColor = UIColor(white: 0.0, alpha: 0.8)
 			$0.layer.masksToBounds = true
