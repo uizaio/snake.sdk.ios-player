@@ -85,14 +85,14 @@ class SettingTableViewCell: UITableViewCell {
         initViews()
     }
     
-    let titleLabel:UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
 //        label.textColor =  UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let summaryLabel:UILabel = {
+    let summaryLabel: UILabel = {
         let label = UILabel()
         label.textColor = label.textColor.withAlphaComponent(0.5)
         label.font = .systemFont(ofSize: 15.0, weight: .light)
@@ -100,7 +100,7 @@ class SettingTableViewCell: UITableViewCell {
        return label
     }()
     
-    let containerView:UIView = {
+    let containerView: UIView = {
       let view = UIView()
       view.translatesAutoresizingMaskIntoConstraints = false
       view.clipsToBounds = true // this will make sure its children do not go out of the boundary
@@ -108,21 +108,19 @@ class SettingTableViewCell: UITableViewCell {
     }()
     
     func initViews() {
-
         containerView.addSubview(titleLabel)
         containerView.addSubview(summaryLabel)
-        self.contentView.addSubview(containerView)
+        contentView.addSubview(containerView)
+		
         containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10).isActive = true
         containerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-        //
+        
         titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        // summary
+        
         summaryLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
         summaryLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-//        self.tintColor = UIColor.red
-
     }
 }

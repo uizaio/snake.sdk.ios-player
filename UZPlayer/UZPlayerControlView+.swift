@@ -10,7 +10,7 @@ import UIKit
 import FrameLayoutKit
 
 public enum UZButtonTag: Int {
-    case none    = -1
+    case none    	= -1
     case play       = 101
     case pause      = 102
     case back       = 103
@@ -36,7 +36,7 @@ public enum UZButtonTag: Int {
 }
 
 
-public protocol UZPlayerTheme: class {
+public protocol UZPlayerTheme {
 	var id: String { get set }
     var controlView: UZPlayerControlView? { get set }
     func updateUI()
@@ -69,36 +69,33 @@ extension UZPlayerControlView {
     }
     
     open func showControlView(duration: CGFloat = 0.3) {
-        if endscreenView.isHidden == false {
-            return
-        }
-        
-        if containerView.alpha == 0 || containerView.isHidden {
-            containerView.alpha = 0
-            containerView.isHidden = false
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.alignLogo()
-                self.containerView.alpha = 1.0
-            }, completion: { (finished) in
-                if finished {
-                    self.autoFadeOutControlView(after: self.autoHideControlsInterval)
-                }
-            })
-        }
+        if endscreenView.isHidden == false { return }
+		guard containerView.alpha == 0 || containerView.isHidden else { return }
+		
+		containerView.alpha = 0
+		containerView.isHidden = false
+		
+		UIView.animate(withDuration: 0.3, animations: {
+			self.alignLogo()
+			self.containerView.alpha = 1.0
+		}, completion: { (finished) in
+			if finished {
+				self.autoFadeOutControlView(after: self.autoHideControlsInterval)
+			}
+		})
     }
     
     @objc open func hideControlView(duration: CGFloat = 0.3) {
-        if containerView.alpha > 0 || containerView.isHidden == false {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.containerView.alpha = 0.0
-            }, completion: { (finished) in
-                if finished {
-                    self.containerView.isHidden = true
-                    self.alignLogo()
-                }
-            })
-        }
+		guard containerView.alpha > 0 || containerView.isHidden == false else { return }
+		
+		UIView.animate(withDuration: 0.3, animations: {
+			self.containerView.alpha = 0.0
+		}, completion: { (finished) in
+			if finished {
+				self.containerView.isHidden = true
+				self.alignLogo()
+			}
+		})
     }
     
     open func showMessage(_ message: String) {
@@ -199,9 +196,7 @@ extension UZPlayerControlView {
     }
     
     @objc open func onDoubleTap(_ gesture: UITapGestureRecognizer) {
-        if gesture.view is UIButton {
-            return
-        }
+        if gesture.view is UIButton { return }
         
         if playerConfig?.allowFullscreen ?? true {
             delegate?.controlView(controlView: self, didSelectButton: fullscreenButton)
@@ -213,7 +208,8 @@ extension UZPlayerControlView {
             enlapseTimeLabel.setTitle(Date().timeIntervalSince(date).toString, for: .normal)
             enlapseTimeLabel.isHidden = false
             enlapseTimeLabel.superview?.setNeedsLayout()
-        } else {
+        }
+		else {
             enlapseTimeLabel.setTitle(nil, for: .normal)
             enlapseTimeLabel.isHidden = true
         }

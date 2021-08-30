@@ -40,7 +40,7 @@ func DLog(_ message: String, _ file: String = #file, _ line: Int = #line) {
 	#endif
 }
 
-public protocol UZPlayerDelegate: class {
+public protocol UZPlayerDelegate: AnyObject {
 	func player(player: UZPlayer, playerStateDidChange state: UZPlayerState)
 	func player(player: UZPlayer, loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval)
 	func player(player: UZPlayer, playTimeDidChange currentTime: TimeInterval, totalTime: TimeInterval)
@@ -50,13 +50,13 @@ public protocol UZPlayerDelegate: class {
 	func player(playerDidEndLivestream: UZPlayer)
 }
 
-public protocol UZPlayerControlViewDelegate: class {
+public protocol UZPlayerControlViewDelegate: AnyObject {
 	func controlView(controlView: UZPlayerControlView, didChooseDefinition index: Int)
 	func controlView(controlView: UZPlayerControlView, didSelectButton button: UIButton)
 	func controlView(controlView: UZPlayerControlView, slider: UISlider, onSliderEvent event: UIControl.Event)
 }
 
-public protocol UZSettingViewDelegate: class {
+public protocol UZSettingViewDelegate: AnyObject {
     func settingRow(didChanged sender: UISwitch)
     func settingRow(didSelected tag: UZSettingTag, value: Float)
     func settingRow(didSelected tag: UZSettingTag, value: AVMediaSelectionOption?)

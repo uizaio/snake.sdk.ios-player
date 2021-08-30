@@ -74,7 +74,7 @@ public enum UZSpeedRate: Float, CaseIterable {
     }
 }
 
-protocol UZPlayerLayerViewDelegate: class {
+protocol UZPlayerLayerViewDelegate: AnyObject {
 	func player(player: UZPlayerLayerView, playerStateDidChange state: UZPlayerState)
 	func player(player: UZPlayerLayerView, loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval)
 	func player(player: UZPlayerLayerView, playTimeDidChange currentTime: TimeInterval, totalTime: TimeInterval)

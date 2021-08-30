@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Shedulable Action
 
 /** Protcol for any action that can be added to an ActionScheduler instance */
-public protocol SchedulableAction: class {
+public protocol SchedulableAction: AnyObject {
     
     /** Called when the action bhecomes active */
     var onBecomeActive: () -> Void {get set}

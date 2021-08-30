@@ -39,9 +39,7 @@ open class UZButton: UIButton {
 	
 	/** Set/Get title of the button */
 	open var title: String? {
-		get {
-			return currentTitle
-		}
+		get { currentTitle }
 		set {
 			setTitle(newValue, for: .normal)
 			setNeedsLayout()
@@ -50,9 +48,7 @@ open class UZButton: UIButton {
 	
 	/** Space between image and text */
 	open var spacing: CGFloat {
-		get {
-			return contentFrameLayout.spacing
-		}
+		get { contentFrameLayout.spacing }
 		set {
 			contentFrameLayout.spacing = newValue
 			contentFrameLayout.setNeedsLayout()
@@ -62,9 +58,7 @@ open class UZButton: UIButton {
 	
 	/** Minimum size of imageView, set zero to width or height to disable */
 	open var imageMinSize: CGSize {
-		get {
-			return imageFrameLayout.minSize
-		}
+		get { imageFrameLayout.minSize }
 		set {
 			imageFrameLayout.minSize = newValue
 			contentFrameLayout.setNeedsLayout()
@@ -74,9 +68,7 @@ open class UZButton: UIButton {
 	
 	/** Maximum size of imageView, set zero to width or height to disable */
 	open var imageMaxSize: CGSize {
-		get {
-			return imageFrameLayout.maxSize
-		}
+		get { imageFrameLayout.maxSize }
 		set {
 			imageFrameLayout.maxSize = newValue
 			contentFrameLayout.setNeedsLayout()
@@ -86,11 +78,9 @@ open class UZButton: UIButton {
 	
 	/** Fixed size of imageView, set zero to width or height to disable */
 	open var imageFixSize: CGSize {
-		get {
-			return imageFrameLayout.fixSize
-		}
+		get { imageFrameLayout.fixedSize }
 		set {
-			imageFrameLayout.fixSize = newValue
+			imageFrameLayout.fixedSize = newValue
 			contentFrameLayout.setNeedsLayout()
 			setNeedsLayout()
 		}
@@ -137,12 +127,8 @@ open class UZButton: UIButton {
 	
 	/** Size of border */
 	open var borderSize: CGFloat {
-		get {
-			return borderSize(for: .normal)
-		}
-		set {
-			setBorderSize(newValue, for: .normal)
-		}
+		get { borderSize(for: .normal) }
+		set { setBorderSize(newValue, for: .normal) }
 	}
 	
 	/** Rounds both sides of the button */
@@ -172,9 +158,7 @@ open class UZButton: UIButton {
 	
 	/** Text Horizontal Alignment */
 	open var textHorizontalAlignment: NKContentHorizontalAlignment {
-		get {
-			return labelFrame.horizontalAlignment
-		}
+		get { labelFrame.horizontalAlignment }
 		set {
 			resetLabelAlignment()
 			labelFrame.horizontalAlignment = newValue
@@ -184,9 +168,7 @@ open class UZButton: UIButton {
 	
 	/** Text Vertical Alignment */
 	open var textVerticalAlignment: NKContentVerticalAlignment {
-		get {
-			return labelFrame.verticalAlignment
-		}
+		get { labelFrame.verticalAlignment }
 		set {
 			resetLabelAlignment()
 			labelFrame.verticalAlignment = newValue
@@ -196,9 +178,7 @@ open class UZButton: UIButton {
 	
 	/** Text Alignment */
 	open var textAlignment: (NKContentVerticalAlignment, NKContentHorizontalAlignment) {
-		get {
-			return labelFrame.alignment
-		}
+		get { labelFrame.alignment }
 		set {
 			resetLabelAlignment()
 			labelFrame.alignment = newValue
@@ -207,9 +187,7 @@ open class UZButton: UIButton {
 	}
 	
 	override open var contentEdgeInsets: UIEdgeInsets {
-		get {
-			return contentFrameLayout.edgeInsets
-		}
+		get { contentFrameLayout.edgeInsets }
 		set {
 			contentFrameLayout.edgeInsets = newValue
 			setNeedsLayout()

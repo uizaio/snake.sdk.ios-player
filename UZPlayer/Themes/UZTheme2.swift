@@ -134,9 +134,7 @@ open class UZTheme2: UZPlayerTheme {
 			$0.spacing = 10
 		}
 		frameLayout + HStackLayout {
-			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { (layout) in
-				layout.alignment = (.center, .center)
-			}
+			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { $0.alignment = (.center, .center) }
 			$0.spacing = 10
 			$0.alignment = (.center, .center)
 			$0.distribution = .center
@@ -195,6 +193,7 @@ open class UZTheme2: UZPlayerTheme {
 	
 	open func showLoader() {
 		guard let controlView = controlView else { return }
+		
 		if controlView.loadingIndicatorView == nil {
 			if #available(iOS 13.0, *) {
 				controlView.loadingIndicatorView = UIActivityIndicatorView(style: .medium)

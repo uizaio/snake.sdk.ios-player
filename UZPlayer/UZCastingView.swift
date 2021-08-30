@@ -15,7 +15,7 @@ class UZCastingView: UIView {
 
 	init() {
 		super.init(frame: .zero)
-		self.backgroundColor = .black
+		backgroundColor = .black
 		
 		if #available(iOS 8.2, *) {
 			titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
@@ -40,8 +40,8 @@ class UZCastingView: UIView {
 //		imageView.image = icon
 		imageView.contentMode = .scaleAspectFit
 		
-		self.addSubview(imageView)
-		self.addSubview(titleLabel)
+		addSubview(imageView)
+		addSubview(titleLabel)
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -51,14 +51,14 @@ class UZCastingView: UIView {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		let viewSize = self.bounds.size
+		let viewSize = bounds.size
 		let labelSize = titleLabel.sizeThatFits(viewSize)
 		let edgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 		
 		#if swift(>=4.2)
-		imageView.frame = self.bounds.inset(by: edgeInsets)
+		imageView.frame = bounds.inset(by: edgeInsets)
 		#else
-		imageView.frame = UIEdgeInsetsInsetRect(self.bounds, edgeInsets)
+		imageView.frame = UIEdgeInsetsInsetRect(bounds, edgeInsets)
 		#endif
 		
 		titleLabel.frame = CGRect(x: 0, y: viewSize.height - labelSize.height - 20, width: viewSize.width, height: labelSize.height)

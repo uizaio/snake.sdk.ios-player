@@ -103,33 +103,33 @@ open class UZPlayerControlView: UIView {
 	var messageLabel: UILabel?
 	
 	public let containerView = UIView()
-	public let titleLabel = UILabel()
-	public let currentTimeLabel = UILabel()
-	public let totalTimeLabel = UILabel()
-	public let remainTimeLabel = UILabel()
-	public let playpauseCenterButton = UZButton()
-	public let playpauseButton = UZButton()
-	public let forwardButton = UZButton()
-	public let backwardButton = UZButton()
-	public let nextButton = UZButton()
-	public let previousButton = UZButton()
-	public let volumeButton = UZButton()
-	public let backButton = UZButton()
-	public let fullscreenButton = UZButton()
-	public let playlistButton = UZButton()
-	public let relateButton = UZButton()
-	public let ccButton = UZButton()
-	public let settingsButton = UZButton()
-	public let helpButton = UZButton()
-	public let pipButton = UZButton()
-	public let castingButton = UZCastButton()
-	public let enlapseTimeLabel = UZButton()
-	public let logoButton = UZButton()
-	public let airplayButton = UZAirPlayButton()
-	public let coverImageView = UIImageView()
-	public let liveBadgeView = UZLiveBadgeView()
+	open lazy var titleLabel = UILabel()
+	open lazy var currentTimeLabel = UILabel()
+	open lazy var totalTimeLabel = UILabel()
+	open lazy var remainTimeLabel = UILabel()
+	open lazy var playpauseCenterButton = UZButton()
+	open lazy var playpauseButton = UZButton()
+	open lazy var forwardButton = UZButton()
+	open lazy var backwardButton = UZButton()
+	open lazy var nextButton = UZButton()
+	open lazy var previousButton = UZButton()
+	open lazy var volumeButton = UZButton()
+	open lazy var backButton = UZButton()
+	open lazy var fullscreenButton = UZButton()
+	open lazy var playlistButton = UZButton()
+	open lazy var relateButton = UZButton()
+	open lazy var ccButton = UZButton()
+	open lazy var settingsButton = UZButton()
+	open lazy var helpButton = UZButton()
+	open lazy var pipButton = UZButton()
+	open lazy var castingButton = UZCastButton()
+	open lazy var enlapseTimeLabel = UZButton()
+	open lazy var logoButton = UZButton()
+	open lazy var airplayButton = UZAirPlayButton()
+	open lazy var coverImageView = UIImageView()
+	open lazy var liveBadgeView = UZLiveBadgeView()
+	open lazy var endscreenView = UZEndscreenView()
 	public var loadingIndicatorView: UIActivityIndicatorView?
-	public var endscreenView = UZEndscreenView()
 	public var timeSlider: UZSlider! {
 		didSet {
 			timeSlider.maximumValue = 1.0
@@ -249,19 +249,16 @@ open class UZPlayerControlView: UIView {
         let imageBundle = Bundle(path: imagePath)
         
         backButton.setImage(imageBundle?.getUZImage(named: "ic_close"), for: .normal)
-        /// settings
         settingsButton.setImage(imageBundle?.getUZImage(named: "ic_settings"), for: .normal)
-        /// fullscreen/ exit fullscreen
         fullscreenButton.setImage(imageBundle?.getUZImage(named: "ic_maximize"), for: .normal)
         fullscreenButton.setImage(imageBundle?.getUZImage(named: "ic_minimize"), for: .selected)
         forwardButton.setImage(imageBundle?.getUZImage(named: "ic_forward"), for: .normal)
         backwardButton.setImage(imageBundle?.getUZImage(named: "ic_backward"), for: .normal)
 //        let thumbIcon = UIImage(named: "ic_thumb", in: imageBundle, compatibleWith: nil)
-        let thumbIcon = UIImage(icon: .fontAwesomeSolid(.circle), size: CGSize(width: 18, height: 18), textColor: UIColor.red, backgroundColor: .clear)
+        let thumbIcon = UIImage(icon: .fontAwesomeSolid(.circle), size: CGSize(width: 18, height: 18), textColor: .red, backgroundColor: .clear)
         timeSlider.setThumbImage(thumbIcon, for: .normal)
-        // volume icon
-        volumeButton.setImage(UIImage(icon: .fontAwesomeSolid(.volumeUp), size: CGSize(width: 24, height: 24), textColor: UIColor.white, backgroundColor: .clear), for: .normal)
-        volumeButton.setImage(UIImage(icon: .icofont(.volumeMute), size: CGSize(width: 24, height: 24), textColor: UIColor.white, backgroundColor: .clear), for: .selected)
+        volumeButton.setImage(UIImage(icon: .fontAwesomeSolid(.volumeUp), size: CGSize(width: 24, height: 24), textColor: .white, backgroundColor: .clear), for: .normal)
+        volumeButton.setImage(UIImage(icon: .icofont(.volumeMute), size: CGSize(width: 24, height: 24), textColor: .white, backgroundColor: .clear), for: .selected)
     }
 	
 	// MARK: - Skins
@@ -370,24 +367,16 @@ open class UZPlayerControlView: UIView {
 	
 	open func playerStateDidChange(state: UZPlayerState) {
 		switch state {
-		case .readyToPlay:
-			hideLoader()
+			case .readyToPlay: hideLoader()
+			case .buffering: showLoader()
+			case .bufferFinished: hideLoader()
+			case .playedToTheEnd:
+				playpauseCenterButton.isSelected = false
+				playpauseButton.isSelected = false
+//				showEndScreen()
+//				showControlView()
 			
-		case .buffering:
-			showLoader()
-			
-		case .bufferFinished:
-			hideLoader()
-			
-		case .playedToTheEnd:
-			playpauseCenterButton.isSelected = false
-			playpauseButton.isSelected = false
-			
-//			showEndScreen()
-//			showControlView()
-			
-		default:
-			break
+			default: break
 		}
 		
 		playerLastState = state
@@ -414,9 +403,8 @@ open class UZPlayerControlView: UIView {
 		if !enableTimeshiftForLiveVideo {
 			hiddenViewsWhenLive.append(contentsOf: controlsForTimeshift)
 		}
-		for view in hiddenViewsWhenLive {
-			view.isHidden = isLiveVideo
-		}
+		
+		hiddenViewsWhenLive.forEach { $0.isHidden = isLiveVideo }
 		
 		helpButton.isHidden = isLiveVideo
 		ccButton.isHidden = isLiveVideo

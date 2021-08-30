@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 		
 		askForURL()
 	}
+	
 /// UserDefaults.standard.string(forKey: "last_url") ?? "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 	func askForURL() {
 //       let prefilled = "https://1955897154.rsc.cdn77.org/live/8dee8601-931e-409a-b2e8-aa84761add1e/master.m3u8?cm=eyJlbnRpdHlfaWQiOiI4ZGVlODYwMS05MzFlLTQwOWEtYjJlOC1hYTg0NzYxYWRkMWUiLCJlbnRpdHlfc291cmNlIjoibGl2ZSIsImFwcF9pZCI6IjhhZTY3ZDlmM2EyNzQyODVhMTUwNmUzZjc3Njc5MmVhIn0="
@@ -49,9 +50,10 @@ class ViewController: UIViewController {
 	
 	func presentFloatingPlayer(urlPath: String) {
 		guard let url = URL(string: urlPath) else { return }
+		
 		let playerViewController = UZPlayerViewController()
 		playerViewController.player.aspectRatio = .aspectFill
-        playerViewController.player.controlView.theme = UZTheme1()
+        playerViewController.player.controlView.theme = UZTheme4()
         playerViewController.player.loadVideo(url: url)
         present(playerViewController, animated: true, completion: nil)
 	}

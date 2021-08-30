@@ -126,15 +126,11 @@ open class UZTheme1: UZPlayerTheme {
 		frameLayout + HStackLayout {
 			$0 + [controlView.backButton, controlView.titleLabel]
 			($0 + 0).flexible()
-            ($0 + [controlView.pipButton, controlView.castingButton, controlView.playlistButton, controlView.settingsButton]).forEach { (layout) in
-				layout.minSize = buttonMinSize
-			}
+            ($0 + [controlView.pipButton, controlView.castingButton, controlView.playlistButton, controlView.settingsButton]).forEach { $0.minSize = buttonMinSize }
 			$0.spacing = 10
 		}
 		frameLayout + HStackLayout {
-			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { (layout) in
-				layout.alignment = (.center, .center)
-			}
+			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { $0.alignment = (.center, .center) }
 			$0.spacing = 10
 			$0.alignment = (.center, .center)
 			$0.distribution = .center
@@ -149,9 +145,7 @@ open class UZTheme1: UZPlayerTheme {
                 $0.flexible()
                 $0.ignoreHiddenView = false
             }
-            ($0 + [controlView.backwardButton, controlView.forwardButton, controlView.fullscreenButton]).forEach { (layout) in
-				layout.minSize = buttonMinSize
-			}
+            ($0 + [controlView.backwardButton, controlView.forwardButton, controlView.fullscreenButton]).forEach { $0.minSize = buttonMinSize }
 			$0.spacing = 10
 		}
 		frameLayout.padding(top: 10, left: 10, bottom: 0, right: 10)
@@ -196,6 +190,7 @@ open class UZTheme1: UZPlayerTheme {
 	
 	open func showLoader() {
 		guard let controlView = controlView else { return }
+		
 		if controlView.loadingIndicatorView == nil {
 			if #available(iOS 13.0, *) {
 				controlView.loadingIndicatorView = UIActivityIndicatorView(style: .medium)

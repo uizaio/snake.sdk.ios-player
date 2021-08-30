@@ -13,7 +13,7 @@ import UZM3U8Kit
 public class SettingViewController: UIViewController {
     private let MAX_HEIGHT =  UIScreen.main.bounds.height * 0.65
     private let ROW_HEIGHT = CGFloat(46.0)
-    //
+    
     private let withNavigationButton: Bool
     private var settingItems: [SettingItem]?
     private var defaultValue: Any? = nil
@@ -26,6 +26,7 @@ public class SettingViewController: UIViewController {
         self.settingItems = settingItems
         self.withNavigationButton = true
         super.init(nibName: nil, bundle: nil)
+		
         self.title = text
         self.defaultValue = defaultValue
     }
@@ -37,15 +38,16 @@ public class SettingViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         let contentHeight: CGFloat = ROW_HEIGHT + ROW_HEIGHT * CGFloat(self.settingItems?.count ?? 0 + 1)
-        var rect = self.view.bounds
+        var rect = view.bounds
         rect.size.height = min(contentHeight, MAX_HEIGHT)
         tableView = UITableView(frame: rect, style: UITableView.Style.plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.IDENTIFIER)
-        view.addSubview(tableView)
         tableView.separatorColor = UIColor.clear
         tableView.estimatedRowHeight = ROW_HEIGHT
+		
+		view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -61,14 +63,13 @@ public class SettingViewController: UIViewController {
 extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
         
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.settingItems?.count ?? 0
+        return settingItems?.count ?? 0
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.IDENTIFIER, for: indexPath) as? SettingTableViewCell else {
-            return UITableViewCell()
-        }
-        if let settingItem = self.settingItems?[indexPath.row] {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.IDENTIFIER, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
+		
+        if let settingItem = settingItems?[indexPath.row] {
             cell.titleLabel.text = settingItem.title
             switch settingItem.type {
             case .bool:
@@ -136,7 +137,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let settingItem = self.settingItems?[indexPath.row] {
+        if let settingItem = settingItems?[indexPath.row] {
             let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
             switch settingItem.type {
             case .bool:

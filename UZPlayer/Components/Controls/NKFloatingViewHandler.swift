@@ -16,7 +16,7 @@ public enum NKFloatingPosition: Int {
 	case bottomRight
 }
 
-public protocol NKFloatingViewHandlerProtocol: class {
+public protocol NKFloatingViewHandlerProtocol: AnyObject {
 	var containerView: UIView! { get }
 	var gestureView: UIView! { get }
 //	var panGesture: UIPanGestureRecognizer! { get }

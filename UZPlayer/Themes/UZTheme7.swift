@@ -118,22 +118,20 @@ open class UZTheme7: UZPlayerTheme {
 		frameLayout + HStackLayout {
 			($0 + controlView.titleLabel).flexible()
             $0 + [controlView.backButton]
-			//			($0 + 0).flexible()
-			//			$0 + [controlView.pipButton, controlView.castingButton, controlView.playlistButton, controlView.settingsButton, controlView.volumeButton]
+//			($0 + 0).flexible()
+//			$0 + [controlView.pipButton, controlView.castingButton, controlView.playlistButton, controlView.settingsButton, controlView.volumeButton]
 			$0.distribution = .right
 			$0.spacing = 10
 			$0.padding(top: 0, left: 10, bottom: 0, right: 10)
 		}
 		frameLayout + HStackLayout {
-			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { (layout) in
-				layout.alignment = (.center, .center)
-			}
+			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { $0.alignment = (.center, .center) }
 			$0.spacing = 10
 			$0.alignment = (.center, .center)
 			$0.distribution = .center
 			$0.flexible()
 		}
-		frameLayout + VStackLayout {
+		frameLayout + ZStackLayout {
 			$0 + HStackLayout {
 				$0 + [controlView.settingsButton, controlView.castingButton, controlView.pipButton, controlView.volumeButton]
 				($0 + 0).flexible()
@@ -144,16 +142,12 @@ open class UZTheme7: UZPlayerTheme {
 			}
 			
 			$0 + HStackLayout {
-				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { (layout) in
-					layout.alignment = (.center, .center)
-				}
+				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { $0.alignment = (.center, .center) }
 				$0.distribution = .center
-				$0.fixSize = CGSize(width: 0, height: 60)
+				$0.fixedHeight = 60
 			}
 			
-			$0.isOverlapped = true
-			$0.distribution = .bottom
-			$0.fixSize = CGSize(width: 0, height: 60)
+			$0.fixedHeight = 60
 		}
 		
 		controlView.containerView.addSubview(blurView)
@@ -204,6 +198,7 @@ open class UZTheme7: UZPlayerTheme {
 	
 	open func showLoader() {
 		guard let controlView = controlView else { return }
+		
 		if controlView.loadingIndicatorView == nil {
 			if #available(iOS 13.0, *) {
 				controlView.loadingIndicatorView = UIActivityIndicatorView(style: .medium)

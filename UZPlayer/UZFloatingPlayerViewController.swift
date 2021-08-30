@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol UZFloatingPlayerViewProtocol: class {
+public protocol UZFloatingPlayerViewProtocol: AnyObject {
 	
 	func floatingPlayer(_ player: UZFloatingPlayerViewController, didBecomeFloating: Bool)
 	func floatingPlayer(_ player: UZFloatingPlayerViewController, onFloatingProgress: CGFloat)

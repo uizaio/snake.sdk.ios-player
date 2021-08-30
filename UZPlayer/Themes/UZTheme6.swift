@@ -122,9 +122,7 @@ open class UZTheme6: UZPlayerTheme {
 			$0.padding(top: 0, left: 10, bottom: 0, right: 10)
 		}
 		frameLayout + HStackLayout {
-			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { (layout) in
-				layout.alignment = (.center, .center)
-			}
+			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { $0.alignment = (.center, .center) }
 			$0.spacing = 10
 			$0.alignment = (.center, .center)
 			$0.distribution = .center
@@ -133,16 +131,14 @@ open class UZTheme6: UZPlayerTheme {
 		frameLayout + HStackLayout {
 			$0 + [controlView.settingsButton, controlView.castingButton, controlView.pipButton]
 			$0 + HStackLayout {
-				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { (layout) in
-					layout.alignment = (.center, .center)
-				}
+				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { $0.alignment = (.center, .center) }
 				$0.alignment = (.center, .center)
 				$0.distribution = .center
 				$0.flexible()
 			}
 			$0 + [controlView.playlistButton, controlView.fullscreenButton]
 			
-			$0.fixSize = CGSize(width: 0, height: 50)
+			$0.fixedHeight = 50
 			$0.spacing = 10
 			$0.padding(top: 0, left: 10, bottom: 0, right: 10)
 		}

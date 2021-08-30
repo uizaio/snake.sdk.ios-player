@@ -126,23 +126,21 @@ open class UZTheme3: UZPlayerTheme {
 			$0.spacing = 10
 		}
 		frameLayout + HStackLayout {
-			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { (layout) in
-				layout.alignment = (.center, .center)
-			}
+			($0 + [controlView.previousButton, controlView.playpauseCenterButton, controlView.nextButton]).forEach { $0.alignment = (.center, .center) }
 			$0.spacing = 10
 			$0.alignment = (.center, .center)
 			$0.distribution = .center
 			$0.flexible()
 		}        
-		let bottomBar = HStackLayout {
+		(frameLayout + HStackLayout {
 			$0 + HStackLayout {
-                $0 + controlView.currentTimeLabel
-                ($0 + controlView.timeSlider).flexible()
-                $0 + controlView.remainTimeLabel
-                $0.spacing = 10
-                $0.ignoreHiddenView = false
-                $0.flexible()
-            }
+				$0 + controlView.currentTimeLabel
+				($0 + controlView.timeSlider).flexible()
+				$0 + controlView.remainTimeLabel
+				$0.spacing = 10
+				$0.ignoreHiddenView = false
+				$0.flexible()
+			}
 			$0 + [controlView.backwardButton, controlView.forwardButton, controlView.fullscreenButton]
 			$0.spacing = 10
 			$0.backgroundColor = UIColor(white: 0.0, alpha: 0.8)
@@ -150,9 +148,7 @@ open class UZTheme3: UZPlayerTheme {
 			$0.layer.masksToBounds = true
 			$0.padding(top: 0, left: 10, bottom: 0, right: 10)
 			controlView.containerView.insertSubview($0, at: 0)
-		}
-		
-		(frameLayout + bottomBar).with {
+		}).with {
 			$0.horizontalAlignment = .center
 			$0.padding(top: 0, left: 20, bottom: 20, right: 20)
 		}
@@ -172,21 +168,21 @@ open class UZTheme3: UZPlayerTheme {
 		topGradientLayer.frame = frameLayout.firstFrameLayout?.frame.inset(by: UIEdgeInsets(top: -frameLayout.edgeInsets.top, left: -frameLayout.edgeInsets.left, bottom: -frameLayout.edgeInsets.bottom, right: -frameLayout.edgeInsets.right)) ?? .zero
 		CATransaction.commit()
 		
-		if let controlView = controlView {
-			let viewSize = controlView.bounds.size
-			
-			if !controlView.liveBadgeView.isHidden {
-				let badgeSize = controlView.liveBadgeView.sizeThatFits(viewSize)
-				controlView.liveBadgeView.frame = CGRect(x: (viewSize.width - badgeSize.width)/2, y: 10, width: badgeSize.width, height: badgeSize.height)
-			}
-			
-			if !controlView.enlapseTimeLabel.isHidden {
-				let labelSize = controlView.enlapseTimeLabel.sizeThatFits(viewSize)
-				let edgeInsets = frameLayout.lastFrameLayout?.edgeInsets ?? .zero
-				controlView.enlapseTimeLabel.frame = CGRect(x: edgeInsets.left + 5,
-                                                            y: viewSize.height - labelSize.height - edgeInsets.bottom - 8,
-                                                            width: labelSize.width, height: labelSize.height)
-			}
+		guard let controlView = controlView else { return }
+		
+		let viewSize = controlView.bounds.size
+		
+		if !controlView.liveBadgeView.isHidden {
+			let badgeSize = controlView.liveBadgeView.sizeThatFits(viewSize)
+			controlView.liveBadgeView.frame = CGRect(x: (viewSize.width - badgeSize.width)/2, y: 10, width: badgeSize.width, height: badgeSize.height)
+		}
+		
+		if !controlView.enlapseTimeLabel.isHidden {
+			let labelSize = controlView.enlapseTimeLabel.sizeThatFits(viewSize)
+			let edgeInsets = frameLayout.lastFrameLayout?.edgeInsets ?? .zero
+			controlView.enlapseTimeLabel.frame = CGRect(x: edgeInsets.left + 5,
+														y: viewSize.height - labelSize.height - edgeInsets.bottom - 8,
+														width: labelSize.width, height: labelSize.height)
 		}
 	}
 	
@@ -200,6 +196,7 @@ open class UZTheme3: UZPlayerTheme {
 	
 	open func showLoader() {
 		guard let controlView = controlView else { return }
+		
 		if controlView.loadingIndicatorView == nil {
 			if #available(iOS 13.0, *) {
 				controlView.loadingIndicatorView = UIActivityIndicatorView(style: .medium)

@@ -117,10 +117,7 @@ open class UZTheme4: UZPlayerTheme {
 			$0.spacing = 10
 			$0.padding(top: 10, left: 10, bottom: 0, right:12)
 		}
-        // center layout in vertical
-		frameLayout + HStackLayout {
-			$0.flexible()
-		}
+		(frameLayout + 0).flexible()
 		frameLayout + HStackLayout {
             $0 + HStackLayout {
                 $0 + [controlView.currentTimeLabel, controlView.remainTimeLabel]
@@ -128,16 +125,15 @@ open class UZTheme4: UZPlayerTheme {
                 $0.spacing = 10
             }
 			$0 + HStackLayout {
-				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { (layout) in
-					layout.alignment = (.center, .center)
-				}
+				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { $0.alignment = (.center, .center) }
 				$0.alignment = (.center, .center)
 				$0.distribution = .center
 				$0.flexible()
 			}
 			$0 + [controlView.playlistButton, controlView.fullscreenButton]
-            $0.ignoreHiddenView = false
-			$0.fixSize = CGSize(width: 0, height: 50)
+            
+			$0.ignoreHiddenView = false
+			$0.fixedHeight = 50
 			$0.spacing = 10
 			$0.padding(top: 0, left: 10, bottom: 0, right: 12)
 			$0.backgroundColor = UIColor(white: 0.0, alpha: 0.8)
@@ -188,6 +184,7 @@ open class UZTheme4: UZPlayerTheme {
 	
 	open func showLoader() {
 		guard let controlView = controlView else { return }
+		
 		if controlView.loadingIndicatorView == nil {
 			if #available(iOS 13.0, *) {
 				controlView.loadingIndicatorView = UIActivityIndicatorView(style: .medium)
