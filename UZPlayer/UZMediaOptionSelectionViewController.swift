@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 import FrameLayoutKit
-import NKModalViewManager
+import NKModalPresenter
 
 class UZMediaOptionSelectionViewController: UIViewController {
 	let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
@@ -120,8 +120,8 @@ class UZMediaOptionSelectionViewController: UIViewController {
 	}
 	
 	override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-		if let modalViewController = NKModalViewManager.sharedInstance()?.modalViewControllerThatContains(self) {
-			modalViewController.dismissWith(animated: flag, completion: completion)
+		if let modalController = modalController {
+			modalController.dismiss(animated: flag, completion: completion)
 		} else {
 			super.dismiss(animated: flag, completion: completion)
 		}
@@ -129,18 +129,22 @@ class UZMediaOptionSelectionViewController: UIViewController {
 	
 }
 
-extension UZMediaOptionSelectionViewController: NKModalViewControllerProtocol {
+extension UZMediaOptionSelectionViewController: NKModalControllerDelegate {
 	
-	func shouldTapOutside(toDismiss modalViewController: NKModalViewController!) -> Bool {
+	func shouldTapOutsideToDismiss(modalController: NKModalController) -> Bool {
 		return true
 	}
 	
-	func presentingStyle(for modalViewController: NKModalViewController!) -> NKModalPresentingStyle {
-		return .zoomIn
+	func presentAnimation(modalController: NKModalController) -> NKModalPresentAnimation {
+		return .fromCenter(scale: 0.9)
 	}
 	
-	func dismissingStyle(for modalViewController: NKModalViewController!) -> NKModalDismissingStyle {
-		return .zoomOut
+	func presentPosition(modalController: NKModalController) -> NKModalPresentPosition {
+		return .center
+	}
+	
+	func dismissAnimation(modalController: NKModalController) -> NKModalDismissAnimation {
+		return .toCenter(scale: 0.9)
 	}
 	
 }

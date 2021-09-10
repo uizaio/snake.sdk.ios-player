@@ -1,6 +1,6 @@
 //
 //  UZPlayer.swift
-//  UizaPlayerSDK
+//  SnakePlayerSDK
 //
 //  Created by Nam Kennic on 11/7/17.
 //  Copyright © 2017 Nam Kennic. All rights reserved.
@@ -11,7 +11,7 @@ import AVKit
 import AVFoundation
 import Foundation
 import CoreGraphics
-import NKModalViewManager
+//import NKModalPresenter
 import FrameLayoutKit
 import UZM3U8Kit
 
@@ -304,12 +304,8 @@ open class UZPlayer: UIView {
 	fileprivate var _pictureInPictureController: Any?
 	@available(iOS 9.0, *)
 	public internal(set) var pictureInPictureController: AVPictureInPictureController? {
-		get {
-			return _pictureInPictureController as? AVPictureInPictureController
-		}
-		set {
-			_pictureInPictureController = newValue
-		}
+		get { _pictureInPictureController as? AVPictureInPictureController }
+		set { _pictureInPictureController = newValue }
 	}
     var visualizeInformationView: UZVisualizeInformationView?
 	public var autoPauseWhenInactive = true

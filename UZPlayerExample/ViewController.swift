@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 			textField.text = prefilled
             textField.frame.size.height = 153
 		}
-		alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] (action) in
+		alertController.addAction(UIAlertAction(title: "Play", style: .default, handler: { [weak self] (action) in
 			if let string = alertController.textFields?.first?.text, !string.isEmpty {
 				UserDefaults.standard.set(string, forKey: "last_url")
 				alertController.dismiss(animated: true, completion: nil)
@@ -48,14 +48,24 @@ class ViewController: UIViewController {
 		present(alertController, animated: true, completion: nil)
 	}
 	
-	func presentFloatingPlayer(urlPath: String) {
+	func presentPlayer(urlPath: String) {
 		guard let url = URL(string: urlPath) else { return }
 		
 		let playerViewController = UZPlayerViewController()
-		playerViewController.player.aspectRatio = .aspectFill
-        playerViewController.player.controlView.theme = UZTheme4()
+		playerViewController.modalPresentationStyle = .fullScreen
+//		playerViewController.player.aspectRatio = .aspectFill
+        playerViewController.player.controlView.theme = UZTheme1()
         playerViewController.player.loadVideo(url: url)
         present(playerViewController, animated: true, completion: nil)
+	}
+	
+	func presentFloatingPlayer(urlPath: String) {
+		guard let url = URL(string: urlPath) else { return }
+		
+		let videoItem = UZVideoItem(name: nil, thumbnailURL: nil, linkPlay: UZVideoLinkPlay(definition: "", url: url))
+		let floatPlayer = MoviePlayerViewController()
+		floatPlayer.present(with: videoItem, playlist: nil).player.controlView.theme = UZTheme1()
+		floatPlayer.delegate = self
 	}
 	
 	override open var prefersStatusBarHidden: Bool {
@@ -76,3 +86,21 @@ class ViewController: UIViewController {
 	
 }
 
+extension ViewController: UZFloatingPlayerViewDelegate {
+	
+	func floatingPlayer(_ player: UZFloatingPlayerViewController, didBecomeFloating: Bool) {
+		print(didBecomeFloating ? "Did become floating" : "Did unfloat")
+		guard let floatingPlayer = player as? MoviePlayerViewController else { return }
+		floatingPlayer.topPadding = didBecomeFloating ? 0 : view.extendSafeEdgeInsets.top
+	}
+	
+	func floatingPlayer(_ player: UZFloatingPlayerViewController, onFloatingProgress: CGFloat) {
+		guard let floatingPlayer = player as? MoviePlayerViewController else { return }
+		floatingPlayer.topPadding = view.extendSafeEdgeInsets.top - (view.extendSafeEdgeInsets.top * onFloatingProgress)
+	}
+	
+	func floatingPlayerDidDismiss(_ player: UZFloatingPlayerViewController) {
+		askForURL()
+	}
+	
+}

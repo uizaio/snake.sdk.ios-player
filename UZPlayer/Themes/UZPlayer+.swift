@@ -11,7 +11,7 @@ import AVKit
 import AVFoundation
 import Foundation
 import CoreGraphics
-import NKModalViewManager
+
 #if canImport(GoogleCast)
 import GoogleCast
 #endif
@@ -131,8 +131,7 @@ extension UZPlayer {
     
     open func showCastingDeviceList() {
         #if canImport(GoogleCast)
-        let viewController = UZDeviceListTableViewController()
-        NKModalViewManager.sharedInstance().presentModalViewController(viewController).tapOutsideToDismiss = true
+		UZDeviceListTableViewController().presentAsModal()
         #else
         showAirPlayDevicesSelection()
         #endif
@@ -272,13 +271,13 @@ extension UZPlayer {
         viewController.currentDefinition = currentLinkPlay
         viewController.resource = resource
         viewController.collectionViewController.selectedBlock = { [weak self] (linkPlay, index) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             
             self.currentDefinition = index
             self.switchVideoDefinition(linkPlay)
             viewController.dismiss(animated: true, completion: nil)
         }
-        NKModalViewManager.sharedInstance().presentModalViewController(viewController)
+		viewController.presentAsModal()
     }
     
     open func showMediaOptionSelector() {
@@ -289,9 +288,9 @@ extension UZPlayer {
 		viewController.asset = asset
 		viewController.selectedSubtitle = selectedSubtitle
 		viewController.subtitiles = subtitles
-		//            viewController.selectedSubtitleOption = nil
+//            viewController.selectedSubtitleOption = nil
 		viewController.collectionViewController.selectedBlock = { [weak self] (option, indexPath) in
-			guard let `self` = self else { return }
+			guard let self = self else { return }
 			
 			if indexPath.section == 0 { // audio
 				self.selectAudio(index: indexPath.item)
@@ -305,8 +304,7 @@ extension UZPlayer {
 			
 			viewController.dismiss(animated: true, completion: nil)
 		}
-		
-		NKModalViewManager.sharedInstance().presentModalViewController(viewController)
+		viewController.presentAsModal()
     }
     
     open func showSettings() {

@@ -1,6 +1,6 @@
 //
 //  UZMediaResource.swift
-//  UizaPlayerSDK
+//  SnakePlayerSDK
 //
 //  Created by Nam Kennic on 11/7/17.
 //  Copyright © 2017 Nam Kennic. All rights reserved.

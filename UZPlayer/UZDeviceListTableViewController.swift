@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NKModalViewManager
+import NKModalPresenter
 #if canImport(GoogleCast)
 import GoogleCast
 
@@ -61,9 +61,9 @@ class UZDeviceListTableViewController: UITableViewController {
 		}
 	}
 	
-	override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
-		if let viewController = NKModalViewManager.sharedInstance().modalViewControllerThatContains(self) {
-			viewController.dismissWith(animated: flag, completion: completion)
+	override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+		if let modalController = modalController {
+			modalController.dismiss(animated: flag, completion: completion)
 		} else {
 			super.dismiss(animated: flag, completion: completion)
 		}
@@ -215,18 +215,22 @@ class UZDeviceListTableViewController: UITableViewController {
 
 // MARK: -
 
-extension UZDeviceListTableViewController: NKModalViewControllerProtocol {
+extension UZDeviceListTableViewController: NKModalControllerDelegate {
 	
-	func shouldTapOutside(toDismiss modalViewController: NKModalViewController!) -> Bool {
+	func shouldTapOutsideToDismiss(modalController: NKModalController) -> Bool {
 		return true
 	}
 	
-	func presentingStyle(for modalViewController: NKModalViewController!) -> NKModalPresentingStyle {
-		return .zoomIn
+	func presentAnimation(modalController: NKModalController) -> NKModalPresentAnimation {
+		return .fromCenter(scale: 0.9)
 	}
 	
-	func dismissingStyle(for modalViewController: NKModalViewController!) -> NKModalDismissingStyle {
-		return .zoomOut
+	func presentPosition(modalController: NKModalController) -> NKModalPresentPosition {
+		return .center
+	}
+	
+	func dismissAnimation(modalController: NKModalController) -> NKModalDismissAnimation {
+		return .toCenter(scale: 0.9)
 	}
 	
 }

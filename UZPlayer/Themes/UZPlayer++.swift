@@ -11,7 +11,6 @@ import AVKit
 import AVFoundation
 import Foundation
 import CoreGraphics
-import NKModalViewManager
 import FrameLayoutKit
 
 #if canImport(NHNetworkTime)
@@ -216,7 +215,7 @@ extension UZPlayer {
 		
 		if let currentVideo = currentVideo, currentVideo.isLive {
 			UZLiveServices().loadViews(video: currentVideo) { [weak self] (view, _) in
-				guard let `self` = self else { return }
+				guard let self = self else { return }
 				
 				let changed = view != self.controlView.liveBadgeView.views
 				if changed {
@@ -308,7 +307,7 @@ extension UZPlayer {
             avPlayer?.removeTimeObserver(timeObserver)
         }
         timeObserver = avPlayer?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { [weak self] (time) -> Void in
-			guard let `self` = self else { return }
+			guard let self = self else { return }
 			
 			guard let text = savedSubtitles.search(for: TimeInterval(CMTimeGetSeconds(time)))?.text else {
 				self.subtitleLabel?.text = ""
@@ -453,10 +452,10 @@ extension UZPlayer {
     // MARK: - KVO
     // swiftlint:disable block_based_kvo
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        //        guard context == &playerViewControllerKVOContext else {
-        //            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        //            return
-        //        }
+//        guard context == &playerViewControllerKVOContext else {
+//            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+//            return
+//        }
         
         if keyPath == pipKeyPath {
             let newValue = change?[NSKeyValueChangeKey.newKey] as? NSNumber

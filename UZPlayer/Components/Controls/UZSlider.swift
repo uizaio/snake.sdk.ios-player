@@ -1,6 +1,6 @@
 //
 //  UZSlider.swift
-//  UizaPlayerSDK
+//  SnakePlayerSDK
 //
 //  Created by Nam Kennic on 11/4/17.
 //  Copyright © 2017 Nam Kennic. All rights reserved.

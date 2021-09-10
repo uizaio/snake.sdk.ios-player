@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FrameLayoutKit
 
-public protocol UZFloatingPlayerViewProtocol: AnyObject {
+public protocol UZFloatingPlayerViewDelegate: AnyObject {
 	
 	func floatingPlayer(_ player: UZFloatingPlayerViewController, didBecomeFloating: Bool)
 	func floatingPlayer(_ player: UZFloatingPlayerViewController, onFloatingProgress: CGFloat)
@@ -18,6 +19,7 @@ public protocol UZFloatingPlayerViewProtocol: AnyObject {
 
 open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandlerProtocol {
 	public private(set) var playerWindow: UIWindow?
+	public let frameLayout = VStackLayout()
 	private var lastKeyWindow: UIWindow?
 	
 	public var playerViewController: UZPlayerViewController! {
@@ -34,8 +36,8 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 			
 			player = playerViewController.player
 			player?.backBlock = { [weak self] (_) in
-				guard let `self` = self else { return }
-				print("backButton: \(self.playerViewController.isFullscreen)")
+				guard let self = self else { return }
+				
 				if self.playerViewController.isFullscreen {
 					self.playerViewController.setFullscreen(fullscreen: false)
 				} else {
@@ -53,7 +55,7 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 	public var playerRatio: CGFloat = 9/16
 	public var autoDetectPortraitVideo = false
 	
-	public weak var delegate: UZFloatingPlayerViewProtocol?
+	public weak var delegate: UZFloatingPlayerViewDelegate?
 	
 	public var videoItem: UZVideoItem? = nil {
 		didSet {
@@ -134,8 +136,9 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 		if playerViewController == nil {
 			playerViewController = UZPlayerViewController()
 		}
-		playerViewController.onOrientationUpdateRequestBlock = { fullscreen in
-		}
+//		playerViewController.onOrientationUpdateRequestBlock = { fullscreen in
+//		}
+		
 		if playerWindow == nil {
 			modalPresentationStyle = .overCurrentContext
 			
@@ -212,22 +215,31 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 		view.backgroundColor = UIColor(red: 0.04, green: 0.06, blue: 0.12, alpha: 1.00)
 		view.addSubview(detailsContainerView)
 		view.addSubview(playerViewController.view)
+		view.addSubview(frameLayout)
+		
+		(frameLayout + playerViewController.view).willSizeThatFitsBlock = { [weak self] sender, size in
+			guard let self = self else { return }
+			let viewSize = self.view.bounds.size
+			
+			var isPortrait = false
+			if let currentVideoSize = self.player?.playerLayer?.playerLayer?.videoRect, self.autoDetectPortraitVideo {
+				isPortrait = currentVideoSize.width < currentVideoSize.height
+			}
+			
+			let playerSize = isPortrait ? viewSize : CGSize(width: viewSize.width, height: viewSize.width * self.playerRatio)
+			sender.fixedContentSize = playerSize
+		}
+		(frameLayout + detailsContainerView).flexible()
 		
 		floatingHandler = NKFloatingViewHandler(target: self)
 	}
 	
-	override open func viewWillLayoutSubviews() {
-		super.viewWillLayoutSubviews()
-		let viewSize = view.bounds.size
+	override open func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
 		
-		var isPortrait = false
-		if let currentVideoSize = player?.playerLayer?.playerLayer?.videoRect, autoDetectPortraitVideo {
-			isPortrait = currentVideoSize.width < currentVideoSize.height
-		}
-		
-		let playerSize = isPortrait ? viewSize : CGSize(width: viewSize.width, height: viewSize.width * playerRatio) // 4:3
-		playerViewController.view.frame = CGRect(x: 0, y: 0, width: playerSize.width, height: playerSize.height)
-		detailsContainerView.frame = CGRect(x: 0, y: playerSize.height, width: viewSize.width, height: viewSize.height - playerSize.height)
+		frameLayout.frame = view.bounds
+		frameLayout.setNeedsLayout()
+		frameLayout.layoutIfNeeded()
 	}
 	
 	override open var prefersStatusBarHidden: Bool {

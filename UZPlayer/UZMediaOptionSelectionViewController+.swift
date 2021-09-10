@@ -8,17 +8,13 @@
 
 import UIKit
 import AVFoundation
-import NKModalViewManager
-
-// MARK: - UZMediaOptionItemCollectionViewCell
-
 import FrameLayoutKit
 
 class UZMediaOptionItemCollectionViewCell: UICollectionViewCell {
     var highlightView: UIView!
     var titleLabel: UILabel!
     var frameLayout: DoubleFrameLayout!
-    var highlightMode        = false {
+    var highlightMode = false {
         didSet {
             self.isSelected = super.isSelected
         }
@@ -92,12 +88,12 @@ class UZMediaOptionItemCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: CGRect.zero)
         
-        self.backgroundColor = .clear
+        backgroundColor = .clear
         
-        self.backgroundView = UIView()
-        self.backgroundView!.backgroundColor = UIColor.white.withAlphaComponent(0.2)
-        self.backgroundView!.layer.cornerRadius = 10
-        self.backgroundView!.layer.masksToBounds = true
+        backgroundView = UIView()
+        backgroundView!.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        backgroundView!.layer.cornerRadius = 10
+        backgroundView!.layer.masksToBounds = true
         
         highlightView = UIView()
         highlightView.alpha = 0.0
@@ -110,16 +106,16 @@ class UZMediaOptionItemCollectionViewCell: UICollectionViewCell {
         titleLabel.numberOfLines = 1
         titleLabel.textColor = .white
         
-        self.contentView.addSubview(highlightView)
-        self.contentView.addSubview(titleLabel)
+        contentView.addSubview(highlightView)
+        contentView.addSubview(titleLabel)
         
         frameLayout = DoubleFrameLayout(axis: .horizontal, views: [titleLabel])
         frameLayout.bottomFrameLayout.fixedHeight = 40
         frameLayout.distribution = .center
         frameLayout.spacing = 0
-        self.contentView.addSubview(frameLayout)
+        contentView.addSubview(frameLayout)
         
-        self.updateColor()
+        updateColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -138,13 +134,13 @@ class UZMediaOptionItemCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        frameLayout.frame = self.bounds
+        frameLayout.frame = bounds
         
         if let backgroundView = backgroundView {
 			let edgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 			
 			#if swift(>=4.2)
-			backgroundView.frame = self.contentView.bounds.inset(by: edgeInsets)
+			backgroundView.frame = contentView.bounds.inset(by: edgeInsets)
 			#else
 			backgroundView.frame = UIEdgeInsetsInsetRect(self.contentView.bounds, edgeInsets)
 			#endif
@@ -158,7 +154,6 @@ class UZMediaOptionItemCollectionViewCell: UICollectionViewCell {
 // MARK: - UZTitleCollectionViewHeader
 
 class UZTitleCollectionViewHeader: UICollectionReusableView {
-    
     let label = UILabel()
     var frameLayout: FrameLayout!
     
@@ -175,7 +170,7 @@ class UZTitleCollectionViewHeader: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .clear
+        backgroundColor = .clear
         
         if #available(iOS 8.2, *) {
             label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
@@ -187,13 +182,13 @@ class UZTitleCollectionViewHeader: UICollectionReusableView {
         frameLayout = FrameLayout(targetView: label)
         frameLayout.addSubview(label)
         frameLayout.padding(top: 10, left: 10, bottom: 0, right: 0)
-        self.addSubview(frameLayout)
+        addSubview(frameLayout)
     }
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
-        //        layoutAttributes.zIndex = 0
+//        layoutAttributes.zIndex = 0
         super.apply(layoutAttributes)
-        self.layer.zPosition = 0
+        layer.zPosition = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -207,7 +202,7 @@ class UZTitleCollectionViewHeader: UICollectionReusableView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        frameLayout.frame = self.bounds
+        frameLayout.frame = bounds
     }
     
 }

@@ -1,6 +1,6 @@
 //
 //  UZPlayerControlView.swift
-//  UizaPlayerSDK
+//  SnakePlayerSDK
 //
 //  Created by Nam Kennic on 10/25/17.
 //  Copyright © 2017 Nam Kennic. All rights reserved.
@@ -228,6 +228,7 @@ open class UZPlayerControlView: UIView {
 		liveBadgeView.liveBadge.tag = UZButtonTag.live.rawValue
         
 		allButtons.forEach { (button) in
+			button.imageView?.contentMode = .scaleAspectFit
 			button.showsTouchWhenHighlighted = true
 			button.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
 		}

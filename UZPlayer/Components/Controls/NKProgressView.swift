@@ -1,6 +1,6 @@
 //
 //  NKProgressView.swift
-//  UizaPlayerSDK
+//  SnakePlayerSDK
 //
 //  Created by Nam Kennic on 11/9/17.
 //  Copyright © 2017 Nam Kennic. All rights reserved.
