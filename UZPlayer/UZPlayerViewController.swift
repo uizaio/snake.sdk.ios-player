@@ -31,15 +31,21 @@ open class UZPlayerViewController: UIViewController {
 		set { setFullscreen(fullscreen: newValue) }
 	}
 	
-	open func setFullscreen(fullscreen: Bool, completion:(() -> Void)? = nil) {
+	open func setFullscreen(fullscreen: Bool, completion: (() -> Void)? = nil) {
 		UZLogger.shared.log(event: "fullscreenchange")
 		if fullscreen {
 			if !isFullscreen {
 				playerController.presentAsModal()
-				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-					self.viewDidLayoutSubviews()
-				}
-				completion?()
+				
+				UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+					self.playerController.player.frame = CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.width)
+					self.playerController.player.center = self.view.center
+					self.playerController.player.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+					self.playerController.player.layoutSubviews()
+					
+				}, completion: { finished in
+					completion?()
+				})
 				
 				playerController.player.controlView.updateUI(true)
 			} else {
@@ -47,10 +53,17 @@ open class UZPlayerViewController: UIViewController {
 				onOrientationUpdateRequestBlock?(true)
 				completion?()
 			}
-		} else {
-			onOrientationUpdateRequestBlock?(false)
+		} else if isFullscreen {
+			view.setNeedsLayout()
+			UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+				self.playerController.player.transform = CGAffineTransform.identity
+				self.playerController.player.layoutSubviews()
+				self.view.layoutIfNeeded()
+			}, completion: nil)
+			
 			playerController.player.controlView.updateUI(false)
 			playerController.dismissModal(animated: true) { [weak self] in
+				self?.onOrientationUpdateRequestBlock?(false)
 				self?.viewDidLayoutSubviews()
 				completion?()
 			}
