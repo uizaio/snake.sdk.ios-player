@@ -82,31 +82,32 @@ open class UZTheme6: UZPlayerTheme {
 		controlView.titleLabel.textColor = .white
 		controlView.titleLabel.font = UIFont.systemFont(ofSize: 14)
 		
-		let timeLabelFont = UIFont(name: "Arial", size: 12)
-		let timeLabelColor = UIColor.white
-		let timeLabelShadowColor = UIColor.black
-		let timeLabelShadowOffset = CGSize(width: 0, height: 1)
-		
-		controlView.currentTimeLabel.textColor = timeLabelColor
-		controlView.currentTimeLabel.font = timeLabelFont
-		controlView.currentTimeLabel.shadowColor = timeLabelShadowColor
-		controlView.currentTimeLabel.shadowOffset = timeLabelShadowOffset
-		
-		controlView.totalTimeLabel.textColor = timeLabelColor
-		controlView.totalTimeLabel.font = timeLabelFont
-		controlView.totalTimeLabel.shadowColor = timeLabelShadowColor
-		controlView.totalTimeLabel.shadowOffset = timeLabelShadowOffset
-		
-		controlView.remainTimeLabel.textColor = timeLabelColor
-		controlView.remainTimeLabel.font = timeLabelFont
-		controlView.remainTimeLabel.shadowColor = timeLabelShadowColor
-		controlView.remainTimeLabel.shadowOffset = timeLabelShadowOffset
+//		let timeLabelFont = UIFont(name: "Arial", size: 12)
+//		let timeLabelColor = UIColor.white
+//		let timeLabelShadowColor = UIColor.black
+//		let timeLabelShadowOffset = CGSize(width: 0, height: 1)
+//
+//		controlView.currentTimeLabel.textColor = timeLabelColor
+//		controlView.currentTimeLabel.font = timeLabelFont
+//		controlView.currentTimeLabel.shadowColor = timeLabelShadowColor
+//		controlView.currentTimeLabel.shadowOffset = timeLabelShadowOffset
+//
+//		controlView.totalTimeLabel.textColor = timeLabelColor
+//		controlView.totalTimeLabel.font = timeLabelFont
+//		controlView.totalTimeLabel.shadowColor = timeLabelShadowColor
+//		controlView.totalTimeLabel.shadowOffset = timeLabelShadowOffset
+//
+//		controlView.remainTimeLabel.textColor = timeLabelColor
+//		controlView.remainTimeLabel.font = timeLabelFont
+//		controlView.remainTimeLabel.shadowColor = timeLabelShadowColor
+//		controlView.remainTimeLabel.shadowOffset = timeLabelShadowOffset
 	}
 	
 	func setupLayout() {
 		guard let controlView = controlView else { return }
 		
 		controlView.allControlViews.forEach { frameLayout.addSubview($0) }
+		controlView.allLabels.forEach { $0.removeFromSuperview() }
 		
 		frameLayout.isUserInteractionEnabled = true
 		topGradientLayer.colors = [UIColor(white: 0.0, alpha: 0.8).cgColor, UIColor(white: 0.0, alpha: 0.0).cgColor]

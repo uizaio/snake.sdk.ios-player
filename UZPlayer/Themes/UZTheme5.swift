@@ -109,6 +109,8 @@ open class UZTheme5: UZPlayerTheme {
 		guard let controlView = controlView else { return }
 		
 		controlView.allControlViews.forEach { frameLayout.addSubview($0) }
+		controlView.forwardButton.removeFromSuperview()
+		controlView.backwardButton.removeFromSuperview()
 		
 		frameLayout.isUserInteractionEnabled = true
 		topGradientLayer.colors = [UIColor(white: 0.0, alpha: 0.8).cgColor, UIColor(white: 0.0, alpha: 0.0).cgColor]
