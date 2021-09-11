@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'UZPlayer'
-    s.version = '1.3'
+    s.version = '2.0'
     s.summary = 'UZPlayer'
     s.homepage = 'https://uiza.io/'
     s.documentation_url = 'https://docs.uiza.io'
@@ -12,9 +12,9 @@ Pod::Spec.new do |s|
                            'Icons' => ['UZPlayer/Themes/UZIcons.bundle'] }
     s.ios.deployment_target = '9.0'
     s.requires_arc  = true
-    s.swift_version = '4.2'
+    s.swift_version = '5.2'
     
-    s.ios.dependency "NKModalViewManager"
+    s.ios.dependency "NKModalPresenter"
     s.ios.dependency "FrameLayoutKit"
     s.ios.dependency "Sentry"
     s.ios.dependency "UZM3U8Kit"
