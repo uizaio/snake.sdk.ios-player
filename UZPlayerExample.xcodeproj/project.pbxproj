@@ -341,6 +341,9 @@
 				8BC84A9124B70D8E002906F6 /* UZMediaOptionSelectionViewController.swift */,
 				8BC84A9824B70D8E002906F6 /* UZMediaOptionSelectionViewController+.swift */,
 				8BC84A9224B70D8E002906F6 /* UZPlayer.h */,
+				8BC84AB624B70DA4002906F6 /* UZPlayer.swift */,
+				8BC84ABB24B70DA4002906F6 /* UZPlayer+.swift */,
+				8BC84AB724B70DA4002906F6 /* UZPlayer++.swift */,
 				8BC84A9B24B70D8E002906F6 /* UZPlayerControlView.swift */,
 				8BC84A9C24B70D8E002906F6 /* UZPlayerControlView+.swift */,
 				8BC84A9724B70D8E002906F6 /* UZPlayerLayerView.swift */,
@@ -354,9 +357,6 @@
 			isa = PBXGroup;
 			children = (
 				8BC84AB224B70DA4002906F6 /* UZIcons.bundle */,
-				8BC84AB624B70DA4002906F6 /* UZPlayer.swift */,
-				8BC84ABB24B70DA4002906F6 /* UZPlayer+.swift */,
-				8BC84AB724B70DA4002906F6 /* UZPlayer++.swift */,
 				8BC84AB424B70DA4002906F6 /* UZTheme1.swift */,
 				8BC84ABA24B70DA4002906F6 /* UZTheme2.swift */,
 				8BC84AB024B70DA4002906F6 /* UZTheme3.swift */,

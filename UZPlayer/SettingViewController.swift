@@ -76,7 +76,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
                 let toogle = UISwitch(frame: CGRect.zero)
                 toogle.tag = settingItem.tag.rawValue
                 toogle.isOn = settingItem.initValue as? Bool ?? false
-                toogle.addTarget(self, action: #selector(onToggleAction(_:)), for: .valueChanged)
+                toogle.addTarget(self, action: #selector(onToggleAction), for: .valueChanged)
                 cell.accessoryView = toogle
                 break
             case .number:

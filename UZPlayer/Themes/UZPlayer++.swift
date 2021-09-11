@@ -56,8 +56,6 @@ extension UZPlayer {
             } else {
                 pictureInPictureController?.startPictureInPicture()
             }
-        } else {
-            
         }
     }
 }

@@ -106,9 +106,7 @@ open class UZTheme6: UZPlayerTheme {
 	func setupLayout() {
 		guard let controlView = controlView else { return }
 		
-		controlView.allControlViews.forEach { (view) in
-			frameLayout.addSubview(view)
-		}
+		controlView.allControlViews.forEach { frameLayout.addSubview($0) }
 		
 		frameLayout.isUserInteractionEnabled = true
 		topGradientLayer.colors = [UIColor(white: 0.0, alpha: 0.8).cgColor, UIColor(white: 0.0, alpha: 0.0).cgColor]
@@ -167,14 +165,10 @@ open class UZTheme6: UZPlayerTheme {
 		
 		blurView.frame = frameLayout.lastFrameLayout?.frame ?? .zero
 		
-		if let controlView = controlView {
-			let viewSize = rect.size
-			controlView.timeSlider.frame = CGRect(x: 0, y: viewSize.height - (frameLayout.lastFrameLayout?.frame.size.height ?? viewSize.height) - 8, width: viewSize.width, height: 16)
-		}
-		
 		guard let controlView = controlView else { return }
 		
 		let viewSize = controlView.bounds.size
+		controlView.timeSlider.frame = CGRect(x: 0, y: viewSize.height - (frameLayout.lastFrameLayout?.frame.size.height ?? viewSize.height) - 8, width: viewSize.width, height: 16)
 		
 		if !controlView.liveBadgeView.isHidden {
 			let badgeSize = controlView.liveBadgeView.sizeThatFits(viewSize)

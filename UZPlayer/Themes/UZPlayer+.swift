@@ -308,43 +308,39 @@ extension UZPlayer {
     }
     
     open func showSettings() {
-        
-        if let window = UIApplication.shared.windows.first,
-            let viewController = window.rootViewController {
-            var settingItems = [SettingItem]()
-            // VOD
-            if !isLive() {
-                print("currentBitrate = \(currentBitrate())")
-                if let videoStreams = currentVideo?.streams,
-                    videoStreams.count > 0 {
-                      settingItems.append(SettingItem(tag: .quality, type: .array, initValue:
-                        Float(currentBitrate()), streamItems: videoStreams))
-                }
-                // audio
-                if let audioOptions = audioOptions,
-                    audioOptions.count > 0 {
-                      settingItems.append(SettingItem(tag: .audio, type: .array, initValue: currentAudioOption(),  childItems: audioOptions))
-                }
-                // subtitles
-                if let subtitleOptions = subtitleOptions,
-                    subtitleOptions.count > 0 {
-                      settingItems.append(SettingItem(tag: .captions, type: .array, initValue: currentSubtileOption(), childItems: subtitleOptions))
-                }
-                // speed rate
-                settingItems.append(SettingItem(tag: .speedRate, type: .array, initValue: playerLayer?.currentSpeedRate().rawValue ?? UZSpeedRate.normal.rawValue))
-            }
-//            #if DEBUG
-//            settingItems.append(SettingItem(tag: .stats))
-//            #endif
-            if isTimeshiftSupport() {
-                settingItems.append(SettingItem(tag: .timeshift, type: .bool, initValue: isTimeshiftOn()))
-            }
-            let settingViewController = SettingViewController(settingItems: settingItems)
-            settingViewController.delegate = self
-            let navigationController = BottomSheetNavigationController(rootViewController: settingViewController)
-            navigationController.navigationBar.isTranslucent = false
-            viewController.topPresented()?.present(navigationController, animated: true)
-        }
+		guard let window = UIApplication.shared.windows.first, let viewController = window.rootViewController else { return }
+		var settingItems = [SettingItem]()
+		// VOD
+		if !isLive() {
+			print("currentBitrate = \(currentBitrate())")
+			if let videoStreams = currentVideo?.streams,
+			   videoStreams.count > 0 {
+				settingItems.append(SettingItem(tag: .quality, type: .array, initValue:
+													Float(currentBitrate()), streamItems: videoStreams))
+			}
+			// audio
+			if let audioOptions = audioOptions,
+			   audioOptions.count > 0 {
+				settingItems.append(SettingItem(tag: .audio, type: .array, initValue: currentAudioOption(),  childItems: audioOptions))
+			}
+			// subtitles
+			if let subtitleOptions = subtitleOptions,
+			   subtitleOptions.count > 0 {
+				settingItems.append(SettingItem(tag: .captions, type: .array, initValue: currentSubtileOption(), childItems: subtitleOptions))
+			}
+			// speed rate
+			settingItems.append(SettingItem(tag: .speedRate, type: .array, initValue: playerLayer?.currentSpeedRate().rawValue ?? UZSpeedRate.normal.rawValue))
+		}
+//		#if DEBUG
+//		settingItems.append(SettingItem(tag: .stats))
+//		#endif
+		if isTimeshiftSupport() { settingItems.append(SettingItem(tag: .timeshift, type: .bool, initValue: isTimeshiftOn())) }
+		
+		let settingViewController = SettingViewController(settingItems: settingItems)
+		settingViewController.delegate = self
+		let navigationController = BottomSheetNavigationController(rootViewController: settingViewController)
+		navigationController.navigationBar.isTranslucent = false
+		viewController.topPresented()?.present(navigationController, animated: true)
     }
 }
 
@@ -386,20 +382,16 @@ extension UZPlayer: UZSettingViewDelegate {
         }
     }
     
-    public func settingRow(didSelected tag: UZSettingTag, value: AVMediaSelectionOption?) {
-        switch tag {
-        case .audio:
-            changeAudioSelect(option: value)
-            break
-        case .captions:
-            changeSubtitleSelect(option: value)
-            break
-        default:
-            #if DEBUG
-            print("[UZPlayer] Unhandled Action")
-            #endif
-        }
-    }
+	public func settingRow(didSelected tag: UZSettingTag, value: AVMediaSelectionOption?) {
+		switch tag {
+			case .audio: changeAudioSelect(option: value)
+			case .captions: changeSubtitleSelect(option: value)
+			default:
+				#if DEBUG
+				print("[UZPlayer] Unhandled Action")
+				#endif
+		}
+	}
 }
 
 // MARK: - UZPlayerControlViewDelegate
@@ -414,9 +406,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
     open func controlView(controlView: UZPlayerControlView, didSelectButton button: UIButton) {
         if let action = UZButtonTag(rawValue: button.tag) {
             switch action {
-            case .back:
-                    backBlock?(true)
-                break
+            case .back: backBlock?(true)
             case .play:
                 if button.isSelected {
                     pause()
@@ -430,29 +420,15 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                         play()
                     }
                 }
-                break
             case .pause:
                 pause()
                 isPauseByUser = true
-                break
-            case .replay:
-                replay()
-                break
-            case .forward:
-                seek(offset: DEFAULT_SEEK_FORWARD)
-                break
-            case .backward:
-                seek(offset: DEFAULT_SEEK_BACKWARD)
-                break
-            case .next:
-                nextVideo()
-                break
-            case .previous:
-                previousVideo()
-                break
-            case .fullscreen:
-                fullscreenBlock?(nil)
-                break
+            case .replay: replay()
+            case .forward: seek(offset: DEFAULT_SEEK_FORWARD)
+            case .backward: seek(offset: DEFAULT_SEEK_BACKWARD)
+            case .next: nextVideo()
+            case .previous: previousVideo()
+            case .fullscreen: fullscreenBlock?(nil)
             case .volume:
                 if let avPlayer = avPlayer {
                     avPlayer.isMuted = !avPlayer.isMuted
@@ -466,15 +442,9 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                     button.isEnabled = true
                 }
                 break
-            case .pip:
-                togglePiP()
-                break
-            case .settings:
-                showSettings()
-                break
-            case .caption:
-                showMediaOptionSelector()
-                break
+            case .pip: togglePiP()
+            case .settings: showSettings()
+            case .caption: showMediaOptionSelector()
             case .casting:
                 if button.isSelected {
                     showCastDisconnectConfirmation(at: button)
@@ -493,9 +463,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                     }
                 }
 				break
-			case .live:
-				seekToLive()
-                break
+			case .live: seekToLive()
             default:
                 #if DEBUG
                 print("[UZPlayer] Unhandled Action")
@@ -511,9 +479,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
         let castingManager = UZCastingManager.shared
         if castingManager.hasConnectedSession {
             switch event {
-            case .touchDown:
-                isSliderSliding = true
-                
+            case .touchDown: isSliderSliding = true
             case .touchUpInside :
                 isSliderSliding = false
                 let targetTime = totalDuration * Double(slider.value)
@@ -531,8 +497,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                     })
                 }
                 
-            default:
-                break
+            default: break
             }
             
             return
@@ -571,8 +536,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                 })
             }
             
-        default:
-            break
+        default: break
         }
     }
     

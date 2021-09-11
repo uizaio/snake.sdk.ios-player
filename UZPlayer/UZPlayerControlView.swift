@@ -60,16 +60,12 @@ open class UZPlayerControlView: UIView {
 		willSet {
 			cancelAutoFadeOutAnimation()
 			showControlView()
-			
-			if let allButtons = theme?.allButtons() {
-				for button in allButtons {
-					button.removeTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
-				}
-			}
-			
+			endscreenView.allButtons.forEach { $0.removeTarget(self, action: #selector(onButtonPressed), for: .touchUpInside) }
+			theme?.allButtons().forEach { $0.removeTarget(self, action: #selector(onButtonPressed), for: .touchUpInside) }
 			theme?.cleanUI()
 			resetSkin()
 			resetLayout()
+			theme?.controlView = nil
 		}
 		
 		didSet {
@@ -79,21 +75,12 @@ open class UZPlayerControlView: UIView {
 			
 			addSubview(endscreenView)
 			
-			if let allButtons = theme?.allButtons() {
-				for button in allButtons {
-					button.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
-				}
-			}
+			theme?.allButtons().forEach { $0.addTarget(self, action: #selector(onButtonPressed), for: .touchUpInside) }
+			endscreenView.allButtons.forEach { $0.addTarget(self, action: #selector(onButtonPressed), for: .touchUpInside) }
 			
-			if let allButtons = endscreenView.allButtons {
-				for button in allButtons {
-					button.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
-				}
-			}
-			
-			timeSlider.addTarget(self, action: #selector(progressSliderTouchBegan(_:)), for: .touchDown)
-			timeSlider.addTarget(self, action: #selector(progressSliderValueChanged(_:)), for: .valueChanged)
-			timeSlider.addTarget(self, action: #selector(progressSliderTouchEnded(_:)), for: [.touchUpInside, .touchCancel, .touchUpOutside])
+			timeSlider.addTarget(self, action: #selector(progressSliderTouchBegan), for: .touchDown)
+			timeSlider.addTarget(self, action: #selector(progressSliderValueChanged), for: .valueChanged)
+			timeSlider.addTarget(self, action: #selector(progressSliderTouchEnded), for: [.touchUpInside, .touchCancel, .touchUpOutside])
 			
 			autoFadeOutControlView(after: autoHideControlsInterval)
 		}
@@ -147,19 +134,11 @@ open class UZPlayerControlView: UIView {
 	
 	fileprivate var timer: Timer?
 	
-	open lazy var allButtons: [UIButton] = {
-		return [backButton, helpButton, ccButton, relateButton, playlistButton, settingsButton, fullscreenButton,
-				playpauseCenterButton, playpauseButton, forwardButton, backwardButton, nextButton,
-				previousButton, volumeButton, pipButton, castingButton, logoButton]
-	}()
-	
-	open lazy var allLabels: [UILabel] = {
-		return [titleLabel, currentTimeLabel, totalTimeLabel, remainTimeLabel]
-	}()
-    
-	open lazy var allControlViews: [UIView] = {
-		return allButtons + allLabels + [airplayButton, timeSlider, liveBadgeView]
-	}()
+	open lazy var allButtons: [UIButton] = [backButton, helpButton, ccButton, relateButton, playlistButton, settingsButton, fullscreenButton,
+											playpauseCenterButton, playpauseButton, forwardButton, backwardButton, nextButton,
+											previousButton, volumeButton, pipButton, castingButton, logoButton]
+	open lazy var allLabels: [UILabel] = [titleLabel, currentTimeLabel, totalTimeLabel, remainTimeLabel]
+	open lazy var allControlViews: [UIView] = { allButtons + allLabels + [airplayButton, timeSlider, liveBadgeView] }()
 	
 	// MARK: -
 	
@@ -185,13 +164,10 @@ open class UZPlayerControlView: UIView {
 		totalTimeLabel.text = "--:--"
 		remainTimeLabel.text = "--:--"
 		
-		if timeSlider == nil {
-			timeSlider = UZSlider()
-		}
-		
+		if timeSlider == nil { timeSlider = UZSlider() }
 		timeSlider.maximumValue = 1.0
 		timeSlider.minimumValue = 0.0
-		timeSlider.value        = 0.0
+		timeSlider.value = 0.0
 		timeSlider.maximumTrackTintColor = UIColor.clear
 		
 		if #available(iOS 8.2, *) {
@@ -227,14 +203,14 @@ open class UZPlayerControlView: UIView {
 		logoButton.tag = UZButtonTag.logo.rawValue
 		liveBadgeView.liveBadge.tag = UZButtonTag.live.rawValue
         
-		allButtons.forEach { (button) in
-			button.imageView?.contentMode = .scaleAspectFit
-			button.showsTouchWhenHighlighted = true
-			button.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
+		allButtons.forEach {
+			$0.imageView?.contentMode = .scaleAspectFit
+			$0.showsTouchWhenHighlighted = true
+			$0.addTarget(self, action: #selector(onButtonPressed), for: .touchUpInside)
 		}
 		
 		liveBadgeView.liveBadge.showsTouchWhenHighlighted = true
-		liveBadgeView.liveBadge.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
+		liveBadgeView.liveBadge.addTarget(self, action: #selector(onButtonPressed), for: .touchUpInside)
 		
 		endscreenView.isHidden = true
 		liveBadgeView.isHidden = true
@@ -244,9 +220,7 @@ open class UZPlayerControlView: UIView {
 	}
     
     open func setDefaultThemeIcon() {
-
         guard let imagePath = Bundle(for: Self.self).uzIconPath() else { return }
-        
         let imageBundle = Bundle(path: imagePath)
         
         backButton.setImage(imageBundle?.getUZImage(named: "ic_close"), for: .normal)
@@ -255,9 +229,7 @@ open class UZPlayerControlView: UIView {
         fullscreenButton.setImage(imageBundle?.getUZImage(named: "ic_minimize"), for: .selected)
         forwardButton.setImage(imageBundle?.getUZImage(named: "ic_forward"), for: .normal)
         backwardButton.setImage(imageBundle?.getUZImage(named: "ic_backward"), for: .normal)
-//        let thumbIcon = UIImage(named: "ic_thumb", in: imageBundle, compatibleWith: nil)
-        let thumbIcon = UIImage(icon: .fontAwesomeSolid(.circle), size: CGSize(width: 18, height: 18), textColor: .red, backgroundColor: .clear)
-        timeSlider.setThumbImage(thumbIcon, for: .normal)
+        timeSlider.setThumbImage(UIImage(icon: .fontAwesomeSolid(.circle), size: CGSize(width: 18, height: 18), textColor: .red, backgroundColor: .clear), for: .normal)
         volumeButton.setImage(UIImage(icon: .fontAwesomeSolid(.volumeUp), size: CGSize(width: 24, height: 24), textColor: .white, backgroundColor: .clear), for: .normal)
         volumeButton.setImage(UIImage(icon: .icofont(.volumeMute), size: CGSize(width: 24, height: 24), textColor: .white, backgroundColor: .clear), for: .selected)
     }
@@ -265,11 +237,11 @@ open class UZPlayerControlView: UIView {
 	// MARK: - Skins
 	
 	func resetSkin() {
-		for button in allButtons {
-			button.setImage(nil, for: .normal)
-			button.setImage(nil, for: .highlighted)
-			button.setImage(nil, for: .selected)
-			button.setImage(nil, for: .disabled)
+		allButtons.forEach {
+			$0.setImage(nil, for: .normal)
+			$0.setImage(nil, for: .highlighted)
+			$0.setImage(nil, for: .selected)
+			$0.setImage(nil, for: .disabled)
 		}
 		
 		liveBadgeView.liveBadge.images[.normal] = nil
@@ -282,9 +254,9 @@ open class UZPlayerControlView: UIView {
 		timeSlider.setThumbImage(nil, for: .selected)
 		timeSlider.setThumbImage(nil, for: .disabled)
 		
-		timeSlider.removeTarget(self, action: #selector(progressSliderTouchBegan(_:)), for: .touchDown)
-		timeSlider.removeTarget(self, action: #selector(progressSliderValueChanged(_:)), for: .valueChanged)
-		timeSlider.removeTarget(self, action: #selector(progressSliderTouchEnded(_:)), for: [.touchUpInside, .touchCancel, .touchUpOutside])
+		timeSlider.removeTarget(self, action: #selector(progressSliderTouchBegan), for: .touchDown)
+		timeSlider.removeTarget(self, action: #selector(progressSliderValueChanged), for: .valueChanged)
+		timeSlider.removeTarget(self, action: #selector(progressSliderTouchEnded), for: [.touchUpInside, .touchCancel, .touchUpOutside])
 		
 		loadingIndicatorView?.removeFromSuperview()
 		loadingIndicatorView = nil
@@ -293,15 +265,9 @@ open class UZPlayerControlView: UIView {
 	}
 	
 	func resetLayout() {
-		func removeAllSubviews(from targetView: UIView?) {
-			if let targetView = targetView {
-				for view in targetView.subviews {
-					view.removeFromSuperview()
-				}
-			}
-		}
-		
-		removeAllSubviews(from: containerView)
+		allControlViews.forEach { $0.removeFromSuperview() }
+		containerView.subviews.forEach { $0.removeFromSuperview() }
+		containerView.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
 	}
 	
 	// MARK: -

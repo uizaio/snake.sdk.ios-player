@@ -113,9 +113,7 @@ open class UZTheme1: UZPlayerTheme {
 	func setupLayout() {
 		guard let controlView = controlView else { return }
 
-		controlView.allControlViews.forEach { (view) in
-			frameLayout.addSubview(view)
-		}
+		controlView.allControlViews.forEach { frameLayout.addSubview($0) }
 		
 		frameLayout.isUserInteractionEnabled = true
 		topGradientLayer.colors = [UIColor(white: 0.0, alpha: 0.8).cgColor, UIColor(white: 0.0, alpha: 0.0).cgColor]
