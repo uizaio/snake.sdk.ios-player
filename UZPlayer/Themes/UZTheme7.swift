@@ -133,9 +133,9 @@ open class UZTheme7: UZPlayerTheme {
 		}
 		frameLayout + ZStackLayout {
 			$0 + HStackLayout {
-				$0 + [controlView.settingsButton, controlView.castingButton, controlView.pipButton, controlView.volumeButton]
+				$0 + [controlView.settingsButton, controlView.castingButton, controlView.pipButton]
 				($0 + 0).flexible()
-				$0 + [controlView.playlistButton, controlView.fullscreenButton]
+				$0 + [controlView.playlistButton, controlView.volumeButton, controlView.fullscreenButton]
 				
 				$0.spacing = 10
 				$0.padding(top: 10, left: 10, bottom: 20, right: 10)
@@ -144,10 +144,9 @@ open class UZTheme7: UZPlayerTheme {
 			$0 + HStackLayout {
 				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { $0.alignment = (.center, .center) }
 				$0.distribution = .center
-				$0.fixedHeight = 60
 			}
 			
-			$0.fixedHeight = 60
+			$0.fixedHeight = 50
 		}
 		
 		controlView.containerView.addSubview(blurView)

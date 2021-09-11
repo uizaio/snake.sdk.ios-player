@@ -128,18 +128,25 @@ open class UZTheme6: UZPlayerTheme {
 			$0.distribution = .center
 			$0.flexible()
 		}
-		frameLayout + HStackLayout {
-			$0 + [controlView.settingsButton, controlView.castingButton, controlView.pipButton]
+		frameLayout + ZStackLayout {
+			$0 + HStackLayout {
+				$0 + [controlView.settingsButton, controlView.castingButton, controlView.pipButton]
+				$0.distribution = .left
+				$0.spacing = 10
+			}
 			$0 + HStackLayout {
 				($0 + [controlView.backwardButton, controlView.previousButton, controlView.playpauseButton, controlView.nextButton, controlView.forwardButton]).forEach { $0.alignment = (.center, .center) }
 				$0.alignment = (.center, .center)
 				$0.distribution = .center
 				$0.flexible()
 			}
-			$0 + [controlView.playlistButton, controlView.fullscreenButton]
+			$0 + HStackLayout {
+				$0 + [controlView.playlistButton, controlView.fullscreenButton]
+				$0.distribution = .right
+				$0.spacing = 10
+			}
 			
 			$0.fixedHeight = 50
-			$0.spacing = 10
 			$0.padding(top: 0, left: 10, bottom: 0, right: 10)
 		}
 		

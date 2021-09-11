@@ -28,9 +28,11 @@ public class MoviePlayerViewController: UZFloatingPlayerViewController {
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		view.backgroundColor = .white
+		
 		label.numberOfLines = 0
-		label.font = .systemFont(ofSize: 15, weight: .regular)
-		label.textColor = .white
+		label.font = .systemFont(ofSize: 13, weight: .regular)
+		label.textColor = .black
 		label.textAlignment = .center
 		label.text = """
 		Drag down to enter floating mode.
@@ -39,8 +41,9 @@ public class MoviePlayerViewController: UZFloatingPlayerViewController {
 		"""
 		
 		themeButton.title = "Switch Theme"
-		themeButton.titleColors[.normal] = .white
-		themeButton.borderColors[.normal] = .white
+		themeButton.titleFonts[.normal] = .systemFont(ofSize: 13, weight: .regular)
+		themeButton.titleColors[.normal] = .black
+		themeButton.borderColors[.normal] = .black
 		themeButton.borderSizes[.normal] = 1
 		themeButton.cornerRadius = 8
 		themeButton.extendSize = CGSize(width: 10, height: 6)

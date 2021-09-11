@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
+		view.backgroundColor = .lightGray
 		UZPlayerSDK.initWith(enviroment: .production)
 		
 		askForURL()
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
 		
 		let videoItem = UZVideoItem(name: nil, thumbnailURL: nil, linkPlay: UZVideoLinkPlay(definition: "", url: url))
 		let floatPlayer = MoviePlayerViewController()
-		floatPlayer.present(with: videoItem, playlist: nil).player.controlView.theme = UZTheme1()
+		floatPlayer.present(with: videoItem, playlist: nil).player.controlView.theme = UZTheme5()
 		floatPlayer.delegate = self
 	}
 	
