@@ -15,8 +15,6 @@ public class MoviePlayerViewController: UZFloatingPlayerViewController {
 	let themeButton = NKButton()
 	let contentLayout = VStackLayout()
 	
-	let themes: [UZPlayerTheme] = [UZTheme1(), UZTheme2(), UZTheme3(), UZTheme4(), UZTheme5(), UZTheme6(), UZTheme7()]
-	
 	var topPadding: CGFloat {
 		get { frameLayout.edgeInsets.top }
 		set {
@@ -68,6 +66,8 @@ public class MoviePlayerViewController: UZFloatingPlayerViewController {
 	}
 	
 	@objc func switchTheme() {
+		let themes: [UZPlayerTheme] = [UZTheme1(), UZTheme2(), UZTheme3(), UZTheme4(), UZTheme5(), UZTheme6(), UZTheme7()]
+		
 		if playerViewController.player.controlView.theme?.id == themes.last?.id {
 			playerViewController.player.controlView.theme = themes.first
 		}
