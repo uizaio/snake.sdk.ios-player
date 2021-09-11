@@ -27,7 +27,7 @@ import GoogleInteractiveMediaAds
 import GoogleCast
 #endif
 
-let PLAYER_VERSION = "1.0"
+let PLAYER_VERSION = "2.0"
 
 
 let DEFAULT_SEEK_FORWARD: TimeInterval = TimeInterval(10)
