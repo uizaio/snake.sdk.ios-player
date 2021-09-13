@@ -31,10 +31,15 @@ open class UZPlayerViewController: UIViewController {
 		set { setFullscreen(fullscreen: newValue) }
 	}
 	
+	private var lastFrame: CGRect = .zero
+	private var lastSuperview: UIView? = nil
 	open func setFullscreen(fullscreen: Bool, completion: (() -> Void)? = nil) {
 		UZLogger.shared.log(event: "fullscreenchange")
 		if fullscreen {
 			if !isFullscreen {
+				lastFrame = playerController.player.superview?.frame ?? playerController.player.frame
+				lastSuperview = playerController.player.superview
+				
 				playerController.presentAsModal()
 				
 				UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
@@ -57,16 +62,17 @@ open class UZPlayerViewController: UIViewController {
 			view.setNeedsLayout()
 			UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
 				self.playerController.player.transform = CGAffineTransform.identity
+				self.playerController.player.frame = self.lastFrame
 				self.playerController.player.layoutSubviews()
 				self.view.layoutIfNeeded()
-			}, completion: nil)
-			
-			playerController.player.controlView.updateUI(false)
-			playerController.dismissModal(animated: true) { [weak self] in
-				self?.onOrientationUpdateRequestBlock?(false)
-				self?.viewDidLayoutSubviews()
-				completion?()
-			}
+			}, completion: { finished in
+				self.playerController.player.controlView.updateUI(false)
+				self.playerController.dismissModal(animated: false) { [weak self] in
+					self?.onOrientationUpdateRequestBlock?(false)
+					self?.viewDidLayoutSubviews()
+					completion?()
+				}
+			})
 		}
 	}
 	
@@ -157,9 +163,8 @@ internal class UZPlayerController: UIViewController {
 	
 	// MARK: -
 	
-	override var prefersStatusBarHidden: Bool {
-		return true
-	}
+	override var prefersStatusBarHidden: Bool { true }
+	override var prefersHomeIndicatorAutoHidden: Bool { true }
 	
 	override var shouldAutorotate: Bool {
 		let videoSize = currentVideoSize()

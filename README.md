@@ -1,8 +1,3 @@
-<p align="center">
-<img src="https://d3co7cvuqq9u2k.cloudfront.net/public/image/logo/snake_logo_color.png" data-canonical-src="https://uiza.io" width="450" height="220" />
-</p>
-
-
 [![License BSD](https://img.shields.io/badge/license-BSD-AB2B28.svg?style=flat)](https://raw.githubusercontent.com/uizaio/uiza-android-broadcast-sdk/master/LICENSE)&nbsp;
 [![Version](https://img.shields.io/cocoapods/v/UZPlayer.svg?style=flat&color=EE3322)](http://cocoapods.org/pods/UZPlayer)
 [![Build Status](https://travis-ci.org/uizaio/snake.sdk.ios-player.svg?branch=master)](https://travis-ci.org/uizaio/snake.sdk.ios-player)

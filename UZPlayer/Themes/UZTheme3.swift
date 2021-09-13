@@ -149,7 +149,7 @@ open class UZTheme3: UZPlayerTheme {
 			$0.padding(top: 0, left: 10, bottom: 0, right: 10)
 			controlView.containerView.insertSubview($0, at: 0)
 		}).with {
-			$0.horizontalAlignment = .center
+			$0.alignment.horizontal = .center
 			$0.padding(top: 0, left: 20, bottom: 20, right: 20)
 		}
 		

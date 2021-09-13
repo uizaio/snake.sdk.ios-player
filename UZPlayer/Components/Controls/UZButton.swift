@@ -158,20 +158,20 @@ open class UZButton: UIButton {
 	
 	/** Text Horizontal Alignment */
 	open var textHorizontalAlignment: NKContentHorizontalAlignment {
-		get { labelFrame.horizontalAlignment }
+		get { labelFrame.alignment.horizontal }
 		set {
 			resetLabelAlignment()
-			labelFrame.horizontalAlignment = newValue
+			labelFrame.alignment.horizontal = newValue
 			setNeedsLayout()
 		}
 	}
 	
 	/** Text Vertical Alignment */
 	open var textVerticalAlignment: NKContentVerticalAlignment {
-		get { labelFrame.verticalAlignment }
+		get { labelFrame.alignment.vertical }
 		set {
 			resetLabelAlignment()
-			labelFrame.verticalAlignment = newValue
+			labelFrame.alignment.vertical = newValue
 			setNeedsLayout()
 		}
 	}

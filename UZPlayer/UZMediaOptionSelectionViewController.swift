@@ -95,7 +95,7 @@ class UZMediaOptionSelectionViewController: UIViewController {
 			screenSize.width = min(320, screenSize.width * 0.8)
 			screenSize.height = min(min(400, screenSize.height * 0.8),
                                     CGFloat(self.collectionViewController.audioOptions.count * 50) +
-                                        CGFloat(self.collectionViewController.subtitleOptions.count * 50) + 130)
+									CGFloat(self.collectionViewController.subtitleOptions.count * 50) + 130)
 			return frameLayout.sizeThatFits(screenSize)
 		}
 		set {

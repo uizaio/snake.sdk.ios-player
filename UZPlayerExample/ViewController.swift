@@ -11,13 +11,27 @@ import UIKit
 
 class ViewController: UIViewController {
 	
+	let playerViewController = UZPlayerViewController()
+	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
 		view.backgroundColor = .lightGray
-		UZPlayerSDK.initWith(enviroment: .production)
+		
+		playerViewController.modalPresentationStyle = .fullScreen
+//		playerViewController.player.aspectRatio = .aspectFill
+		playerViewController.player.controlView.theme = UZTheme1()
+		playerViewController.player.isHidden = true
+		view.addSubview(playerViewController.view)
 		
 		askForURL()
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		let viewSize = view.bounds.size
+		let playerSize = CGSize(width: viewSize.width, height: viewSize.width * 9/16)
+		playerViewController.view.frame = CGRect(x: 0, y: 100, width: playerSize.width, height: playerSize.height)
 	}
 	
 /// UserDefaults.standard.string(forKey: "last_url") ?? "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
@@ -38,6 +52,18 @@ class ViewController: UIViewController {
 			if let string = alertController.textFields?.first?.text, !string.isEmpty {
 				UserDefaults.standard.set(string, forKey: "last_url")
 				alertController.dismiss(animated: true, completion: nil)
+				self?.presentPlayer(urlPath: string)
+			}
+			else {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+					self?.askForURL()
+				}
+			}
+		}))
+		alertController.addAction(UIAlertAction(title: "Play as Float Player", style: .default, handler: { [weak self] (action) in
+			if let string = alertController.textFields?.first?.text, !string.isEmpty {
+				UserDefaults.standard.set(string, forKey: "last_url")
+				alertController.dismiss(animated: true, completion: nil)
 				self?.presentFloatingPlayer(urlPath: string)
 			}
 			else {
@@ -51,13 +77,8 @@ class ViewController: UIViewController {
 	
 	func presentPlayer(urlPath: String) {
 		guard let url = URL(string: urlPath) else { return }
-		
-		let playerViewController = UZPlayerViewController()
-		playerViewController.modalPresentationStyle = .fullScreen
-//		playerViewController.player.aspectRatio = .aspectFill
-        playerViewController.player.controlView.theme = UZTheme1()
+		playerViewController.player.isHidden = false
         playerViewController.player.loadVideo(url: url)
-        present(playerViewController, animated: true, completion: nil)
 	}
 	
 	func presentFloatingPlayer(urlPath: String) {
@@ -73,17 +94,17 @@ class ViewController: UIViewController {
 		return true
 	}
 	
-	override open var shouldAutorotate: Bool {
-		return false
-	}
-	
-	override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : UIApplication.shared.statusBarOrientation
-	}
-	
-	override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : .all
-	}
+//	override open var shouldAutorotate: Bool {
+//		return false
+//	}
+//	
+//	override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+//		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : UIApplication.shared.statusBarOrientation
+//	}
+//	
+//	override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : .all
+//	}
 	
 }
 
