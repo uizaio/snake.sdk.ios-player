@@ -24,18 +24,14 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 	
 	public var playerViewController: UZPlayerViewController! {
 		didSet {
-			if player != nil {
-				player!.videoChangedBlock = nil
-				player!.backBlock = nil
-				player!.removeFromSuperview()
-				player = nil
+			if let oldPlayer = oldValue?.player {
+				oldPlayer.videoChangedBlock = nil
+				oldPlayer.backBlock = nil
+				oldPlayer.removeFromSuperview()
 			}
 			
-			playerViewController.fullscreenPresentationMode = .modal
 			playerViewController.autoFullscreenWhenRotateDevice = true
-			
-			player = playerViewController.player
-			player?.backBlock = { [weak self] (_) in
+			playerViewController.player.backBlock = { [weak self] (_) in
 				guard let self = self else { return }
 				
 				if self.playerViewController.isFullscreen {
@@ -50,7 +46,7 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 			}
 		}
 	}
-	public private(set) var player: UZPlayer?
+	public var player: UZPlayer? { playerViewController.player }
 	public let detailsContainerView = UIView()
 	public var playerRatio: CGFloat = 9/16
 	public var autoDetectPortraitVideo = false
@@ -85,21 +81,21 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 				return
 			}
 			
-			if player?.playlist != videoItems {
-				if let floatingHandler = floatingHandler {
-					if floatingHandler.isFloatingMode {
-						floatingHandler.backToNormalState()
-						
-						DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-							self.view.setNeedsLayout()
-						}
+			guard player?.playlist != videoItems else { return }
+			
+			if let floatingHandler = floatingHandler {
+				if floatingHandler.isFloatingMode {
+					floatingHandler.backToNormalState()
+					
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+						self.view.setNeedsLayout()
 					}
 				}
-				
-				player?.playlist = videoItems
-				if let videoItem = videoItems.first {
-					player?.loadVideo(videoItem)
-				}
+			}
+			
+			player?.playlist = videoItems
+			if let videoItem = videoItems.first {
+				player?.loadVideo(videoItem)
 			}
 		}
 	}
@@ -133,12 +129,7 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 	
 	@discardableResult
 	open func present(with videoItem: UZVideoItem? = nil, playlist: [UZVideoItem]? = nil) -> UZPlayerViewController {
-		if playerViewController == nil {
-			playerViewController = UZPlayerViewController()
-		}
-//		playerViewController.onOrientationUpdateRequestBlock = { fullscreen in
-//		}
-		
+		if playerViewController == nil { playerViewController = UZPlayerViewController() }
 		if playerWindow == nil {
 			modalPresentationStyle = .overCurrentContext
 			
@@ -168,7 +159,6 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 	
 	override open func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
 		player?.stop()
-		player = nil
 		
 		floatingHandler?.delegate = nil
 		floatingHandler = nil

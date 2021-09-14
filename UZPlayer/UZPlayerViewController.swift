@@ -9,23 +9,12 @@
 import UIKit
 import NKModalPresenter
 
-public enum UZFullscreenPresentationMode {
-	case modal
-	case fullscreen
-}
-
 open class UZPlayerViewController: UIViewController {
 	internal let playerController = UZPlayerController()
-	open var player: UZPlayer {
-		get { playerController.player }
-		set { playerController.player = newValue }
-	}
+	public var player: UZPlayer { playerController.player }
 	
-	open var fullscreenPresentationMode: UZFullscreenPresentationMode = .modal
 	open var autoFullscreenWhenRotateDevice = true
-	open var autoFullscreenDelay: TimeInterval = 0.3
-	var onOrientationUpdateRequestBlock: ((Bool) -> Void)?
-	
+	open var autoFullscreenDelay: TimeInterval = 0.3	
 	open var isFullscreen: Bool {
 		get { playerController.modalController != nil }
 		set { setFullscreen(fullscreen: newValue) }
@@ -55,7 +44,6 @@ open class UZPlayerViewController: UIViewController {
 				playerController.player.controlView.updateUI(true)
 			} else {
 				UIViewController.attemptRotationToDeviceOrientation()
-				onOrientationUpdateRequestBlock?(true)
 				completion?()
 			}
 		} else if isFullscreen {
@@ -68,7 +56,6 @@ open class UZPlayerViewController: UIViewController {
 			}, completion: { finished in
 				self.playerController.player.controlView.updateUI(false)
 				self.playerController.dismissModal(animated: false) { [weak self] in
-					self?.onOrientationUpdateRequestBlock?(false)
 					self?.viewDidLayoutSubviews()
 					completion?()
 				}
@@ -115,17 +102,9 @@ open class UZPlayerViewController: UIViewController {
 	
 	// MARK: -
 	
-	override open var prefersStatusBarHidden: Bool {
-		return true
-	}
-	
-	override open var shouldAutorotate: Bool {
-		return false
-	}
-	
-	override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-		return .all
-	}
+	override open var prefersStatusBarHidden: Bool { true }
+	override open var shouldAutorotate: Bool { false }
+	override open var supportedInterfaceOrientations: UIInterfaceOrientationMask { .all }
 	
 	override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
 		return playerController.preferredInterfaceOrientationForPresentation
@@ -138,27 +117,15 @@ open class UZPlayerViewController: UIViewController {
 // MARK: - UZPlayerController
 
 internal class UZPlayerController: UIViewController {
-	
-	open var player: UZPlayer! = UZPlayer() {
-		didSet {
-			self.view = player
-		}
-	}
+	let player = UZPlayer()
 	
 	override func loadView() {
-		if player == nil {
-			player = UZPlayer()
-		}
-		
 		self.view = player
 	}
 	
 	fileprivate func currentVideoSize() -> CGSize {
-		if let player = player.playerLayer, let videoRect = player.playerLayer?.videoRect {
-			return videoRect.size
-		}
-		
-		return .zero
+		guard let player = player.playerLayer, let videoRect = player.playerLayer?.videoRect else { return .zero}
+		return videoRect.size
 	}
 	
 	// MARK: -
@@ -192,6 +159,17 @@ internal class UZPlayerController: UIViewController {
 	
 }
 
+extension UZPlayerController: NKModalControllerDelegate {
+	
+	func presentingViewController(modalController: NKModalController) -> UIViewController? { topPresented() }
+	func backgroundColor(modalController: NKModalController) -> UIColor { .clear }
+	func shouldDragToDismiss(modalController: NKModalController) -> Bool { false }
+	func shouldTapOutsideToDismiss(modalController: NKModalController) -> Bool { false }
+	func shouldAvoidKeyboard(modalController: NKModalController) -> Bool { false }
+	
+}
+
+
 /*
 internal class UZPlayerContainerController: UIViewController {
 	
@@ -222,15 +200,3 @@ internal class UZPlayerContainerController: UIViewController {
 	
 }
 */
-
-extension UZPlayerController: NKModalControllerDelegate {
-	
-	func presentingViewController(modalController: NKModalController) -> UIViewController? {
-		return topPresented()
-	}
-	
-	func shouldDragToDismiss(modalController: NKModalController) -> Bool {
-		return false
-	}
-	
-}
