@@ -20,8 +20,6 @@ public protocol UZFloatingPlayerViewDelegate: AnyObject {
 open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandlerProtocol {
 	public private(set) var playerWindow: UIWindow?
 	public let frameLayout = VStackLayout()
-	private var lastKeyWindow: UIWindow?
-	
 	public var playerViewController: UZPlayerViewController! {
 		didSet {
 			if let oldPlayer = oldValue?.player {
@@ -106,6 +104,7 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 	public var onUnfloating: ((UZFloatingPlayerViewController) -> Void)?
 	
 	public private(set) var floatingHandler: NKFloatingViewHandler?
+	private var lastKeyWindow: UIWindow?
 	
 	// MARK: -
 	
@@ -198,11 +197,10 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 	
 	override open func viewDidLoad() {
 		super.viewDidLoad()
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
+//
 		view.clipsToBounds = true
 		view.backgroundColor = UIColor(red: 0.04, green: 0.06, blue: 0.12, alpha: 1.00)
+		
 		view.addSubview(detailsContainerView)
 		view.addSubview(playerViewController.view)
 		view.addSubview(frameLayout)
@@ -232,35 +230,22 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 		frameLayout.layoutIfNeeded()
 	}
 	
-	override open var prefersStatusBarHidden: Bool {
-		return true
-	}
-	
-	override open var shouldAutorotate: Bool {
-		return false //floatingHandler.isFloatingMode == false
-	}
+	override open var prefersStatusBarHidden: Bool { true }
+	override open var shouldAutorotate: Bool { false }
 	
 	override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : UIApplication.shared.statusBarOrientation
+		UIDevice.current.userInterfaceIdiom == .phone ? .portrait : UIApplication.shared.statusBarOrientation
 	}
 	
 	override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-		return UIDevice.current.userInterfaceIdiom == .phone || (floatingHandler?.isFloatingMode ?? false) ? .portrait : .all
+		UIDevice.current.userInterfaceIdiom == .phone || (floatingHandler?.isFloatingMode ?? false) ? .portrait : .all
 	}
 	
 	// MARK: - NKFloatingViewHandlerProtocol
 	
-	open var containerView: UIView! {
-        return view.window!
-	}
-	
-	open var gestureView: UIView! {
-        return view!
-	}
-	
-	open var fullRect: CGRect {
-        return UIScreen.main.bounds
-	}
+	open var containerView: UIView! { view.window! }
+	open var gestureView: UIView! { view! }
+	open var fullRect: CGRect { UIScreen.main.bounds }
 	
 	open func floatingRect(for position: NKFloatingPosition) -> CGRect {
 		let screenSize = UIScreen.main.bounds.size
@@ -336,20 +321,15 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 
 open class UZPlayerContainerViewController: UIViewController {
 	
-	override open var prefersStatusBarHidden: Bool {
-		return true
-	}
-	
-	override open var shouldAutorotate: Bool {
-		return false
-	}
+	override open var prefersStatusBarHidden: Bool { true }
+	override open var shouldAutorotate: Bool { false }
 	
 	override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : UIApplication.shared.statusBarOrientation
+		UIDevice.current.userInterfaceIdiom == .phone ? .portrait : UIApplication.shared.statusBarOrientation
 	}
 	
 	override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : .all
+		UIDevice.current.userInterfaceIdiom == .phone ? .portrait : .all
 	}
 	
 }

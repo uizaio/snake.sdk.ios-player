@@ -13,60 +13,36 @@ open class UZPlayerViewController: UIViewController {
 	internal let playerController = UZPlayerController()
 	public var player: UZPlayer { playerController.player }
 	
-	open var autoFullscreenWhenRotateDevice = true
-	open var autoFullscreenDelay: TimeInterval = 0.3	
+	public var autoFullscreenWhenRotateDevice = true
+	public var autoFullscreenDelay: TimeInterval = 0.3
 	open var isFullscreen: Bool {
-		get { playerController.modalController != nil }
+		get { playerController.fullscreenController != nil }
 		set { setFullscreen(fullscreen: newValue) }
 	}
 	
-	private var lastFrame: CGRect = .zero
-	private var lastSuperview: UIView? = nil
 	open func setFullscreen(fullscreen: Bool, completion: (() -> Void)? = nil) {
 		UZLogger.shared.log(event: "fullscreenchange")
 		if fullscreen {
 			if !isFullscreen {
-				lastFrame = playerController.player.superview?.frame ?? playerController.player.frame
-				lastSuperview = playerController.player.superview
-				
-				playerController.presentAsModal()
-				
-				UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-					self.playerController.player.frame = CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.width)
-					self.playerController.player.center = self.view.center
-					self.playerController.player.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
-					self.playerController.player.layoutSubviews()
-					
-				}, completion: { finished in
-					completion?()
-				})
-				
-				playerController.player.controlView.updateUI(true)
+				self.playerController.presentFullscreen()
+//				playerController.player.controlView.updateUI(true)
+//				completion?()
 			} else {
 				UIViewController.attemptRotationToDeviceOrientation()
 				completion?()
 			}
 		} else if isFullscreen {
-			view.setNeedsLayout()
-			UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-				self.playerController.player.transform = CGAffineTransform.identity
-				self.playerController.player.frame = self.lastFrame
-				self.playerController.player.layoutSubviews()
-				self.view.layoutIfNeeded()
-			}, completion: { finished in
-				self.playerController.player.controlView.updateUI(false)
-				self.playerController.dismissModal(animated: false) { [weak self] in
-					self?.viewDidLayoutSubviews()
-					completion?()
-				}
-			})
+			self.playerController.dismissFullscreen(animated: true) { [weak self] in
+				self?.viewDidLayoutSubviews()
+//				completion?()
+			}
 		}
 	}
 	
 	override open func viewDidLoad() {
 		super.viewDidLoad()
 		
-		playerController.player.fullscreenBlock = { [weak self] (fullscreen) in
+		playerController.player.fullscreenToggleBlock = { [weak self] (fullscreen) in
 			guard let self = self else { return }
 			self.isFullscreen = fullscreen ?? !self.isFullscreen
 		}
@@ -121,6 +97,7 @@ internal class UZPlayerController: UIViewController {
 	
 	override func loadView() {
 		self.view = player
+		player.clipsToBounds = true
 	}
 	
 	fileprivate func currentVideoSize() -> CGSize {
@@ -161,42 +138,10 @@ internal class UZPlayerController: UIViewController {
 
 extension UZPlayerController: NKModalControllerDelegate {
 	
-	func presentingViewController(modalController: NKModalController) -> UIViewController? { topPresented() }
+//	func presentingViewController(modalController: NKModalController) -> UIViewController? { topPresented() }
 	func backgroundColor(modalController: NKModalController) -> UIColor { .clear }
 	func shouldDragToDismiss(modalController: NKModalController) -> Bool { false }
 	func shouldTapOutsideToDismiss(modalController: NKModalController) -> Bool { false }
 	func shouldAvoidKeyboard(modalController: NKModalController) -> Bool { false }
 	
 }
-
-
-/*
-internal class UZPlayerContainerController: UIViewController {
-	
-	// MARK: -
-	
-	override var prefersStatusBarHidden: Bool {
-		return true
-	}
-	
-	override var shouldAutorotate : Bool {
-		return true
-	}
-	
-	override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-		return .landscape
-	}
-	
-	override var preferredInterfaceOrientationForPresentation : UIInterfaceOrientation {
-		let deviceOrientation = UIDevice.current.orientation
-		if UIDeviceOrientationIsLandscape(deviceOrientation) {
-			return deviceOrientation == .landscapeRight ? .landscapeLeft : .landscapeRight
-		}
-		else {
-			let currentOrientation = UIApplication.shared.statusBarOrientation
-			return UIInterfaceOrientationIsLandscape(currentOrientation) ? currentOrientation : .landscapeRight
-		}
-	}
-	
-}
-*/

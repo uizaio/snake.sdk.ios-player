@@ -10,7 +10,6 @@ import UIKit
 //import UZPlayer
 
 class ViewController: UIViewController {
-	
 	let playerViewController = UZPlayerViewController()
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -18,8 +17,6 @@ class ViewController: UIViewController {
 		
 		view.backgroundColor = .lightGray
 		
-		playerViewController.modalPresentationStyle = .fullScreen
-//		playerViewController.player.aspectRatio = .aspectFill
 		playerViewController.player.controlView.theme = UZTheme1()
 		playerViewController.player.isHidden = true
 		view.addSubview(playerViewController.view)
@@ -29,6 +26,7 @@ class ViewController: UIViewController {
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
+		guard playerViewController.view.superview == view else { return }
 		let viewSize = view.bounds.size
 		let playerSize = CGSize(width: viewSize.width, height: viewSize.width * 9/16)
 		playerViewController.view.frame = CGRect(x: 0, y: 100, width: playerSize.width, height: playerSize.height)
@@ -90,21 +88,7 @@ class ViewController: UIViewController {
 		floatPlayer.delegate = self
 	}
 	
-	override open var prefersStatusBarHidden: Bool {
-		return true
-	}
-	
-//	override open var shouldAutorotate: Bool {
-//		return false
-//	}
-//	
-//	override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-//		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : UIApplication.shared.statusBarOrientation
-//	}
-//	
-//	override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//		return UIDevice.current.userInterfaceIdiom == .phone ? .portrait : .all
-//	}
+	override open var prefersStatusBarHidden: Bool { true }
 	
 }
 

@@ -10,20 +10,17 @@ import UIKit
 import FrameLayoutKit
 
 open class UZEndscreenView: UIView {
-	public let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-	public let titleLabel = UILabel()
-	public let replayButton = UZButton()
-	public let shareButton = UZButton()
-	internal fileprivate(set)var frameLayout: StackFrameLayout?
+	open lazy var blurView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+	open lazy var titleLabel: UILabel = UILabel()
+	open lazy var replayButton: UZButton = UZButton()
+	open lazy var shareButton: UZButton = UZButton()
 	
-	open var allButtons: [UIButton]! {
-        return [replayButton, shareButton]
-	}
+	let frameLayout = StackFrameLayout(axis: .horizontal)
+	
+	open var allButtons: [UIButton] { [replayButton, shareButton] }
 	
 	open var title: String? {
-		get {
-			return titleLabel.text
-		}
+		get { titleLabel.text }
 		set {
 			titleLabel.text = newValue
 			setNeedsLayout()
@@ -74,22 +71,22 @@ open class UZEndscreenView: UIView {
 //		addSubview(titleLabel)
 		addSubview(replayButton)
 		addSubview(shareButton)
+		addSubview(frameLayout)
 		
-		frameLayout = StackFrameLayout(axis: .horizontal)
-//		frameLayout!.add(titleLabel)
-		frameLayout!.add(replayButton).alignment = (.center, .center)
-		frameLayout!.add(shareButton).alignment = (.center, .center)
-		frameLayout!.spacing = 30
-		frameLayout!.distribution = .center
-		frameLayout!.padding(top: 20, left: 20, bottom: 20, right: 20)
-		addSubview(frameLayout!)
+//		frameLayout + titleLabel
+		(frameLayout + replayButton).alignment = (.center, .center)
+		(frameLayout + shareButton).alignment = (.center, .center)
+		
+		frameLayout.spacing = 30
+		frameLayout.distribution = .center
+		frameLayout.padding(top: 20, left: 20, bottom: 20, right: 20)
 	}
 	
 	override open func layoutSubviews() {
 		super.layoutSubviews()
 		
 		blurView.frame = bounds
-		frameLayout?.frame = bounds
+		frameLayout.frame = bounds
 	}
 	
 }

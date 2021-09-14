@@ -271,7 +271,7 @@ open class UZPlayerLayerView: UIView {
                 playerLayer?.frame = CGRect(x: 0, y: (bounds.height - height)/2, width: bounds.width, height: height)
                 break
             case .sixteen2Ten:
-                let height = bounds.width/(16/10)
+				let height = bounds.width/1.6 //(16/10)
                 playerLayer?.videoGravity = .resize
                 playerLayer?.frame = CGRect(x: 0, y: (bounds.height - height)/2, width: bounds.width, height: height)
                 break

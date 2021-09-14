@@ -48,31 +48,31 @@ open class UZLogger: UZAPIConnector {
 	}
 	
     open func log(event: String, params: Parameters? = nil) {
-		let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
-		let timestamp: String = dateFormatter.string(from: Date())
-		
-		let logParams: Parameters = ["data" : ["entity_id": entityId ?? "",
-											   "entity_source": entitySource ?? "",
-											   "event": event,
-											   "viewer_user_id" : uuid,
-											   "viewer_session_id": sessionId ?? "",
-											   "timestamp": timestamp,
-											   "app_id" : appId ?? ""]]
-		
-		let defaultParams: Parameters! = ["type": "io.uiza.\(event)event",
-										  "time": timestamp,
-										  "source" : "UZData/IOSSDK/\(PLAYER_VERSION)",
-										  "specversion" : "1.0"]
-		
-		var finalParams: Parameters! = defaultParams
-		finalParams.appendFrom(logParams)
-		
-		if params != nil {
-			finalParams.appendFrom(params!)
-		}
-        let prod = UZPlayerSDK.enviroment == .production
-        guard let url = URL(string: prod ? Self.prodAPIEndpoint : Self.logAPIEndpoint) else { return }
-		post(url: url, params: finalParams)
+//		let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+//		let timestamp: String = dateFormatter.string(from: Date())
+//
+//		let logParams: Parameters = ["data" : ["entity_id": entityId ?? "",
+//											   "entity_source": entitySource ?? "",
+//											   "event": event,
+//											   "viewer_user_id" : uuid,
+//											   "viewer_session_id": sessionId ?? "",
+//											   "timestamp": timestamp,
+//											   "app_id" : appId ?? ""]]
+//
+//		let defaultParams: Parameters! = ["type": "io.uiza.\(event)event",
+//										  "time": timestamp,
+//										  "source" : "UZData/IOSSDK/\(PLAYER_VERSION)",
+//										  "specversion" : "1.0"]
+//		
+//		var finalParams: Parameters! = defaultParams
+//		finalParams.appendFrom(logParams)
+//
+//		if params != nil {
+//			finalParams.appendFrom(params!)
+//		}
+//        let prod = UZPlayerSDK.enviroment == .production
+//        guard let url = URL(string: prod ? Self.prodAPIEndpoint : Self.logAPIEndpoint) else { return }
+//		post(url: url, params: finalParams)
 	}
 	
 }

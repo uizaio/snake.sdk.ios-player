@@ -428,7 +428,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
             case .backward: seek(offset: DEFAULT_SEEK_BACKWARD)
             case .next: nextVideo()
             case .previous: previousVideo()
-            case .fullscreen: fullscreenBlock?(nil)
+            case .fullscreen: fullscreenToggleBlock?(nil)
             case .volume:
                 if let avPlayer = avPlayer {
                     avPlayer.isMuted = !avPlayer.isMuted

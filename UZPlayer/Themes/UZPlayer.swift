@@ -84,7 +84,7 @@ open class UZPlayer: UIView {
 	
 	public var backBlock: ((Bool) -> Void)?
 	public var videoChangedBlock: ((UZVideoItem) -> Void)?
-	public var fullscreenBlock: ((Bool?) -> Void)?
+	public var fullscreenToggleBlock: ((Bool?) -> Void)?
 	public var buttonSelectionBlock: ((UIButton) -> Void)?
 	public var playTimeDidChange: ((_ currentTime: TimeInterval, _ totalTime: TimeInterval) -> Void)?
 	public var playStateDidChange: ((_ isPlaying: Bool) -> Void)?

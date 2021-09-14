@@ -569,7 +569,7 @@ extension UZPlayer {
         visualizeInformationView?.frame = bounds
         playerLayer?.frame = bounds
         controlView.frame = bounds
-        controlView.setNeedsLayout()
-        controlView.layoutIfNeeded()
+//        controlView.setNeedsLayout()
+//        controlView.layoutIfNeeded()
     }
 }

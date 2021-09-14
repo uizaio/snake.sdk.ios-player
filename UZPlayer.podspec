@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'UZPlayer'
-    s.version = '2.0.1'
+    s.version = '2.1.0'
     s.summary = 'UZPlayer'
     s.homepage = 'https://uiza.io/'
     s.documentation_url = 'https://docs.uiza.io'
