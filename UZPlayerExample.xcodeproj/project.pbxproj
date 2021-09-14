@@ -13,8 +13,8 @@
 		63744BF226EBAF3400F81B82 /* NKButton in Frameworks */ = {isa = PBXBuildFile; productRef = 63744BF126EBAF3400F81B82 /* NKButton */; };
 		63744BF526EBAF6600F81B82 /* NKModalPresenter in Frameworks */ = {isa = PBXBuildFile; productRef = 63744BF426EBAF6600F81B82 /* NKModalPresenter */; };
 		63744C0826EBBCCD00F81B82 /* UIView+ExtendSafeEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63744C0726EBBCCD00F81B82 /* UIView+ExtendSafeEdgeInsets.swift */; };
-		63A7630A26F09B63000E43A2 /* NKFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7630826F09B62000E43A2 /* NKFullscreenController.swift */; };
-		63A7630B26F09B63000E43A2 /* NKFullscreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7630926F09B63000E43A2 /* NKFullscreenPresenter.swift */; };
+		63A7630F26F0A251000E43A2 /* NKFullscreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7630D26F0A251000E43A2 /* NKFullscreenPresenter.swift */; };
+		63A7631026F0A251000E43A2 /* NKFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7630E26F0A251000E43A2 /* NKFullscreenController.swift */; };
 		63FD93342420DA30001B7A48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD93332420DA30001B7A48 /* AppDelegate.swift */; };
 		63FD93382420DA30001B7A48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD93372420DA30001B7A48 /* ViewController.swift */; };
 		63FD933D2420DA32001B7A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FD933C2420DA32001B7A48 /* Assets.xcassets */; };
@@ -139,8 +139,8 @@
 		31A40E25366A755FE439B40E /* Pods-UZPlayerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZPlayerExample.debug.xcconfig"; path = "Target Support Files/Pods-UZPlayerExample/Pods-UZPlayerExample.debug.xcconfig"; sourceTree = "<group>"; };
 		63744BEB26EBAE9200F81B82 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerViewController.swift; sourceTree = "<group>"; };
 		63744C0726EBBCCD00F81B82 /* UIView+ExtendSafeEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ExtendSafeEdgeInsets.swift"; sourceTree = "<group>"; };
-		63A7630826F09B62000E43A2 /* NKFullscreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKFullscreenController.swift; sourceTree = "<group>"; };
-		63A7630926F09B63000E43A2 /* NKFullscreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKFullscreenPresenter.swift; sourceTree = "<group>"; };
+		63A7630D26F0A251000E43A2 /* NKFullscreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKFullscreenPresenter.swift; sourceTree = "<group>"; };
+		63A7630E26F0A251000E43A2 /* NKFullscreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKFullscreenController.swift; sourceTree = "<group>"; };
 		63FD93312420DA30001B7A48 /* UZPlayerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UZPlayerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FD93332420DA30001B7A48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FD93372420DA30001B7A48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -279,13 +279,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		63A7630726F09B56000E43A2 /* NKFullscreenPresenter */ = {
+		63A7630C26F0A251000E43A2 /* NKFullscreenPresenter */ = {
 			isa = PBXGroup;
 			children = (
-				63A7630826F09B62000E43A2 /* NKFullscreenController.swift */,
-				63A7630926F09B63000E43A2 /* NKFullscreenPresenter.swift */,
+				63A7630D26F0A251000E43A2 /* NKFullscreenPresenter.swift */,
+				63A7630E26F0A251000E43A2 /* NKFullscreenController.swift */,
 			);
 			name = NKFullscreenPresenter;
+			path = UZPlayer/Components/NKFullscreenPresenter;
 			sourceTree = "<group>";
 		};
 		63FD9176241D03FA001B7A48 = {
@@ -400,7 +401,7 @@
 		8BC84AE724B70DD9002906F6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				63A7630726F09B56000E43A2 /* NKFullscreenPresenter */,
+				63A7630C26F0A251000E43A2 /* NKFullscreenPresenter */,
 				8BC84B3824B70E65002906F6 /* TweenKit */,
 				8BC84B1224B70E2E002906F6 /* Extensions */,
 				8BC84B0324B70E18002906F6 /* Controls */,
@@ -655,7 +656,6 @@
 			files = (
 				8BC84AC524B70DA4002906F6 /* UZTheme7.swift in Sources */,
 				8BC84B5924B70E75002906F6 /* Action.swift in Sources */,
-				63A7630A26F09B63000E43A2 /* NKFullscreenController.swift in Sources */,
 				8BC84AA424B70D8E002906F6 /* UZFloatingPlayerViewController.swift in Sources */,
 				8BC84AAD24B70D8E002906F6 /* UZCastingView.swift in Sources */,
 				8BC84B0224B70E0E002906F6 /* BottomSheetView.swift in Sources */,
@@ -690,10 +690,12 @@
 				63FD93382420DA30001B7A48 /* ViewController.swift in Sources */,
 				8BC84B5C24B70E75002906F6 /* ActionSequence.swift in Sources */,
 				8BC84AA124B70D8E002906F6 /* UZMediaOptionSelectionViewController.swift in Sources */,
+				63A7630F26F0A251000E43A2 /* NKFullscreenPresenter.swift in Sources */,
 				8BC84B2224B70E3C002906F6 /* AVAudioSession+Airplay.swift in Sources */,
 				8BC84B6E24B70E93002906F6 /* UZVideoSubtitle.swift in Sources */,
 				8BC84B5424B70E75002906F6 /* CoreGraphics+Tweenable.swift in Sources */,
 				8BC84B7024B70E93002906F6 /* UZVisualizeInfo.swift in Sources */,
+				63A7631026F0A251000E43A2 /* NKFullscreenController.swift in Sources */,
 				8BC84B2024B70E3C002906F6 /* AVAsset+Selection.swift in Sources */,
 				8BC84B1D24B70E3C002906F6 /* NSTimeInterval+ToString.swift in Sources */,
 				8BC84B0C24B70E25002906F6 /* UZSlider.swift in Sources */,
@@ -741,7 +743,6 @@
 				8BC84B5D24B70E75002906F6 /* ArcAction.swift in Sources */,
 				8BC84B7224B70E93002906F6 /* UZMediaResource.swift in Sources */,
 				8BC84B6524B70E75002906F6 /* Easing.swift in Sources */,
-				63A7630B26F09B63000E43A2 /* NKFullscreenPresenter.swift in Sources */,
 				8BC84B5B24B70E75002906F6 /* YoyoAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
