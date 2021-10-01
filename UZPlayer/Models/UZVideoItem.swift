@@ -113,7 +113,7 @@ public struct UZVideoItem {
 			guard let url = linkPlay?.url else { return }
             do {
                 let manifest = try M3U8PlaylistModel(url: url)
-                if let timeshift = manifest.masterPlaylist.uzTimeshift {
+                if let timeshift = manifest.masterPlaylist?.uzTimeshift {
                     timeshiftSupport = true
                     isLive = true
                     if timeshift.hasPrefix("extras/") {
@@ -140,7 +140,7 @@ public struct UZVideoItem {
                 } else {
                     timeshiftSupport = false
                     // Not live == VOD
-                    let list = manifest.masterPlaylist.xStreamList
+                    let list = manifest.masterPlaylist?.xStreamList
                     list?.sortByBandwidth(inOrder: .orderedDescending)
                     streams = [M3U8ExtXStreamInf]()
                     for value in 0..<(list?.count ?? 0) {
