@@ -170,11 +170,7 @@ open class UZPlayerControlView: UIView {
 		timeSlider.value = 0.0
 		timeSlider.maximumTrackTintColor = UIColor.clear
 		
-		if #available(iOS 8.2, *) {
-			enlapseTimeLabel.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-		} else {
-			enlapseTimeLabel.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-		}
+		enlapseTimeLabel.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
 		enlapseTimeLabel.setTitleColor(.white, for: .normal)
 		enlapseTimeLabel.setBackgroundColor(UIColor(white: 0.2, alpha: 0.8), for: .normal)
 		enlapseTimeLabel.extendSize = CGSize(width: 10, height: 4)
@@ -276,9 +272,9 @@ open class UZPlayerControlView: UIView {
 		super.layoutSubviews()
 		
 		containerView.frame = bounds
-		theme?.layoutControls(rect: bounds)
 		castingView?.frame = bounds
 		endscreenView.frame = bounds
+		theme?.layoutControls(rect: bounds)
 		
 		if let messageLabel = messageLabel {
 			let edgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)

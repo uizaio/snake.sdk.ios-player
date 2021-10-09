@@ -28,6 +28,7 @@ import GoogleCast
 // MARK: - Pip
 
 extension UZPlayer {
+	
     func setupPictureInPicture() {
         if #available(iOS 9.0, *) {
             pictureInPictureController?.removeObserver(self, forKeyPath: pipKeyPath, context: &playerViewControllerKVOContext)
@@ -515,6 +516,7 @@ extension UZPlayer {
 // MARK: - Setup
 
 extension UZPlayer {
+	
     func setupUI() {
         backgroundColor = UIColor.black
         

@@ -101,36 +101,19 @@ open class UZPlayer: UIView {
 		}
 	}
 	
-	public var isPlaying: Bool {
-        return playerLayer?.isPlaying ?? false
-	}
+	public var isPlaying: Bool { playerLayer?.isPlaying ?? false }
 	
-	public var avPlayer: AVPlayer? {
-		return playerLayer?.player
-	}
+	public var avPlayer: AVPlayer? { playerLayer?.player }
 	
-    public var subtitleGroup : AVMediaSelectionGroup? {
-        return self.avPlayer?.currentItem?.asset.subtitleGroup
-    }
+    public var subtitleGroup : AVMediaSelectionGroup? { avPlayer?.currentItem?.asset.subtitleGroup }
     
-	public var subtitleOptions: [AVMediaSelectionOption]? {
-        return self.avPlayer?.currentItem?.asset.subtitles
-	}
+	public var subtitleOptions: [AVMediaSelectionOption]? { avPlayer?.currentItem?.asset.subtitles }
     
-    public var audioGroup : AVMediaSelectionGroup? {
-        return self.avPlayer?.currentItem?.asset.audioGroup
-    }
+    public var audioGroup : AVMediaSelectionGroup? { avPlayer?.currentItem?.asset.audioGroup }
     
-	public var audioOptions: [AVMediaSelectionOption]? {
-        return self.avPlayer?.currentItem?.asset.audioTracks
-	}
+	public var audioOptions: [AVMediaSelectionOption]? { avPlayer?.currentItem?.asset.audioTracks }
     
-//    @available(iOS 11.0, *)
-    public var videoQualities: [AVMediaCharacteristic]? {
-        return self.avPlayer?.currentItem?.asset.availableMediaCharacteristicsWithMediaSelectionOptions
-//        return self.avPlayer?.currentItem?.preferredPeakBitRate
-        
-    }
+    public var videoQualities: [AVMediaCharacteristic]? { avPlayer?.currentItem?.asset.availableMediaCharacteristicsWithMediaSelectionOptions }
 	
 	public var playlist: [UZVideoItem]? = nil {
 		didSet {
@@ -141,44 +124,31 @@ open class UZPlayer: UIView {
 	}
     
     open func currentAudioOption() -> AVMediaSelectionOption? {
-        if let currentItem = self.avPlayer?.currentItem,
-            let audioGroup = currentItem.asset.audioGroup{
-            return currentItem.currentMediaSelection.selectedMediaOption(in: audioGroup)
-        }
-        return nil
+        guard let currentItem = avPlayer?.currentItem, let audioGroup = currentItem.asset.audioGroup else { return nil }
+		return currentItem.currentMediaSelection.selectedMediaOption(in: audioGroup)
     }
     
     open func changeAudioSelect(option: AVMediaSelectionOption?) {
-        if let currentItem = self.avPlayer?.currentItem,
-            let audioGroup = currentItem.asset.audioGroup {
-            currentItem.select(option, in: audioGroup)
-        }
+        guard let currentItem = self.avPlayer?.currentItem, let audioGroup = currentItem.asset.audioGroup else { return }
+		currentItem.select(option, in: audioGroup)
     }
     
     open func currentSubtileOption() -> AVMediaSelectionOption? {
-        if let currentItem = self.avPlayer?.currentItem,
-            let subtitleGroup = currentItem.asset.subtitleGroup{
-            return currentItem.currentMediaSelection.selectedMediaOption(in: subtitleGroup)
-        }
-        return nil
+        guard let currentItem = avPlayer?.currentItem, let subtitleGroup = currentItem.asset.subtitleGroup else { return nil }
+		return currentItem.currentMediaSelection.selectedMediaOption(in: subtitleGroup)
     }
     
     open func changeSubtitleSelect(option: AVMediaSelectionOption?) {
-        if let currentItem = self.avPlayer?.currentItem,
-            let subtitleGroup = currentItem.asset.subtitleGroup {
-            currentItem.select(option, in: subtitleGroup)
-        }
+        guard let currentItem = avPlayer?.currentItem, let subtitleGroup = currentItem.asset.subtitleGroup else { return }
+		currentItem.select(option, in: subtitleGroup)
     }
     
     open func changeBitrate(bitrate: Double) {
-        if let currentItem = self.avPlayer?.currentItem {
-            currentItem.preferredPeakBitRate = bitrate
-        }
+		guard let currentItem = avPlayer?.currentItem else { return }
+		currentItem.preferredPeakBitRate = bitrate
     }
     
-    open func currentBitrate() -> Double {
-        return self.avPlayer?.currentItem?.preferredPeakBitRate ?? 0.0
-    }
+    open func currentBitrate() -> Double { avPlayer?.currentItem?.preferredPeakBitRate ?? 0.0 }
     
 	public var currentVideoIndex: Int {
 		get {
@@ -200,10 +170,8 @@ open class UZPlayer: UIView {
 			return -1
 		}
 		set {
-			if let playlist = playlist {
-				if newValue > -1 && newValue < playlist.count {
-					self.loadVideo(playlist[newValue])
-				}
+			if let playlist = playlist, newValue > -1 && newValue < playlist.count {
+				loadVideo(playlist[newValue])
 			}
 		}
 	}
@@ -236,10 +204,10 @@ open class UZPlayer: UIView {
 	public var autoTryNextDefinitionIfError = true
 	public var controlView: UZPlayerControlView!
 	public var liveEndedMessage = "This live video has ended"
-    // pip
+    
     let pipKeyPath = #keyPath(AVPictureInPictureController.isPictureInPicturePossible)
     var playerViewControllerKVOContext = 0
-    // log event
+    
     var playThroughEventLog: [Float: Bool] = [:]
     let logPercent: [Float] = [25, 50, 75, 100]
     var sendWatchingLiveEventTimer: Timer?
@@ -262,9 +230,7 @@ open class UZPlayer: UIView {
 	
 	public var preferredForwardBufferDuration: TimeInterval = 0 {
 		didSet {
-			if let playerLayer = playerLayer {
-				playerLayer.preferredForwardBufferDuration = preferredForwardBufferDuration
-			}
+			playerLayer?.preferredForwardBufferDuration = preferredForwardBufferDuration
 		}
 	}
 	
@@ -278,9 +244,7 @@ open class UZPlayer: UIView {
 	public internal(set) var playerLayer: UZPlayerLayerView?
 	
     var liveViewTimer: Timer?
-    var isFullScreen: Bool {
-        return UIApplication.shared.statusBarOrientation.isLandscape
-	}
+    var isFullScreen: Bool { UIApplication.shared.statusBarOrientation.isLandscape }
 	
 	public internal(set) var totalDuration: TimeInterval = 0
 	public internal(set) var currentPosition: TimeInterval = 0
@@ -333,7 +297,6 @@ open class UZPlayer: UIView {
 	
 	public convenience init (customControlView: UZPlayerControlView?) {
 		self.init()
-
 		defer { self.customControlView = customControlView }
 	}
 	
@@ -374,11 +337,12 @@ open class UZPlayer: UIView {
         UZVisualizeSavedInformation.shared.currentVideo = video
 		
 		guard let linkPlay = video.linkPlay else { return }
-		if let host = linkPlay.url.host {
-			UZVisualizeSavedInformation.shared.host = host
-		}
-        let resource = UZPlayerResource(name: video.name ?? "", definitions: [linkPlay], subtitles: video.subtitleURLs, cover: video.thumbnailURL, isLive: video.isLive, timeshiftSupport: video.timeshiftSupport, timeShiftOn: video.isTimeshiftOn)
+		
+		if let host = linkPlay.url.host { UZVisualizeSavedInformation.shared.host = host }
+        
+		let resource = UZPlayerResource(name: video.name ?? "", definitions: [linkPlay], subtitles: video.subtitleURLs, cover: video.thumbnailURL, isLive: video.isLive, timeshiftSupport: video.timeshiftSupport, timeShiftOn: video.isTimeshiftOn)
         setResource(resource: resource)
+		
 		if video.isLive {
 			controlView.liveStartDate = nil
 			loadLiveViews()
@@ -387,10 +351,9 @@ open class UZPlayer: UIView {
 	}
     
     open func switchTimeshiftMode(_ timeshiftOn: Bool) -> Bool {
-        guard let video = currentVideo else {
-            return false
-        }
-        if(video.extIsTimeshift) {
+        guard let video = currentVideo else { return false }
+		
+        if video.extIsTimeshift {
             guard let extLinkPlay = timeshiftOn ? video.extLinkPlay : video.linkPlay else { return false }
             let resource = UZPlayerResource(name: video.name ?? "", definitions: [extLinkPlay], subtitles: video.subtitleURLs, cover: video.thumbnailURL, isLive: video.isLive, timeshiftSupport: video.timeshiftSupport)
             setResource(resource: resource)
@@ -410,17 +373,9 @@ open class UZPlayer: UIView {
         controlView.setUIWithTimeshift(timeshiftOn)
     }
     
-    open func isTimeshiftOn() -> Bool {
-        return currentVideo?.isTimeshiftOn ?? false
-    }
-    
-    open func isTimeshiftSupport() -> Bool {
-        return currentVideo?.timeshiftSupport ?? false
-    }
-    
-    open func isLive() -> Bool {
-        return currentVideo?.isLive ?? false
-    }
+    open func isTimeshiftOn() -> Bool { currentVideo?.isTimeshiftOn ?? false }
+    open func isTimeshiftSupport() -> Bool { currentVideo?.timeshiftSupport ?? false }
+    open func isLive() -> Bool { currentVideo?.isLive ?? false }
 	
 	open func playIfApplicable() {
 		if !isPauseByUser && isURLSet && !isPlayToTheEnd {
@@ -429,9 +384,7 @@ open class UZPlayer: UIView {
 	}
 	
 	open func play() {
-		if resource == nil {
-			return
-		}
+		if resource == nil { return }
 		
 		if !isURLSet {
 			currentLinkPlay = resource.definitions[currentDefinition]
@@ -444,10 +397,9 @@ open class UZPlayer: UIView {
 		
 		playerLayer?.play()
 		isPauseByUser = false
+		
 		if #available(iOS 9.0, *) {
-			if pictureInPictureController == nil {
-				setupPictureInPicture()
-			}
+			if pictureInPictureController == nil { setupPictureInPicture() }
 		}
 		
 		if currentPosition == 0 && !isPauseByUser {
@@ -562,22 +514,20 @@ open class UZPlayer: UIView {
 	- parameter offset: offset from current time
 	*/
 	open func seek(offset: TimeInterval, completion: (() -> Void)? = nil) {
-		if let avPlayer = avPlayer {
-			let currentTime = CMTimeGetSeconds(avPlayer.currentTime())
-			let maxTime = max(currentTime + offset, 0)
-			let toTime = min(maxTime, totalDuration)
-			self.seek(to: toTime, completion: completion)
-		}
+		guard let avPlayer = avPlayer else { return }
+		let currentTime = CMTimeGetSeconds(avPlayer.currentTime())
+		let maxTime = max(currentTime + offset, 0)
+		let toTime = min(maxTime, totalDuration)
+		seek(to: toTime, completion: completion)
 	}
 	
 	open func switchVideoDefinition(_ linkplay: UZVideoLinkPlay) {
-		if currentLinkPlay != linkplay {
-			currentLinkPlay = linkplay
-			playerLayer?.shouldSeekTo = currentPosition
-			
-			playerLayer?.replaceAsset(asset: linkplay.avURLAsset)
-			setupPictureInPicture() // reset it
-		}
+		guard currentLinkPlay != linkplay else { return }
+		currentLinkPlay = linkplay
+		playerLayer?.shouldSeekTo = currentPosition
+		
+		playerLayer?.replaceAsset(asset: linkplay.avURLAsset)
+		setupPictureInPicture() // reset it
 	}
 
     public var isVisualizeInfoEnabled: Bool = false {

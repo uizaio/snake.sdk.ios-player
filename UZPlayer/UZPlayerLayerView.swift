@@ -553,8 +553,8 @@ open class UZPlayerLayerView: UIView {
 				}
 			}
 			
-		case "rate":
-			updateStatus()
+		case "rate": updateStatus()
+				
 		default:
 			break
 		}
@@ -568,6 +568,7 @@ open class UZPlayerLayerView: UIView {
 }
 
 extension UZPlayerLayerView {
+	
     func setupTimer() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(playerTimerAction), userInfo: nil, repeats: true)

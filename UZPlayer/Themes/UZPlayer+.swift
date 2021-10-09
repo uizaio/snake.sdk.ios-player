@@ -47,13 +47,13 @@ extension UZPlayer {
 		adsLoader?.requestAds(with: request)
         #endif
         
-        //        if let adsLink = cuePoints.first?.link?.absoluteString {
-        ////            let testAdTagUrl = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator="
-        //            let adDisplayContainer = IMAAdDisplayContainer(adContainer: self, companionSlots: nil)
-        //            let request = IMAAdsRequest(adTagUrl: adsLink, adDisplayContainer: adDisplayContainer, contentPlayhead: contentPlayhead, userContext: nil)
-        //
-        //            adsLoader?.requestAds(with: request)
-        //        }
+//        if let adsLink = cuePoints.first?.link?.absoluteString {
+////            let testAdTagUrl = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator="
+//            let adDisplayContainer = IMAAdDisplayContainer(adContainer: self, companionSlots: nil)
+//            let request = IMAAdsRequest(adTagUrl: adsLink, adDisplayContainer: adDisplayContainer, contentPlayhead: contentPlayhead, userContext: nil)
+//
+//            adsLoader?.requestAds(with: request)
+//        }
     }
 }
 
@@ -73,7 +73,7 @@ extension UZPlayer: IMAAdsLoaderDelegate {
     }
     
     public func adsLoader(_ loader: IMAAdsLoader!, failedWith adErrorData: IMAAdLoadingErrorData!) {
-        //        print("Error loading ads: \(adErrorData.adError.message)")
+//		print("Error loading ads: \(adErrorData.adError.message)")
         avPlayer?.play()
     }
 }
@@ -83,7 +83,7 @@ extension UZPlayer: IMAAdsLoaderDelegate {
 extension UZPlayer: IMAAdsManagerDelegate {
     
     public func adsManager(_ adsManager: IMAAdsManager!, didReceive event: IMAAdEvent!) {
-//        DLog("- \(event.type.rawValue)")
+//		DLog("- \(event.type.rawValue)")
         
         if event.type == IMAAdEventType.LOADED {
             adsManager.start()
@@ -94,7 +94,7 @@ extension UZPlayer: IMAAdsManagerDelegate {
     
     public func adsManager(_ adsManager: IMAAdsManager!, didReceive error: IMAAdError!) {
         DLog("Ads error: \(String(describing: error.message))")
-        //        print("AdsManager error: \(error.message)")
+//		print("AdsManager error: \(error.message)")
         avPlayer?.play()
     }
     
@@ -195,26 +195,26 @@ extension UZPlayer {
     }
     
     @objc func onCastClientDidUpdate(_ notification: Notification) {
-        if let mediaStatus = notification.object as? GCKMediaStatus,
-            let currentQueueItem = mediaStatus.currentQueueItem,
-            let playlist = playlist {
-            let count = mediaStatus.queueItemCount
-            var index = 0
-            var found = false
-            
-            while index < count {
-                if currentQueueItem == mediaStatus.queueItem(at: UInt(index)) {
-                    found = true
-                    break
-                }
-                
-                index += 1
-            }
-            
-            if found && index >= 0 && index < playlist.count {
-                currentVideo = playlist[index]
-            }
-        }
+        guard let mediaStatus = notification.object as? GCKMediaStatus,
+			  let currentQueueItem = mediaStatus.currentQueueItem,
+			  let playlist = playlist else { return }
+		
+		let count = mediaStatus.queueItemCount
+		var index = 0
+		var found = false
+		
+		while index < count {
+			if currentQueueItem == mediaStatus.queueItem(at: UInt(index)) {
+				found = true
+				break
+			}
+			
+			index += 1
+		}
+		
+		if found && index >= 0 && index < playlist.count {
+			currentVideo = playlist[index]
+		}
     }
     
     @objc func onCastSessionDidStop(_ notification: Notification) {
@@ -288,7 +288,7 @@ extension UZPlayer {
 		viewController.asset = asset
 		viewController.selectedSubtitle = selectedSubtitle
 		viewController.subtitiles = subtitles
-//            viewController.selectedSubtitleOption = nil
+//		viewController.selectedSubtitleOption = nil
 		viewController.collectionViewController.selectedBlock = { [weak self] (option, indexPath) in
 			guard let self = self else { return }
 			
@@ -347,39 +347,30 @@ extension UZPlayer {
 // MARK: - UZSettingViewDelegate
 
 extension UZPlayer: UZSettingViewDelegate {
+	
     public func settingRow(didChanged sender: UISwitch) {
-        if let type = UZSettingTag(rawValue: sender.tag) {
-              switch type {
-              case .timeshift:
-                   let result = switchTimeshiftMode(sender.isOn)
-                   if(result){
-                       setTimeshiftOn(sender.isOn)
-                   }
-                  break
-              default:
-                  #if DEBUG
-                  print("[UZPlayer] Unhandled Action")
-                  #endif
-              }
-          }
+		guard let type = UZSettingTag(rawValue: sender.tag) else { return }
+		switch type {
+			case .timeshift: if switchTimeshiftMode(sender.isOn) { setTimeshiftOn(sender.isOn) }
+
+			default:
+				#if DEBUG
+				print("[UZPlayer] Unhandled Action")
+				#endif
+		}
     }
     
     public func settingRow(didSelected tag: UZSettingTag, value: Float) {
-        switch tag {
-        case .speedRate:
-            let speedRate = UZSpeedRate(rawValue: value) ?? UZSpeedRate.normal
-            playerLayer?.changeSpeedRate(speedRate)
-            break
-        case .stats:
-            break
-        case .quality:
-            changeBitrate(bitrate: Double(value))
-            break
-        default:
-            #if DEBUG
-            print("[UZPlayer] Unhandled Action")
-            #endif
-        }
+		switch tag {
+			case .speedRate: playerLayer?.changeSpeedRate(UZSpeedRate(rawValue: value) ?? UZSpeedRate.normal)
+			case .quality: changeBitrate(bitrate: Double(value))
+			case .stats: break
+				
+			default:
+				#if DEBUG
+				print("[UZPlayer] Unhandled Action")
+				#endif
+		}
     }
     
 	public func settingRow(didSelected tag: UZSettingTag, value: AVMediaSelectionOption?) {
@@ -434,14 +425,12 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                     avPlayer.isMuted = !avPlayer.isMuted
                     button.isSelected = avPlayer.isMuted
                 }
-                break
             case .share:
                 showShare(from: button)
                 button.isEnabled = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     button.isEnabled = true
                 }
-                break
             case .pip: togglePiP()
             case .settings: showSettings()
             case .caption: showMediaOptionSelector()
@@ -451,7 +440,6 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                 } else {
                     showCastingDeviceList()
                 }
-                break
             case .logo:
                 if let url = controlView.playerConfig?.logoRedirectUrl {
                     if UIApplication.shared.canOpenURL(url) {
@@ -462,7 +450,6 @@ extension UZPlayer: UZPlayerControlViewDelegate {
                         }
                     }
                 }
-				break
 			case .live: seekToLive()
             default:
                 #if DEBUG
@@ -475,70 +462,70 @@ extension UZPlayer: UZPlayerControlViewDelegate {
     }
     
     open func controlView(controlView: UZPlayerControlView, slider: UISlider, onSliderEvent event: UIControl.Event) {
-        #if canImport(GoogleCast)
-        let castingManager = UZCastingManager.shared
-        if castingManager.hasConnectedSession {
-            switch event {
-            case .touchDown: isSliderSliding = true
-            case .touchUpInside :
-                isSliderSliding = false
-                let targetTime = totalDuration * Double(slider.value)
-                
-                if isPlayToTheEnd {
-                    isPlayToTheEnd = false
-                    
-                    controlView.hideEndScreen()
-                    seek(to: targetTime, completion: { [weak self] in
-                        self?.play()
-                    })
-                } else {
-                    seek(to: targetTime, completion: { [weak self] in
-                        self?.playIfApplicable()
-                    })
-                }
-                
-            default: break
-            }
-            
-            return
-        }
-        #endif
-        
-        switch event {
-        case .touchDown:
-            playerLayer?.onTimeSliderBegan()
-            isSliderSliding = true
-            
-        case .touchUpInside :
-            isSliderSliding = false
-            
-            var targetTime = totalDuration * Double(slider.value)
-            if targetTime.isNaN {
-                guard let currentItem = playerLayer?.playerItem,
-                    let seekableRange = currentItem.seekableTimeRanges.last?.timeRangeValue else { return }
-                
-                let seekableStart = CMTimeGetSeconds(seekableRange.start)
-                let seekableDuration = CMTimeGetSeconds(seekableRange.duration)
-                let livePosition = seekableStart + seekableDuration
-                targetTime = livePosition * Double(slider.value)
-            }
-            
-            if isPlayToTheEnd {
-                isPlayToTheEnd = false
-                
-                controlView.hideEndScreen()
-                seek(to: targetTime, completion: { [weak self] in
-                    self?.play()
-                })
-            } else {
-                seek(to: targetTime, completion: { [weak self] in
-                    self?.playIfApplicable()
-                })
-            }
-            
-        default: break
-        }
-    }
+		#if canImport(GoogleCast)
+		let castingManager = UZCastingManager.shared
+		if castingManager.hasConnectedSession {
+			switch event {
+				case .touchDown: isSliderSliding = true
+				case .touchUpInside :
+					isSliderSliding = false
+					let targetTime = totalDuration * Double(slider.value)
+					
+					if isPlayToTheEnd {
+						isPlayToTheEnd = false
+						
+						controlView.hideEndScreen()
+						seek(to: targetTime, completion: { [weak self] in
+							self?.play()
+						})
+					} else {
+						seek(to: targetTime, completion: { [weak self] in
+							self?.playIfApplicable()
+						})
+					}
+					
+				default: break
+			}
+			
+			return
+		}
+		#endif
+		
+		switch event {
+			case .touchDown:
+				playerLayer?.onTimeSliderBegan()
+				isSliderSliding = true
+				
+			case .touchUpInside :
+				isSliderSliding = false
+				
+				var targetTime = totalDuration * Double(slider.value)
+				if targetTime.isNaN {
+					guard let currentItem = playerLayer?.playerItem,
+						  let seekableRange = currentItem.seekableTimeRanges.last?.timeRangeValue else { return }
+					
+					let seekableStart = CMTimeGetSeconds(seekableRange.start)
+					let seekableDuration = CMTimeGetSeconds(seekableRange.duration)
+					let livePosition = seekableStart + seekableDuration
+					targetTime = livePosition * Double(slider.value)
+				}
+				
+				if isPlayToTheEnd {
+					isPlayToTheEnd = false
+					
+					controlView.hideEndScreen()
+					seek(to: targetTime, completion: { [weak self] in
+						self?.play()
+					})
+				} else {
+					seek(to: targetTime, completion: { [weak self] in
+						self?.playIfApplicable()
+					})
+				}
+				
+			default: break
+		}
+	}
     
 }
 
@@ -562,47 +549,47 @@ extension UZPlayer: UZPlayerLayerViewDelegate {
     open func player(player: UZPlayerLayerView, playerStateDidChange state: UZPlayerState) {
         controlView.playerStateDidChange(state: state)
         
-        switch state {
-        case .readyToPlay:
-            if !isPauseByUser {
-                play()
-                
-                updateCastingUI()
-                requestAds()
-            }
-            
-        case .buffering:
-			UZLogger.shared.log(event: "rebufferstart")
-            bufferingCount += 1
-            
-        case .bufferFinished:
-			UZLogger.shared.log(event: "rebufferend")
-            playIfApplicable()
-            
-        case .playedToTheEnd:
-			UZLogger.shared.log(event: "viewended")
-            isPlayToTheEnd = true
-            
-            if !isReplaying {
-                if themeConfig?.showEndscreen ?? true {
-                    controlView.showEndScreen()
-                }
-            }
-            
-            #if canImport(GoogleInteractiveMediaAds)
-            adsLoader?.contentComplete()
-            #endif
-            nextVideo()
-            
-        case .error:
-			UZLogger.shared.log(event: "error")
-            if autoTryNextDefinitionIfError {
-                tryNextDefinition()
-            }
-            
-        default:
-            break
-        }
+		switch state {
+			case .readyToPlay:
+				if !isPauseByUser {
+					play()
+					
+					updateCastingUI()
+					requestAds()
+				}
+				
+			case .buffering:
+				UZLogger.shared.log(event: "rebufferstart")
+				bufferingCount += 1
+				
+			case .bufferFinished:
+				UZLogger.shared.log(event: "rebufferend")
+				isPlayToTheEnd = false
+				playIfApplicable()
+				
+			case .playedToTheEnd:
+				UZLogger.shared.log(event: "viewended")
+				isPlayToTheEnd = true
+				
+				if !isReplaying {
+					if themeConfig?.showEndscreen ?? true {
+						controlView.showEndScreen()
+					}
+				}
+				
+				#if canImport(GoogleInteractiveMediaAds)
+				adsLoader?.contentComplete()
+				#endif
+				nextVideo()
+				
+			case .error:
+				UZLogger.shared.log(event: "error")
+				if autoTryNextDefinitionIfError {
+					tryNextDefinition()
+				}
+				
+			default: break
+		}
         
         delegate?.player(player: self, playerStateDidChange: state)
     }
@@ -613,13 +600,12 @@ extension UZPlayer: UZPlayerLayerViewDelegate {
         
         delegate?.player(player: self, playTimeDidChange: currentTime, totalTime: totalTime)
         
-        if !isSliderSliding {
-            logPlayEvent(currentTime: currentTime, totalTime: totalTime)
-            controlView.totalDuration = totalDuration
-			controlView.liveBadgeView.liveBadge.isEnabled = (totalTime - currentPosition) > 10
-            controlView.playTimeDidChange(currentTime: currentTime, totalTime: totalTime)
-            playTimeDidChange?(currentTime, totalTime)
-        }
+		guard !isSliderSliding else { return }
+		logPlayEvent(currentTime: currentTime, totalTime: totalTime)
+		controlView.totalDuration = totalDuration
+		controlView.liveBadgeView.liveBadge.isEnabled = (totalTime - currentPosition) > 10
+		controlView.playTimeDidChange(currentTime: currentTime, totalTime: totalTime)
+		playTimeDidChange?(currentTime, totalTime)
     }
     
     open func player(player: UZPlayerLayerView, playerDidFailToPlayToEndTime error: Error?) {
