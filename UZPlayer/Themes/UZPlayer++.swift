@@ -477,8 +477,6 @@ extension UZPlayer {
         
         self.resource = resource
         
-        seekCount = 0
-        bufferingCount = 0
         playThroughEventLog = [:]
         currentDefinition = definitionIndex
         

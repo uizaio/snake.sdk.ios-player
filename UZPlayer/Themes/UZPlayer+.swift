@@ -560,7 +560,7 @@ extension UZPlayer: UZPlayerLayerViewDelegate {
 				
 			case .buffering:
 				UZLogger.shared.log(event: "rebufferstart")
-				bufferingCount += 1
+				isPlayToTheEnd = false
 				
 			case .bufferFinished:
 				UZLogger.shared.log(event: "rebufferend")

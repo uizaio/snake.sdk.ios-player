@@ -255,9 +255,6 @@ open class UZPlayer: UIView {
 	public internal(set) var isPlayToTheEnd  = false
 	public fileprivate(set) var isReplaying	 = false
 	
-    var seekCount = 0
-    var bufferingCount = 0
-	
     #if canImport(GoogleInteractiveMediaAds)
 	fileprivate var contentPlayhead: IMAAVPlayerContentPlayhead?
 	fileprivate var adsLoader: IMAAdsLoader?
@@ -430,9 +427,6 @@ open class UZPlayer: UIView {
 	Stop and unload the player
 	*/
 	open func stop() {
-		seekCount = 0
-		bufferingCount = 0
-		
 		if liveViewTimer != nil {
 			liveViewTimer!.invalidate()
 			liveViewTimer = nil
@@ -489,8 +483,7 @@ open class UZPlayer: UIView {
 	*/
 	open func seek(to interval: TimeInterval, completion: (() -> Void)? = nil) {
 		UZLogger.shared.log(event: "seeking")
-		seekCount += 1
-		
+
 		currentPosition = interval
 		controlView.hideEndScreen()
 		
