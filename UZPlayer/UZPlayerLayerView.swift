@@ -95,13 +95,9 @@ open class UZPlayerLayerView: UIView {
 	
 	public internal(set) var currentVideo: UZVideoItem?
 	
-	public var preferredForwardBufferDuration: TimeInterval = 0 {
+	public var preferredForwardBufferDuration: TimeInterval = 2 {
 		didSet {
-			if let playerItem = playerItem {
-				if #available(iOS 10.0, *) {
-					playerItem.preferredForwardBufferDuration = preferredForwardBufferDuration
-				}
-			}
+			if #available(iOS 10.0, *) { playerItem?.preferredForwardBufferDuration = preferredForwardBufferDuration }
 		}
 	}
 	
@@ -186,6 +182,7 @@ open class UZPlayerLayerView: UIView {
 		#endif
 		
 		if let player = player {
+			if #available(iOS 10.0, *) { player.automaticallyWaitsToMinimizeStalling = false }
 			player.play()
 			setupTimer()
 			isPlaying = true
@@ -227,6 +224,7 @@ open class UZPlayerLayerView: UIView {
 			player?.play()
 		}
 		guard let playerItem = playerItem else { return }
+		
 		if playerItem.isPlaybackLikelyToKeepUp {
 			playerLayer?.removeFromSuperlayer()
 			player?.removeObserver(self, forKeyPath: "rate")
@@ -236,18 +234,21 @@ open class UZPlayerLayerView: UIView {
 			if configPlayerAndCheckForPlayable() {
 				delegate?.player(playerRequiresSeekingToLive: self)
 			}
-		} else {
-			retryPlaying(after: 2.0)
+		}
+		else if playerItem.isPlaybackBufferFull {
+			play()
+		}
+		else {
+//			retryPlaying(after: 2.0)
 		}
 	}
     
-    open func changeSpeedRate(_ speedRate: UZSpeedRate){
+    open func changeSpeedRate(_ speedRate: UZSpeedRate) {
         player?.rate = speedRate.rawValue        
     }
     
     open func currentSpeedRate() -> UZSpeedRate {
-        let rate =  player?.rate ?? 1.0
-        return UZSpeedRate(rawValue: rate) ?? UZSpeedRate.normal
+        return UZSpeedRate(rawValue: player?.rate ?? 1.0) ?? UZSpeedRate.normal
     }
 	
 	override open func layoutSubviews() {
@@ -260,26 +261,25 @@ open class UZPlayerLayerView: UIView {
             case .default:
                 playerLayer?.videoGravity = .resizeAspect
                 playerLayer?.frame  = bounds
-                break
+
 			case .aspectFill:
 				playerLayer?.videoGravity = .resizeAspectFill
 				playerLayer?.frame  = bounds
-				break
-            case .sixteen2Nine:
+
+			case .sixteen2Nine:
                 let height = bounds.width/(16/9)
                 playerLayer?.videoGravity = .resize
                 playerLayer?.frame = CGRect(x: 0, y: (bounds.height - height)/2, width: bounds.width, height: height)
-                break
-            case .sixteen2Ten:
+
+			case .sixteen2Ten:
 				let height = bounds.width/1.6 //(16/10)
                 playerLayer?.videoGravity = .resize
                 playerLayer?.frame = CGRect(x: 0, y: (bounds.height - height)/2, width: bounds.width, height: height)
-                break
-            case .four2Three:
+
+			case .four2Three:
                 playerLayer?.videoGravity = .resize
                 let width = bounds.height * 4 / 3
                 playerLayer?.frame = CGRect(x: (bounds.width - width)/2, y: 0, width: width, height: bounds.height)
-                break
 		}
 		
 		CATransaction.commit()
@@ -308,11 +308,11 @@ open class UZPlayerLayerView: UIView {
 	
 	fileprivate func onPlayerItemChange() {
 		guard lastPlayerItem != playerItem else { return }
-        
+		if #available(iOS 10.0, *) { playerItem?.preferredForwardBufferDuration = preferredForwardBufferDuration }
+		
 		let notificationCenter = NotificationCenter.default
     
 		if let item = lastPlayerItem {
-      
 			notificationCenter.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: item)
 			notificationCenter.removeObserver(self, name: .AVPlayerItemFailedToPlayToEndTime, object: item)
 			notificationCenter.removeObserver(self, name: .AVPlayerItemPlaybackStalled, object: item)
@@ -324,19 +324,16 @@ open class UZPlayerLayerView: UIView {
 		}
         
 		lastPlayerItem = playerItem
-		if let item = playerItem {
-			notificationCenter.addObserver(self, selector: #selector(moviePlayerDidEnd), name: .AVPlayerItemDidPlayToEndTime, object: playerItem)
-			notificationCenter.addObserver(self, selector: #selector(moviePlayerDidFailToPlayToEndTime), name: .AVPlayerItemFailedToPlayToEndTime, object: playerItem)
-			notificationCenter.addObserver(self, selector: #selector(moviePlayerDidStall), name: .AVPlayerItemPlaybackStalled, object: playerItem)
-			
-			item.addObserver(self, forKeyPath: "status", options: .new, context: nil)
-			item.addObserver(self, forKeyPath: "loadedTimeRanges", options: .new, context: nil)
-			item.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
-			item.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
-			if #available(iOS 10.0, *) {
-				item.preferredForwardBufferDuration = preferredForwardBufferDuration
-			}
-		}
+		guard let item = playerItem else { return }
+		notificationCenter.addObserver(self, selector: #selector(moviePlayerDidEnd), name: .AVPlayerItemDidPlayToEndTime, object: playerItem)
+		notificationCenter.addObserver(self, selector: #selector(moviePlayerDidFailToPlayToEndTime), name: .AVPlayerItemFailedToPlayToEndTime, object: playerItem)
+		notificationCenter.addObserver(self, selector: #selector(moviePlayerDidStall), name: .AVPlayerItemPlaybackStalled, object: playerItem)
+		
+		item.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+		item.addObserver(self, forKeyPath: "loadedTimeRanges", options: .new, context: nil)
+		item.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
+		item.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
+		if #available(iOS 10.0, *) { item.preferredForwardBufferDuration = preferredForwardBufferDuration }
 	}
 	
 	fileprivate func configPlayerItem() -> AVPlayerItem? {
@@ -374,6 +371,7 @@ open class UZPlayerLayerView: UIView {
 		
 		playerItem = configPlayerItem()
 		player = AVPlayer(playerItem: playerItem!)
+		if #available(iOS 10.0, *) { player!.automaticallyWaitsToMinimizeStalling = false }
 		player!.addObserver(self, forKeyPath: "rate", options: .new, context: nil)
 		
 		playerLayer = AVPlayerLayer(player: player)
@@ -474,7 +472,8 @@ open class UZPlayerLayerView: UIView {
 	
 	@objc open func moviePlayerDidStall() {
 		DLog("Player stalled")
-		retryPlaying(after: 2.0)
+		if let currentTime = player?.currentTime() { shouldSeekTo = CMTimeGetSeconds(currentTime) }
+ 		retryPlaying(after: 2.0)
 		delegate?.player(playerDidStall: self)
 	}
 	

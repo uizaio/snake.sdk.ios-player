@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import UZM3U8Kit
 
-public enum UZResolution : Int64{
+public enum UZResolution: Int64 {
     case UltraHD = 8_294_400 /// 3840 x 2160 == 4k
     case QHD = 2_211_840 // 2048×1080 == 2k
     case FullHD = 2_073_600 // 1920x1080
@@ -19,13 +19,13 @@ public enum UZResolution : Int64{
 }
 
 extension MediaResoulution {
-    public var pixels : Int64 {
+    public var pixels: Int64 {
         return Int64(width * height)
     }
 }
 
 extension M3U8ExtXStreamInf {
-    open var shortDescription : String {
+    open var shortDescription: String {
         return "\(findRes(resolution: resolution))(\(Int(bandwidth/1000)) kps)"
     }
     
@@ -42,9 +42,7 @@ extension M3U8ExtXStreamInf {
         } else if pixels >= UZResolution.p544.rawValue {
             return "HD"
         } else {
-            if(pixels == 0) {
-                return "Audio Only"
-            }
+            if pixels == 0 { return "Audio Only" }
             return "\(Int(resolution.width))x\(Int(resolution.height))"
         }
     }

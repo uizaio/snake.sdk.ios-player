@@ -176,7 +176,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
                 } else if settingItem.tag == .audio || settingItem.tag == .captions {
                     if let itemOptions = settingItem.childItems {
                         var settingMedias = itemOptions.map{ SettingItem(title: $0.displayName.capitalizingFirstLetter(), tag: settingItem.tag, type: .number, initValue: $0) }
-                        if(settingItem.tag == .captions){
+                        if settingItem.tag == .captions {
                             settingMedias.insert(SettingItem(title: "Off", tag: settingItem.tag, type: .number), at: 0)
                         }
                         let viewController = SettingViewController(text: settingItem.tag.description, settingItems: settingMedias, defaultValue: settingItem.initValue)

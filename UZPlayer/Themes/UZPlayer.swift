@@ -228,7 +228,7 @@ open class UZPlayer: UIView {
 		}
 	}
 	
-	public var preferredForwardBufferDuration: TimeInterval = 0 {
+	public var preferredForwardBufferDuration: TimeInterval = 2 {
 		didSet {
 			playerLayer?.preferredForwardBufferDuration = preferredForwardBufferDuration
 		}

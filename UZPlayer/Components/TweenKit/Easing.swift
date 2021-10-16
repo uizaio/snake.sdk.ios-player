@@ -104,21 +104,21 @@ public enum Easing: Int {
         // **** Bounce ****
         case .bounceIn:
             var newT = t
-            if(t != 0.0 && t != 1.0) {
+            if t != 0.0 && t != 1.0 {
                 newT = 1.0 - bounceTime(t: 1.0 - t)
             }
             return newT;
             
         case .bounceOut:
             var newT = t;
-            if(t != 0.0 && t != 1.0) {
+            if t != 0.0 && t != 1.0 {
                 newT = bounceTime(t: t)
             }
             return newT;
             
         case .bounceInOut:
             let newT: Double
-            if( t == 0.0 || t == 1.0) {
+            if  t == 0.0 || t == 1.0 {
                 newT = t;
             }
             else if (t < 0.5) {
@@ -158,7 +158,7 @@ public enum Easing: Int {
         case .elasticInOut:
             var newT = 0.0;
             
-            if( t == 0.0 || t == 1.0 ) {
+            if t == 0.0 || t == 1.0  {
                 newT = t;
             }
             else {
@@ -167,7 +167,7 @@ public enum Easing: Int {
                 let s = kPERIOD / 4;
                 
                 t = t - 1.0;
-                if( t < 0 ) {
+                if t < 0 {
                     newT = -0.5 * pow(2, 10.0 * t) * sin((t - s) * M_PI_X_2 / kPERIOD);
                 }
                 else{

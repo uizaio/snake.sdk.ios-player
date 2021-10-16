@@ -352,9 +352,9 @@
 				8BC84AB624B70DA4002906F6 /* UZPlayer.swift */,
 				8BC84ABB24B70DA4002906F6 /* UZPlayer+.swift */,
 				8BC84AB724B70DA4002906F6 /* UZPlayer++.swift */,
+				8BC84A9724B70D8E002906F6 /* UZPlayerLayerView.swift */,
 				8BC84A9B24B70D8E002906F6 /* UZPlayerControlView.swift */,
 				8BC84A9C24B70D8E002906F6 /* UZPlayerControlView+.swift */,
-				8BC84A9724B70D8E002906F6 /* UZPlayerLayerView.swift */,
 				8BC84A9624B70D8E002906F6 /* UZPlayerViewController.swift */,
 				8BC84A9024B70D8E002906F6 /* UZVideoQualitySettingsViewController.swift */,
 			);
