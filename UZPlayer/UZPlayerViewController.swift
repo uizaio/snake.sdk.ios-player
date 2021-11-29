@@ -101,7 +101,7 @@ internal class UZPlayerController: UIViewController {
 	}
 	
 	fileprivate func currentVideoSize() -> CGSize {
-		guard let player = player.playerLayer, let videoRect = player.playerLayer?.videoRect else { return .zero}
+		guard let player = player.playerLayerView, let videoRect = player.playerLayer?.videoRect else { return .zero}
 		return videoRect.size
 	}
 	

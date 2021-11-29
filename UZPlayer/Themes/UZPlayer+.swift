@@ -183,15 +183,15 @@ extension UZPlayer {
             UZCastingManager.shared.castItem(item: item)
         }
         
-        playerLayer?.pause(alsoPauseCasting: false)
+        playerLayerView?.pause(alsoPauseCasting: false)
         controlView.showLoader()
         updateCastingUI()
     }
     
     @objc func onCastClientDidStart(_ notification: Notification) {
         controlView.hideLoader()
-        playerLayer?.setupTimer()
-        playerLayer?.isPlaying = true
+        playerLayerView?.setupTimer()
+        playerLayerView?.isPlaying = true
     }
     
     @objc func onCastClientDidUpdate(_ notification: Notification) {
@@ -220,8 +220,8 @@ extension UZPlayer {
     @objc func onCastSessionDidStop(_ notification: Notification) {
         let lastPosision = UZCastingManager.shared.lastPosition
         
-        playerLayer?.seek(to: lastPosision, completion: { [weak self] in
-            self?.playerLayer?.play()
+        playerLayerView?.seek(to: lastPosision, completion: { [weak self] in
+            self?.playerLayerView?.play()
         })
         
         updateCastingUI()
@@ -329,7 +329,7 @@ extension UZPlayer {
 				settingItems.append(SettingItem(tag: .captions, type: .array, initValue: currentSubtileOption(), childItems: subtitleOptions))
 			}
 			// speed rate
-			settingItems.append(SettingItem(tag: .speedRate, type: .array, initValue: playerLayer?.currentSpeedRate().rawValue ?? UZSpeedRate.normal.rawValue))
+			settingItems.append(SettingItem(tag: .speedRate, type: .array, initValue: playerLayerView?.currentSpeedRate().rawValue ?? UZSpeedRate.normal.rawValue))
 		}
 //		#if DEBUG
 //		settingItems.append(SettingItem(tag: .stats))
@@ -362,7 +362,7 @@ extension UZPlayer: UZSettingViewDelegate {
     
     public func settingRow(didSelected tag: UZSettingTag, value: Float) {
 		switch tag {
-			case .speedRate: playerLayer?.changeSpeedRate(UZSpeedRate(rawValue: value) ?? UZSpeedRate.normal)
+			case .speedRate: playerLayerView?.changeSpeedRate(UZSpeedRate(rawValue: value) ?? UZSpeedRate.normal)
 			case .quality: changeBitrate(bitrate: Double(value))
 			case .stats: break
 				
@@ -493,7 +493,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
 		
 		switch event {
 			case .touchDown:
-				playerLayer?.onTimeSliderBegan()
+				playerLayerView?.onTimeSliderBegan()
 				isSliderSliding = true
 				
 			case .touchUpInside :
@@ -501,7 +501,7 @@ extension UZPlayer: UZPlayerControlViewDelegate {
 				
 				var targetTime = totalDuration * Double(slider.value)
 				if targetTime.isNaN {
-					guard let currentItem = playerLayer?.playerItem,
+					guard let currentItem = playerLayerView?.playerItem,
 						  let seekableRange = currentItem.seekableTimeRanges.last?.timeRangeValue else { return }
 					
 					let seekableStart = CMTimeGetSeconds(seekableRange.start)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21DB312D65D24AFAFA8C8070 /* Pods_UZPlayerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38B17FCCBE65DCC08414544 /* Pods_UZPlayerExample.framework */; };
+		634BDB82272657A300963245 /* AVPlayer+LogarithmicVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BDB81272657A300963245 /* AVPlayer+LogarithmicVolume.swift */; };
 		63744BEC26EBAE9200F81B82 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63744BEB26EBAE9200F81B82 /* MoviePlayerViewController.swift */; };
 		63744BEF26EBAF2500F81B82 /* FrameLayoutKit in Frameworks */ = {isa = PBXBuildFile; productRef = 63744BEE26EBAF2500F81B82 /* FrameLayoutKit */; };
 		63744BF226EBAF3400F81B82 /* NKButton in Frameworks */ = {isa = PBXBuildFile; productRef = 63744BF126EBAF3400F81B82 /* NKButton */; };
@@ -137,6 +138,7 @@
 
 /* Begin PBXFileReference section */
 		31A40E25366A755FE439B40E /* Pods-UZPlayerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZPlayerExample.debug.xcconfig"; path = "Target Support Files/Pods-UZPlayerExample/Pods-UZPlayerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		634BDB81272657A300963245 /* AVPlayer+LogarithmicVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+LogarithmicVolume.swift"; sourceTree = "<group>"; };
 		63744BEB26EBAE9200F81B82 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerViewController.swift; sourceTree = "<group>"; };
 		63744C0726EBBCCD00F81B82 /* UIView+ExtendSafeEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ExtendSafeEdgeInsets.swift"; sourceTree = "<group>"; };
 		63A7630D26F0A251000E43A2 /* NKFullscreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKFullscreenPresenter.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				8BA9CD1F24BC242B00047B8E /* Bundle+.swift */,
 				8BC84B1824B70E3C002906F6 /* AVAsset+Selection.swift */,
 				8BC84B1A24B70E3C002906F6 /* AVAudioSession+Airplay.swift */,
+				634BDB81272657A300963245 /* AVPlayer+LogarithmicVolume.swift */,
 				8BC84B1524B70E3C002906F6 /* NSTimeInterval+ToString.swift */,
 				8BC84B1924B70E3C002906F6 /* Number+Extentions.swift */,
 				8BC84B1424B70E3C002906F6 /* UIDevice+Extension.swift */,
@@ -717,6 +720,7 @@
 				8BC84B5024B70E75002906F6 /* ActionScheduler.swift in Sources */,
 				8BC84B1E24B70E3C002906F6 /* UIView+.swift in Sources */,
 				8BA9CD2024BC242B00047B8E /* Bundle+.swift in Sources */,
+				634BDB82272657A300963245 /* AVPlayer+LogarithmicVolume.swift in Sources */,
 				8BC84AA624B70D8E002906F6 /* UZPlayerLayerView.swift in Sources */,
 				8BC84AA224B70D8E002906F6 /* SettingItem.swift in Sources */,
 				8BC84B7124B70E93002906F6 /* UZPlayerConfig.swift in Sources */,

@@ -48,6 +48,7 @@ open class UZLogger: UZAPIConnector {
 	}
 	
     open func log(event: String, params: Parameters? = nil) {
+		DLog(event)
 //		let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
 //		let timestamp: String = dateFormatter.string(from: Date())
 //

@@ -128,6 +128,7 @@ open class UZPlayerLayerView: UIView {
 	}
 	
 	public internal(set) var playerLayer: AVPlayerLayer?
+	public var isAutoRetry = false
 	
 	fileprivate var timer: Timer?
 	fileprivate var getLatencytimer: Timer?
@@ -473,7 +474,8 @@ open class UZPlayerLayerView: UIView {
 	@objc open func moviePlayerDidStall() {
 		DLog("Player stalled")
 		if let currentTime = player?.currentTime() { shouldSeekTo = CMTimeGetSeconds(currentTime) }
- 		retryPlaying(after: 2.0)
+		if isAutoRetry { retryPlaying(after: 1.0) }
+		
 		delegate?.player(playerDidStall: self)
 	}
 	

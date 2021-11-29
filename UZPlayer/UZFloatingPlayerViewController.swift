@@ -210,7 +210,7 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 			let viewSize = self.view.bounds.size
 			
 			var isPortrait = false
-			if let currentVideoSize = self.player?.playerLayer?.playerLayer?.videoRect, self.autoDetectPortraitVideo {
+			if let currentVideoSize = self.player?.playerLayerView?.playerLayer?.videoRect, self.autoDetectPortraitVideo {
 				isPortrait = currentVideoSize.width < currentVideoSize.height
 			}
 			
@@ -250,7 +250,7 @@ open class UZFloatingPlayerViewController: UIViewController, NKFloatingViewHandl
 	open func floatingRect(for position: NKFloatingPosition) -> CGRect {
 		let screenSize = UIScreen.main.bounds.size
 		var isPortrait = false
-		if let currentVideoSize = player?.playerLayer?.playerLayer?.videoRect, autoDetectPortraitVideo {
+		if let currentVideoSize = player?.playerLayerView?.playerLayer?.videoRect, autoDetectPortraitVideo {
 			isPortrait = currentVideoSize.width < currentVideoSize.height
 		}
 		

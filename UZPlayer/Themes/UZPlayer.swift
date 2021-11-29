@@ -91,19 +91,19 @@ open class UZPlayer: UIView {
 	
 	public var videoGravity = AVLayerVideoGravity.resizeAspect {
 		didSet {
-			self.playerLayer?.videoGravity = videoGravity
+			self.playerLayerView?.videoGravity = videoGravity
 		}
 	}
 	
 	public var aspectRatio: UZPlayerAspectRatio = .default {
 		didSet {
-			self.playerLayer?.aspectRatio = self.aspectRatio
+			self.playerLayerView?.aspectRatio = self.aspectRatio
 		}
 	}
 	
-	public var isPlaying: Bool { playerLayer?.isPlaying ?? false }
+	public var isPlaying: Bool { playerLayerView?.isPlaying ?? false }
 	
-	public var avPlayer: AVPlayer? { playerLayer?.player }
+	public var avPlayer: AVPlayer? { playerLayerView?.player }
 	
     public var subtitleGroup : AVMediaSelectionGroup? { avPlayer?.currentItem?.asset.subtitleGroup }
     
@@ -179,7 +179,7 @@ open class UZPlayer: UIView {
 	public internal(set) var currentVideo: UZVideoItem? {
 		didSet {
 			controlView.currentVideo = currentVideo
-			playerLayer?.currentVideo = currentVideo
+			playerLayerView?.currentVideo = currentVideo
 		}
 	}
 	
@@ -199,6 +199,11 @@ open class UZPlayer: UIView {
 		}
 	}
 	
+	public var isAutoRetry: Bool = false {
+		didSet {
+			playerLayerView?.isAutoRetry = isAutoRetry
+		}
+	}
 	public var shouldAutoPlay = true
 	public var shouldShowsControlViewAfterStoppingPiP = true
 	public var autoTryNextDefinitionIfError = true
@@ -230,7 +235,7 @@ open class UZPlayer: UIView {
 	
 	public var preferredForwardBufferDuration: TimeInterval = 2 {
 		didSet {
-			playerLayer?.preferredForwardBufferDuration = preferredForwardBufferDuration
+			playerLayerView?.preferredForwardBufferDuration = preferredForwardBufferDuration
 		}
 	}
 	
@@ -241,7 +246,7 @@ open class UZPlayer: UIView {
 	}
 
 	public internal(set) var currentDefinition = 0
-	public internal(set) var playerLayer: UZPlayerLayerView?
+	public internal(set) var playerLayerView: UZPlayerLayerView?
 	
     var liveViewTimer: Timer?
     var isFullScreen: Bool { UIApplication.shared.statusBarOrientation.isLandscape }
@@ -385,14 +390,14 @@ open class UZPlayer: UIView {
 		
 		if !isURLSet {
 			currentLinkPlay = resource.definitions[currentDefinition]
-			playerLayer?.playAsset(asset: currentLinkPlay!.avURLAsset)
+			playerLayerView?.playAsset(asset: currentLinkPlay!.avURLAsset)
 			controlView.hideCoverImageView()
 			isURLSet = true
 		}
         
         addPeriodicTime()
 		
-		playerLayer?.play()
+		playerLayerView?.play()
 		isPauseByUser = false
 		
 		if #available(iOS 9.0, *) {
@@ -444,8 +449,8 @@ open class UZPlayer: UIView {
 		controlView.playTimeDidChange(currentTime: 0, totalTime: 0)
 		controlView.loadedTimeDidChange(loadedDuration: 0, totalDuration: 0)
 		
-		playerLayer?.prepareToDeinit()
-		playerLayer = nil
+		playerLayerView?.prepareToDeinit()
+		playerLayerView = nil
 	}
 	
 	/**
@@ -468,7 +473,7 @@ open class UZPlayer: UIView {
 	*/
 	open func pause() {
 		UZLogger.shared.log(event: "pause")
-		playerLayer?.pause()
+		playerLayerView?.pause()
 		
 		if sendWatchingLiveEventTimer != nil {
 			sendWatchingLiveEventTimer!.invalidate()
@@ -487,7 +492,7 @@ open class UZPlayer: UIView {
 		currentPosition = interval
 		controlView.hideEndScreen()
 		
-		playerLayer?.seek(to: interval, completion: {
+		playerLayerView?.seek(to: interval, completion: {
 			UZLogger.shared.log(event: "seeked")
 			completion?()
 		})
@@ -495,7 +500,7 @@ open class UZPlayer: UIView {
         #if canImport(GoogleCast)
 		let castingManager = UZCastingManager.shared
 		if castingManager.hasConnectedSession {
-			playerLayer?.pause()
+			playerLayerView?.pause()
 			castingManager.seek(to: interval)
 		}
 		#endif
@@ -517,9 +522,9 @@ open class UZPlayer: UIView {
 	open func switchVideoDefinition(_ linkplay: UZVideoLinkPlay) {
 		guard currentLinkPlay != linkplay else { return }
 		currentLinkPlay = linkplay
-		playerLayer?.shouldSeekTo = currentPosition
+		playerLayerView?.shouldSeekTo = currentPosition
 		
-		playerLayer?.replaceAsset(asset: linkplay.avURLAsset)
+		playerLayerView?.replaceAsset(asset: linkplay.avURLAsset)
 		setupPictureInPicture() // reset it
 	}
 
@@ -565,8 +570,8 @@ open class UZPlayer: UIView {
 			// Fallback on earlier versions
 		}
 		
-		playerLayer?.pause()
-		playerLayer?.prepareToDeinit()
+		playerLayerView?.pause()
+		playerLayerView?.prepareToDeinit()
 		NotificationCenter.default.removeObserver(self)
 	}
 }

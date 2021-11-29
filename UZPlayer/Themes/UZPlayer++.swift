@@ -35,7 +35,7 @@ extension UZPlayer {
             pictureInPictureController?.delegate = nil
             pictureInPictureController = nil
             
-            if let playerLayer = playerLayer?.playerLayer {
+            if let playerLayer = playerLayerView?.playerLayer {
                 pictureInPictureController = AVPictureInPictureController(playerLayer: playerLayer)
                 pictureInPictureController?.delegate = self
                 pictureInPictureController?.addObserver(self, forKeyPath: pipKeyPath,
@@ -73,13 +73,13 @@ extension UZPlayer {
             if AVAudioSession.sharedInstance().isAirPlaying || (pictureInPictureController?.isPictureInPictureActive ?? false) {
                 // user close app or turn off the phone, don't pause video while casting
             } else if autoPauseWhenInactive {
-                playerLayer?.pause()
+                playerLayerView?.pause()
             }
         } else {
             if AVAudioSession.sharedInstance().isAirPlaying {
                 // user close app or turn off the phone, don't pause video while casting
             } else if autoPauseWhenInactive {
-                playerLayer?.pause()
+                playerLayerView?.pause()
             }
         }
     }
@@ -103,7 +103,7 @@ extension UZPlayer {
                 self.seekToLive()
             }
         } else if autoPauseWhenInactive && !isPauseByUser {
-            playerLayer?.play()
+            playerLayerView?.play()
         }
     }
     
@@ -259,7 +259,7 @@ extension UZPlayer {
         
         let livePosition = CMTimeGetSeconds(seekableRange.start) + CMTimeGetSeconds(seekableRange.duration)
         seek(to: livePosition, completion: { [weak self] in
-            self?.playerLayer?.play()
+            self?.playerLayerView?.play()
         })
     }
 }
@@ -444,7 +444,7 @@ extension UZPlayer {
 
     @objc func completeSyncTime() {
         if let video = currentVideo, video.isLive {
-            UZVisualizeSavedInformation.shared.livestreamCurrentDate = playerLayer?.player?.currentItem?.currentDate()
+            UZVisualizeSavedInformation.shared.livestreamCurrentDate = playerLayerView?.player?.currentItem?.currentDate()
         }
     }
     
@@ -501,7 +501,7 @@ extension UZPlayer {
 			let count = resource.definitions.count
 			currentLinkPlay = definitionIndex > -1 && definitionIndex < count ? resource.definitions[definitionIndex] : resource.definitions.first
 			guard currentLinkPlay != nil else { return }
-            playerLayer?.playAsset(asset: currentLinkPlay!.avURLAsset)
+            playerLayerView?.playAsset(asset: currentLinkPlay!.avURLAsset)
             
             setupPictureInPicture()
         } else {
@@ -541,12 +541,13 @@ extension UZPlayer {
     }
     
     func preparePlayer() {
-        playerLayer = UZPlayerLayerView()
-        playerLayer!.preferredForwardBufferDuration = preferredForwardBufferDuration
-        playerLayer!.videoGravity = videoGravity
-        playerLayer!.delegate = self
+        playerLayerView = UZPlayerLayerView()
+        playerLayerView!.preferredForwardBufferDuration = preferredForwardBufferDuration
+        playerLayerView!.videoGravity = videoGravity
+		playerLayerView!.isAutoRetry = isAutoRetry
+        playerLayerView!.delegate = self
         
-        insertSubview(playerLayer!, at: 0)
+        insertSubview(playerLayerView!, at: 0)
         layoutIfNeeded()
         
         #if swift(>=4.2)
@@ -567,7 +568,7 @@ extension UZPlayer {
         super.layoutSubviews()
         
         visualizeInformationView?.frame = bounds
-        playerLayer?.frame = bounds
+        playerLayerView?.frame = bounds
         controlView.frame = bounds
 //        controlView.setNeedsLayout()
 //        controlView.layoutIfNeeded()
