@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 		view.backgroundColor = .lightGray
 		
 		playerViewController.player.controlView.theme = UZTheme1()
+		playerViewController.player.isAutoRetry = true
 		playerViewController.player.isHidden = true
 		view.addSubview(playerViewController.view)
 		
@@ -76,6 +77,7 @@ class ViewController: UIViewController {
 	func presentPlayer(urlPath: String) {
 		guard let url = URL(string: urlPath) else { return }
 		playerViewController.player.isHidden = false
+		playerViewController.player.isAutoRetry = true
         playerViewController.player.loadVideo(url: url)
 	}
 	
@@ -84,6 +86,7 @@ class ViewController: UIViewController {
 		
 		let videoItem = UZVideoItem(name: nil, thumbnailURL: nil, linkPlay: UZVideoLinkPlay(definition: "", url: url))
 		let floatPlayer = MoviePlayerViewController()
+		floatPlayer.player?.isAutoRetry = true
 		floatPlayer.present(with: videoItem, playlist: nil).player.controlView.theme = UZTheme1()
 		floatPlayer.delegate = self
 	}
