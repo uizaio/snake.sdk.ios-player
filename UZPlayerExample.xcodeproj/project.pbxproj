@@ -196,7 +196,6 @@
 		8BC84AD724B70DC5002906F6 /* FontAwesomeBrands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesomeBrands.ttf; path = UZPlayer/Fonts/FontAwesomeBrands.ttf; sourceTree = "<group>"; };
 		8BC84AE824B70DF4002906F6 /* UZLiveServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UZLiveServices.swift; path = UZPlayer/Components/UZLiveServices.swift; sourceTree = "<group>"; };
 		8BC84AE924B70DF5002906F6 /* UZAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UZAPIConnector.swift; path = UZPlayer/Components/UZAPIConnector.swift; sourceTree = "<group>"; };
-		8BC84AEA24B70DF5002906F6 /* SwiftIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftIcons.swift; path = UZPlayer/Components/SwiftIcons.swift; sourceTree = "<group>"; };
 		8BC84AEB24B70DF5002906F6 /* UZLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UZLogger.swift; path = UZPlayer/Components/UZLogger.swift; sourceTree = "<group>"; };
 		8BC84AEC24B70DF5002906F6 /* UZSentry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UZSentry.swift; path = UZPlayer/Components/UZSentry.swift; sourceTree = "<group>"; };
 		8BC84AED24B70DF5002906F6 /* UZPlayerSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UZPlayerSDK.swift; path = UZPlayer/Components/UZPlayerSDK.swift; sourceTree = "<group>"; };
@@ -407,7 +406,6 @@
 				8BC84B1224B70E2E002906F6 /* Extensions */,
 				8BC84B0324B70E18002906F6 /* Controls */,
 				8BC84AF424B70DFF002906F6 /* BottomSheet */,
-				8BC84AEA24B70DF5002906F6 /* SwiftIcons.swift */,
 				8BC84AE924B70DF5002906F6 /* UZAPIConnector.swift */,
 				8BC84AE824B70DF4002906F6 /* UZLiveServices.swift */,
 				8BC84AEB24B70DF5002906F6 /* UZLogger.swift */,
