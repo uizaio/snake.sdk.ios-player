@@ -66,7 +66,6 @@
 		8BC84AE624B70DC5002906F6 /* FontAwesomeBrands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BC84AD724B70DC5002906F6 /* FontAwesomeBrands.ttf */; };
 		8BC84AEE24B70DF5002906F6 /* UZLiveServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC84AE824B70DF4002906F6 /* UZLiveServices.swift */; };
 		8BC84AEF24B70DF5002906F6 /* UZAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC84AE924B70DF5002906F6 /* UZAPIConnector.swift */; };
-		8BC84AF024B70DF5002906F6 /* SwiftIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC84AEA24B70DF5002906F6 /* SwiftIcons.swift */; };
 		8BC84AF124B70DF5002906F6 /* UZLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC84AEB24B70DF5002906F6 /* UZLogger.swift */; };
 		8BC84AF224B70DF5002906F6 /* UZSentry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC84AEC24B70DF5002906F6 /* UZSentry.swift */; };
 		8BC84AF324B70DF5002906F6 /* UZPlayerSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC84AED24B70DF5002906F6 /* UZPlayerSDK.swift */; };
@@ -687,7 +686,6 @@
 				8BC84B6F24B70E93002906F6 /* UZVideoItem.swift in Sources */,
 				8BC84B5824B70E75002906F6 /* BezierAction.swift in Sources */,
 				8BC84B5A24B70E75002906F6 /* DelayAction.swift in Sources */,
-				8BC84AF024B70DF5002906F6 /* SwiftIcons.swift in Sources */,
 				8BC84AA524B70D8E002906F6 /* UZPlayerViewController.swift in Sources */,
 				8BC84B6624B70E75002906F6 /* UIKit+Tweenable.swift in Sources */,
 				63FD93382420DA30001B7A48 /* ViewController.swift in Sources */,
@@ -816,7 +814,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -873,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -894,7 +892,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 385YL4KG69;
 				INFOPLIST_FILE = UZPlayerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -915,7 +913,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 385YL4KG69;
 				INFOPLIST_FILE = UZPlayerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

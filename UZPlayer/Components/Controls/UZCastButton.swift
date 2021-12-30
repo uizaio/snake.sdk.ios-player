@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import SwiftIcons
 
 open class UZCastButton: UIButton {
 	

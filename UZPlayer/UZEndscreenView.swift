@@ -8,6 +8,7 @@
 
 import UIKit
 import FrameLayoutKit
+import SwiftIcons
 
 open class UZEndscreenView: UIView {
 	open lazy var blurView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))

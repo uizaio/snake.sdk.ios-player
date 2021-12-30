@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import UZM3U8Kit
+import SwiftIcons
 
 public class SettingViewController: UIViewController {
     private let MAX_HEIGHT =  UIScreen.main.bounds.height * 0.65

@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import FrameLayoutKit
+import SwiftIcons
 
 open class UZTheme5: UZPlayerTheme {
 	public var id = "UZTheme5"

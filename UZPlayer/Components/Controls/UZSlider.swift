@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import SwiftIcons
 
 open class UZSlider: UISlider {
-	
 	public let progressView = NKProgressView()
 	
 	public init() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import FrameLayoutKit
+import SwiftIcons
 
 open class UZLiveBadgeView: UIView {
 	

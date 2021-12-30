@@ -8,6 +8,7 @@
 
 import UIKit
 import FrameLayoutKit
+import SwiftIcons
 
 open class UZPlayerControlView: UIView {
 	open weak var delegate: UZPlayerControlViewDelegate?
